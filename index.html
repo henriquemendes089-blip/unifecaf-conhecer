@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UniFECAF Conhecer — Graduações e Cursos Técnicos em Ribeirão das Neves</title>
+  <meta name="description" content="Graduações reconhecidas pelo MEC e Cursos Técnicos presenciais em Ribeirão das Neves - MG. UniFECAF Conhecer: sua carreira começa aqui." />
+  <meta property="og:title" content="UniFECAF Conhecer — Ribeirão das Neves" />
+  <meta property="og:description" content="Graduações EAD com polo presencial e Cursos Técnicos rápidos. Perto de você, em Ribeirão das Neves - MG." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables ─────────────────────────────────────────────── */
+    :root {
+      --navy:       #0d1b3e;
+      --navy-deep:  #070f22;
+      --blue:       #1a3a8f;
+      --blue-vivid: #2351c0;
+      --green:      #2db85a;
+      --green-dark: #1e9045;
+      --whatsapp:   #25D366;
+      --bg-light:   #f5f7fb;
+      --text:       #1a1a2e;
+      --text-muted: #5a6478;
+      --white:      #ffffff;
+      --font-head:  'Sora', sans-serif;
+      --font-body:  'Instrument Sans', sans-serif;
+      --radius:     12px;
+      --shadow:     0 4px 24px rgba(13,27,62,.12);
+      --shadow-lg:  0 8px 40px rgba(13,27,62,.2);
+    }
+
+    /* ── Reset ──────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ── Utility ────────────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(45,184,90,.1);
+      border: 1px solid rgba(45,184,90,.3);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: -68px;
+      margin-bottom: 22px;
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--navy);
+    }
+
+    /* ── Fade-in on scroll ──────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       NAVBAR
+    ══════════════════════════════════════════════════════════════ */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(13,27,62,.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: box-shadow .3s ease;
+    }
+    .navbar.scrolled {
+      box-shadow: 0 4px 32px rgba(0,0,0,.35);
+    }
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .navbar__brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .navbar__logos {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .navbar__logos img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+    .navbar__logos .logo-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,.2);
+    }
+    .navbar__brand-text {
+      font-family: var(--font-head);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .navbar__nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .navbar__nav a {
+      font-size: .85rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.78);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    .navbar__nav a:hover {
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+    }
+    .btn-whatsapp-nav {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green);
+      color: var(--white) !important;
+      padding: 9px 18px !important;
+      border-radius: 8px !important;
+      font-weight: 700 !important;
+      font-size: .85rem !important;
+      transition: background .2s, transform .15s !important;
+      margin-left: 8px;
+    }
+    .btn-whatsapp-nav:hover {
+      background: var(--green-dark) !important;
+      transform: translateY(-1px) !important;
+    }
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform .3s ease, opacity .3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-deep);
+      border-top: 1px solid rgba(255,255,255,.07);
+      padding: 12px 24px 20px;
+      gap: 4px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,.8);
+      font-size: .95rem;
+      font-weight: 500;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--white); }
+    .mobile-menu .btn-wpp-mob {
+      margin-top: 10px;
+      background: var(--green);
+      color: var(--white) !important;
+      text-align: center;
+      padding: 12px !important;
+      border-radius: var(--radius) !important;
+      font-weight: 700 !important;
+      border: none !important;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1d4fd8 100%);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+    /* Geometric shapes */
+    .hero__geo {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero__geo::before {
+      content: '';
+      position: absolute;
+      width: 480px; height: 480px;
+      border: 2px solid rgba(255,255,255,.06);
+      border-radius: 48px;
+      top: -120px; right: -80px;
+      transform: rotate(18deg);
+    }
+    .hero__geo::after {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border: 1.5px solid rgba(45,184,90,.15);
+      border-radius: 32px;
+      bottom: 40px; left: -60px;
+      transform: rotate(-12deg);
+    }
+    .hero__geo-circle {
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(35,81,192,.25) 0%, transparent 70%);
+      top: -200px; right: -200px;
+    }
+    /* Linhas verdes decorativas */
+    .hero__lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero__lines svg {
+      position: absolute;
+      width: 100%; height: 100%;
+      top: 0; left: 0;
+    }
+    .hero__geo-dot {
+      position: absolute;
+      width: 180px; height: 180px;
+      border: 1px solid rgba(45,184,90,.12);
+      border-radius: 50%;
+      bottom: 15%; left: 10%;
+    }
+    .hero__inner {
+      position: relative;
+      z-index: 2;
+      display: block;
+      max-width: 58%;
+    }
+    .hero__content {
+      padding-right: 0;
+    }
+    .hero__logo-side {
+      position: absolute;
+      bottom: -60px;
+      right: 1%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .hero__logo-side img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+      filter: drop-shadow(0 0 40px rgba(0,0,0,.35));
+    }
+    @media (max-width: 900px) {
+      .hero__inner { max-width: 100%; }
+      .hero__logo-side { display: none; }
+    }
+    @media (max-width: 768px) {
+      .hero__logo-side { display: none; }
+    }
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(45,184,90,.12);
+      border: 1px solid rgba(45,184,90,.25);
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      animation: fadeUp .6s ease both;
+    }
+    .hero__title {
+      font-family: var(--font-head);
+      font-size: clamp(2.1rem, 5vw, 3.6rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 20px;
+      animation: fadeUp .6s .15s ease both;
+    }
+    .hero__title em {
+      font-style: normal;
+      color: var(--green);
+    }
+    .hero__subtitle {
+      font-size: clamp(.95rem, 1.8vw, 1.1rem);
+      color: rgba(255,255,255,.78);
+      max-width: 580px;
+      margin-bottom: 36px;
+      animation: fadeUp .6s .3s ease both;
+    }
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 36px;
+      animation: fadeUp .6s .45s ease both;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-family: var(--font-head);
+      font-size: .92rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-outline {
+      background: rgba(255,255,255,.12);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,.5) !important;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,.2);
+      box-shadow: 0 6px 24px rgba(0,0,0,.2);
+    }
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-green:hover {
+      background: var(--green-dark);
+      box-shadow: 0 6px 24px rgba(45,184,90,.35);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--white);
+    }
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.75);
+      font-size: .83rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      animation: fadeUp .6s .6s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       TICKER
+    ══════════════════════════════════════════════════════════════ */
+    .ticker {
+      background: var(--green);
+      padding: 13px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ticker__track {
+      display: inline-flex;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker__track:hover { animation-play-state: paused; }
+    .ticker__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 0 40px;
+    }
+    .ticker__sep {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      flex-shrink: 0;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       POR QUE ESTUDAR
+    ══════════════════════════════════════════════════════════════ */
+    .why {
+      padding: 100px 0 48px;
+      background: var(--white);
+    }
+    .why__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .why__card {
+      background: var(--white);
+      border: 1px solid rgba(13,27,62,.08);
+      border-left: 4px solid var(--green);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .why__card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .why__icon {
+      width: 52px; height: 52px;
+      background: rgba(45,184,90,.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .why__icon svg { width: 26px; height: 26px; }
+    .why__card h3 {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .why__card p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       CURSOS
+    ══════════════════════════════════════════════════════════════ */
+    .courses {
+      padding: 48px 0 100px;
+      background: var(--bg-light);
+    }
+    .courses__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .courses__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .course-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .course-card__header {
+      padding: 24px 24px 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 110px;
+    }
+    .course-card--blue .course-card__header { background: var(--navy); }
+    .course-card--semi .course-card__header { background: var(--blue-vivid); }
+    .course-card--green .course-card__header { background: var(--green-dark); }
+    .course-card__header-left h3 {
+      font-family: var(--font-head);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.18);
+      color: var(--white);
+    }
+    .course-card__body {
+      padding: 20px 24px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .course-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .course-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(13,27,62,.06);
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .course-list li:last-child { border-bottom: none; }
+    .course-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .course-card--blue .course-dot { background: var(--blue-vivid); }
+    .course-card--semi .course-dot { background: var(--blue-vivid); }
+    .course-card--semi .course-cta { color: var(--blue-vivid); }
+    .course-card--green .course-dot { background: var(--green); }
+    .course-cta {
+      display: block;
+      margin-top: auto;
+      padding-top: 16px;
+      font-family: var(--font-head);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--blue-vivid);
+      transition: color .2s;
+    }
+    .course-card--green .course-cta { color: var(--green-dark); }
+    .course-cta:hover { opacity: .75; }
+    .courses__cta-center {
+      display: flex;
+      justify-content: center;
+    }
+    .btn-cta-wpp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--green);
+      color: var(--white);
+      padding: 18px 36px;
+      border-radius: var(--radius);
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 800;
+      transition: background .2s, transform .2s, box-shadow .2s;
+      box-shadow: 0 4px 20px rgba(45,184,90,.3);
+    }
+    .btn-cta-wpp:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(45,184,90,.4);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       GALERIA
+    ══════════════════════════════════════════════════════════════ */
+    .gallery {
+      padding: 60px 0 100px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .gallery__bg-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .gallery__bg-lines svg {
+      position: absolute;
+      width: 100%; height: 100%;
+      top: 0; left: 0;
+    }
+    .gallery__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .gallery__featured-wrap {
+      background: linear-gradient(135deg, #0d1b3e 0%, #1a3a8f 50%, #2351c0 100%);
+      border-radius: 28px;
+      padding: 16px;
+      box-shadow: 0 12px 48px rgba(13,27,62,.35);
+    }
+    .gallery__featured {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 500px;
+      position: relative;
+    }
+    .gallery__featured img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+    .gallery__featured:hover img { transform: scale(1.03); }
+    .gallery__overlay-hint {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(7,15,34,.7));
+      padding: 40px 32px 28px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .gallery__hint-text {
+      color: var(--white);
+      font-size: .9rem;
+      opacity: .85;
+    }
+    .btn-gallery {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--navy);
+      padding: 13px 24px;
+      border-radius: var(--radius);
+      font-family: var(--font-head);
+      font-size: .9rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background .2s, transform .2s;
+    }
+    .btn-gallery:hover {
+      background: var(--bg-light);
+      transform: translateY(-2px);
+    }
+    /* ── Modal estrutura ───────────────────────── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(7,15,34,.96);
+      overflow-y: auto;
+      animation: fadeIn .25s ease;
+    }
+    .modal-overlay.open { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .modal-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 64px;
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+    .modal-header h2 {
+      font-family: var(--font-head);
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+    .modal-header p {
+      font-size: .9rem;
+      color: rgba(255,255,255,.5);
+      margin-top: 6px;
+    }
+    .modal-close {
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,.1);
+      border: none;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.2); }
+    .modal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .modal-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .25s ease, border-color .25s ease;
+      cursor: pointer;
+    }
+    .modal-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(45,184,90,.4);
+    }
+    .modal-card__img {
+      height: 240px;
+      overflow: hidden;
+    }
+    .modal-card__img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .modal-card:hover .modal-card__img img { transform: scale(1.05); }
+    .modal-card__info {
+      padding: 18px 20px;
+    }
+    .modal-card__tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .modal-card__title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+    .modal-card__desc {
+      font-size: .83rem;
+      color: rgba(255,255,255,.5);
+      line-height: 1.6;
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: rgba(0,0,0,.95);
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px; right: 20px;
+      width: 44px; height: 44px;
+      background: rgba(255,255,255,.15);
+      border: none;
+      border-radius: 50%;
+      color: var(--white);
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.3); }
+    @media (max-width: 768px) {
+      .modal-grid { grid-template-columns: 1fr; }
+      .gallery__featured { height: 320px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       EXPLORE CURSOS (abas)
+    ══════════════════════════════════════════════════════════════ */
+    .explore {
+      padding: 100px 0;
+      background: linear-gradient(160deg, #0d1b3e 0%, #1a3a8f 100%);
+    }
+    .explore .section-tag {
+      color: var(--green);
+      background: rgba(45,184,90,.15);
+      border-color: rgba(45,184,90,.3);
+    }
+    .explore .section-title { color: var(--white); }
+    .explore > .container > .explore__header p { color: rgba(255,255,255,.6) !important; }
+    .explore__tabs {
+      background: rgba(255,255,255,.08) !important;
+      border-color: rgba(255,255,255,.12) !important;
+    }
+    .tab-btn { color: rgba(255,255,255,.65) !important; }
+    .explore__header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .explore__tabs {
+      display: inline-flex;
+      background: var(--white);
+      border: 1.5px solid rgba(13,27,62,.1);
+      border-radius: 50px;
+      padding: 5px;
+      gap: 4px;
+      margin-bottom: 48px;
+    }
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 26px;
+      border-radius: 50px;
+      border: none;
+      background: none;
+      font-family: var(--font-head);
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background .25s, color .25s, box-shadow .25s;
+    }
+    .tab-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+    .tab-btn.active.tab-unifecaf {
+      background: var(--green);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(45,184,90,.3);
+    }
+    .tab-btn.active.tab-conhecer {
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(13,27,62,.25);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeUp .35s ease both; }
+    .explore__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .area-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+    .area-card__cover {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .area-card__cover svg { width: 52px; height: 52px; opacity: .9; }
+    .area-card--saude   .area-card__cover { background: linear-gradient(135deg, #1a3a8f, #2351c0); }
+    .area-card--gestao  .area-card__cover { background: linear-gradient(135deg, #0d1b3e, #1a3a8f); }
+    .area-card--tech    .area-card__cover { background: linear-gradient(135deg, #1e9045, #2db85a); }
+    .area-card--edu     .area-card__cover { background: linear-gradient(135deg, #2351c0, #3b6fe8); }
+    .area-card--seg     .area-card__cover { background: linear-gradient(135deg, #b45309, #d97706); }
+    .area-card__body {
+      padding: 20px 20px 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .area-card__title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .area-card--saude  .area-card__title { color: var(--blue-vivid); }
+    .area-card--gestao .area-card__title { color: var(--navy); }
+    .area-card--tech   .area-card__title { color: var(--green-dark); }
+    .area-card--edu    .area-card__title { color: var(--blue-vivid); }
+    .area-card--seg    .area-card__title { color: #b45309; }
+    .area-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .area-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(13,27,62,.06);
+      font-size: .85rem;
+      font-weight: 500;
+      color: var(--text);
+      gap: 8px;
+    }
+    .area-list li:last-child { border-bottom: none; }
+    .area-list li svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-muted); }
+    .area-card__cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      padding: 10px 18px;
+      border-radius: 50px;
+      border: 2px solid currentColor;
+      font-family: var(--font-head);
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      transition: background .2s, color .2s;
+      text-decoration: none;
+    }
+    .area-card--saude  .area-card__cta { color: var(--blue-vivid); }
+    .area-card--gestao .area-card__cta { color: var(--navy); }
+    .area-card--tech   .area-card__cta { color: var(--green-dark); }
+    .area-card--edu    .area-card__cta { color: var(--blue-vivid); }
+    .area-card--seg    .area-card__cta { color: #b45309; }
+    .area-card--saude  .area-card__cta:hover { background: var(--blue-vivid); color: var(--white); }
+    .area-card--gestao .area-card__cta:hover { background: var(--navy); color: var(--white); }
+    .area-card--tech   .area-card__cta:hover { background: var(--green-dark); color: var(--white); }
+    .area-card--edu    .area-card__cta:hover { background: var(--blue-vivid); color: var(--white); }
+    .area-card--seg    .area-card__cta:hover { background: #b45309; color: var(--white); }
+    @media (max-width: 1024px) {
+      .explore__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .explore__grid { grid-template-columns: 1fr; }
+      .explore__tabs { flex-direction: column; border-radius: 16px; }
+      .tab-btn { border-radius: 12px; }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       CONTATO
+    ══════════════════════════════════════════════════════════════ */
+    .contact {
+      padding: 100px 0;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(35,81,192,.2) 0%, transparent 70%);
+      top: -200px; right: -200px;
+      pointer-events: none;
+    }
+    .contact__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .contact__header .section-title { color: var(--white); }
+    .contact__centered {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    /* Form */
+    .contact__form-wrap {
+      background: rgba(255,255,255,.06);
+      border: 1.5px solid rgba(45,184,90,.5);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 24px rgba(45,184,90,.18), 0 0 60px rgba(45,184,90,.08), inset 0 0 30px rgba(45,184,90,.04);
+    }
+    /* Selector cards (Graduação / Técnico) */
+    .selector-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .selector-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 12px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.6);
+      font-family: var(--font-head);
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, color .2s;
+      text-align: center;
+    }
+    .selector-card svg { width: 22px; height: 22px; }
+    .selector-card:hover { border-color: rgba(255,255,255,.35); color: var(--white); }
+    .selector-card.selected-grad { border-color: var(--green); background: rgba(45,184,90,.15); color: var(--green); }
+    .selector-card.selected-tec  { border-color: var(--blue-vivid); background: rgba(35,81,192,.2); color: #7ba8ff; }
+    /* Sub-selectors */
+    .sub-group {
+      display: none;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .sub-group.visible { display: flex; flex-wrap: wrap; }
+    .sub-chip {
+      padding: 8px 16px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.6);
+      font-family: var(--font-head);
+      font-size: .78rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: border-color .2s, background .2s, color .2s;
+    }
+    .sub-chip:hover { border-color: rgba(255,255,255,.4); color: var(--white); }
+    .sub-chip.active { border-color: var(--green); background: rgba(45,184,90,.15); color: var(--green); }
+    .sub-chip.active-blue { border-color: var(--blue-vivid); background: rgba(35,81,192,.2); color: #7ba8ff; }
+    /* Form buttons */
+    .form-btns {
+      display: flex;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .btn-inscricao {
+      padding: 17px 100px;
+      border-radius: var(--radius);
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background: var(--green);
+      color: var(--white);
+      transition: background .2s, transform .2s;
+    }
+    .btn-inscricao:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-detalhes {
+      padding: 15px;
+      border-radius: var(--radius);
+      font-family: var(--font-head);
+      font-size: .92rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1.5px solid rgba(255,255,255,.35);
+      background: transparent;
+      color: var(--white);
+      transition: background .2s, transform .2s;
+    }
+    .btn-detalhes:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
+    @media (max-width: 640px) {
+      .selector-group { grid-template-columns: 1fr 1fr; }
+      .form-btns { grid-template-columns: 1fr; }
+      .contact__form-wrap { padding: 24px 18px; }
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: .82rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.65);
+      letter-spacing: .03em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: rgba(255,255,255,.07);
+      border: 1.5px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: .9rem;
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .form-group select option { background: var(--navy); }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.3); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--green);
+      background: rgba(255,255,255,.1);
+    }
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: #f87171;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-note {
+      font-size: .78rem;
+      color: rgba(255,255,255,.4);
+      margin-top: 10px;
+      text-align: center;
+    }
+    /* Success card */
+    .success-card {
+      display: none;
+      background: rgba(45,184,90,.12);
+      border: 1.5px solid var(--green);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      color: var(--white);
+      margin-top: 20px;
+    }
+    .success-card.show { display: block; animation: fadeUp .4s ease both; }
+    .success-card strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: var(--green);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       WHATSAPP FLOAT
+    ══════════════════════════════════════════════════════════════ */
+    .wpp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--whatsapp);
+      color: var(--white);
+      padding: 14px 20px;
+      border-radius: 50px;
+      font-family: var(--font-head);
+      font-size: .88rem;
+      font-weight: 700;
+      box-shadow: 0 4px 24px rgba(37,211,102,.45);
+      animation: pulse 2.4s ease-in-out infinite;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .wpp-float:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 36px rgba(37,211,102,.6);
+      animation: none;
+    }
+    .wpp-float svg { width: 22px; height: 22px; flex-shrink: 0; }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);    box-shadow: 0 4px 24px rgba(37,211,102,.45); }
+      50%       { transform: scale(1.07); box-shadow: 0 6px 32px rgba(37,211,102,.65); }
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       WAVE SEPARATORS
+    ══════════════════════════════════════════════════════════════ */
+    .wave-sep {
+      display: block;
+      width: 100%;
+      line-height: 0;
+      font-size: 0;
+      margin: -1px 0;
+      overflow: hidden;
+    }
+    .wave-sep svg {
+      display: block;
+      width: 100%;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════════════════════ */
+    footer {
+      background: var(--navy-deep);
+      padding: 72px 0 32px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+    }
+    .footer__brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer__brand-logos img {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+    }
+    .footer__desc {
+      font-size: .85rem;
+      color: rgba(255,255,255,.45);
+      line-height: 1.7;
+      max-width: 240px;
+    }
+    .footer__col h4 {
+      font-family: var(--font-head);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 18px;
+    }
+    .footer__col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer__col ul li a {
+      font-size: .87rem;
+      color: rgba(255,255,255,.58);
+      transition: color .2s;
+    }
+    .footer__col ul li a:hover { color: var(--white); }
+    .footer__social {
+      display: flex;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .footer__social a {
+      width: 40px; height: 40px;
+      background: rgba(255,255,255,.07);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.6);
+      transition: background .2s, color .2s;
+    }
+    .footer__social a:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+    .footer__social svg { width: 18px; height: 18px; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer__bottom p {
+      font-size: .78rem;
+      color: rgba(255,255,255,.3);
+    }
+    .footer__mec {
+      font-size: .75rem;
+      color: rgba(255,255,255,.25);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .why__grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar__nav { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 100px 0 64px; }
+      .hero__title { font-size: 2.1rem; }
+      .why { padding: 72px 0; }
+      .why__grid { grid-template-columns: 1fr 1fr; }
+      .courses { padding: 72px 0; }
+      .courses__grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .courses__grid { grid-template-columns: 1fr; }
+      .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery__featured { height: 300px; }
+      .contact { padding: 72px 0; }
+      .contact__grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero__title { font-size: 1.8rem; }
+      .hero__ctas { flex-direction: column; }
+      .why__grid { grid-template-columns: 1fr; }
+      .gallery__grid { grid-template-columns: 1fr; }
+      .gallery__item { height: 180px; }
+      .contact__form-wrap { padding: 24px 20px; }
+      .footer__top { grid-template-columns: 1fr; }
+      .footer__bottom { flex-direction: column; text-align: center; }
+      .wpp-float span { display: none; }
+      .wpp-float { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#inicio" class="navbar__brand">
+        <div class="navbar__logos">
+          <img src="Logo conhcer png transparente.png" alt="UniFECAF Conhecer" />
+        </div>
+        <span class="navbar__brand-text">UniFECAF Conhecer</span>
+      </a>
+      <ul class="navbar__nav">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#por-que">Por que estudar aqui</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#espaco">Nosso Espaço</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li>
+          <a href="#contato" class="btn-whatsapp-nav">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>
+            Inscreva-se
+          </a>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#inicio" class="nav-link-mob">Início</a>
+      <a href="#por-que" class="nav-link-mob">Por que estudar aqui</a>
+      <a href="#cursos" class="nav-link-mob">Cursos</a>
+      <a href="#espaco" class="nav-link-mob">Nosso Espaço</a>
+      <a href="#contato" class="nav-link-mob">Contato</a>
+      <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-wpp-mob">Falar no WhatsApp</a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ════════════════════════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero__geo">
+      <div class="hero__geo-circle"></div>
+      <div class="hero__geo-dot"></div>
+    </div>
+    <div class="hero__lines">
+      <svg viewBox="0 0 1440 700" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="580" x2="600" y2="120" stroke="#2db85a" stroke-width="1.2" stroke-opacity="0.18"/>
+        <line x1="0" y1="640" x2="700" y2="80"  stroke="#2db85a" stroke-width="0.8" stroke-opacity="0.12"/>
+        <line x1="200" y1="700" x2="900" y2="0"  stroke="#2db85a" stroke-width="1.5" stroke-opacity="0.1"/>
+        <line x1="1440" y1="100" x2="800" y2="700" stroke="#2db85a" stroke-width="1.2" stroke-opacity="0.15"/>
+        <line x1="1440" y1="200" x2="750" y2="700" stroke="#2db85a" stroke-width="0.8" stroke-opacity="0.1"/>
+        <line x1="1200" y1="0"   x2="400" y2="700" stroke="#2db85a" stroke-width="1"   stroke-opacity="0.08"/>
+        <circle cx="180" cy="480" r="60" stroke="#2db85a" stroke-width="1" stroke-opacity="0.12" fill="none"/>
+        <circle cx="1300" cy="200" r="90" stroke="#2db85a" stroke-width="1" stroke-opacity="0.1" fill="none"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero__inner">
+      <div class="hero__content" style="position:relative;z-index:4;">
+        <span class="hero__eyebrow">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.403l1.705.73a2 2 0 001.574 0l1.575-.675v2.299a5.013 5.013 0 01-2.554 2.687z"/></svg>
+          Graduações + Cursos Técnicos
+        </span>
+        <h1 class="hero__title">
+          Sua carreira começa <em>aqui</em>,<br/>em Ribeirão das Neves.
+        </h1>
+        <p class="hero__subtitle">
+          Graduações reconhecidas pelo MEC com a credencial UniFECAF + Cursos Técnicos que formam em meses. Tudo perto de você.
+        </p>
+        <div class="hero__ctas">
+          <a href="#cursos" class="btn btn-outline">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z"/></svg>
+            Ver Graduações
+          </a>
+          <a href="#cursos" class="btn btn-green">
+            <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Ver Cursos Técnicos
+          </a>
+        </div>
+        <span class="hero__badge">
+          📍 Av. Dionísio Gomes, 159 — Ribeirão das Neves
+        </span>
+      </div>
+      </div>
+    </div>
+    <div class="hero__logo-side">
+      <img src="Mascote.png" alt="UniFECAF Conhecer" />
+    </div>
+  </section>
+
+  <!-- ══ TICKER ═══════════════════════════════════════════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__item"><span class="ticker__sep"></span> Nota 5 no MEC</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Intercâmbio Digital</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Melhor Ensino EAD do Brasil</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Diploma Reconhecido Nacionalmente</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> +200 Cursos de Graduação</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Polo Presencial em Ribeirão das Neves</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Formação Técnica em Meses</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Atendimento Humanizado</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Nota 5 no MEC</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Intercâmbio Digital</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Melhor Ensino EAD do Brasil</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Diploma Reconhecido Nacionalmente</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> +200 Cursos de Graduação</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Polo Presencial em Ribeirão das Neves</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Formação Técnica em Meses</span>
+      <span class="ticker__item"><span class="ticker__sep"></span> Atendimento Humanizado</span>
+    </div>
+  </div>
+
+  <!-- ══ POR QUE ═══════════════════════════════════════════════ -->
+  <section class="why" id="por-que">
+    <div class="container">
+      <div class="why__header reveal">
+        <span class="section-tag">Diferenciais</span>
+        <h2 class="section-title">Por que escolher a <span style="color:var(--green);">UniFECAF Conhecer</span>?</h2>
+      </div>
+      <div class="why__grid">
+        <div class="why__card reveal" style="transition-delay:.08s">
+          <div class="why__icon">
+            <svg fill="none" stroke="#2db85a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <h3>Diploma reconhecido pelo MEC</h3>
+          <p>Graduações com credencial nacional da UniFECAF, respeitada em todo o Brasil.</p>
+        </div>
+        <div class="why__card reveal" style="transition-delay:.16s">
+          <div class="why__icon">
+            <svg fill="none" stroke="#2db85a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3>Perto de você</h3>
+          <p>Unidade presencial em Ribeirão das Neves, sem precisar ir até BH ou mudar sua rotina.</p>
+        </div>
+        <div class="why__card reveal" style="transition-delay:.24s">
+          <div class="why__icon">
+            <svg fill="none" stroke="#2db85a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Cursos Técnicos rápidos</h3>
+          <p>Formação profissional em meses, com certificado reconhecido e saída rápida para o mercado.</p>
+        </div>
+        <div class="why__card reveal" style="transition-delay:.32s">
+          <div class="why__icon">
+            <svg fill="none" stroke="#2db85a" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3>Suporte próximo</h3>
+          <p>Atendimento humanizado, sem fila, sem burocracia — uma equipe que realmente conhece seu nome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CURSOS ═════════════════════════════════════════════════ -->
+  <section class="courses" id="cursos">
+    <div class="container">
+      <div class="courses__header reveal">
+        <span class="section-tag">Formação</span>
+        <h2 class="section-title">Nossos Cursos</h2>
+        <p style="color:var(--text-muted);margin-top:12px;font-size:.95rem;">Escolha o caminho certo para a sua carreira.</p>
+      </div>
+      <div class="courses__grid reveal">
+        <!-- Graduações EAD -->
+        <div class="course-card course-card--blue">
+          <div class="course-card__header">
+            <div class="course-card__header-left">
+              <h3>Graduação EAD</h3>
+              <span class="badge">100% online · Polo presencial</span>
+            </div>
+            <svg fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" viewBox="0 0 24 24" width="38" height="38"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
+          </div>
+          <div class="course-card__body">
+            <ul class="course-list">
+              <li><span class="course-dot"></span>Administração</li>
+              <li><span class="course-dot"></span>Ciências Contábeis</li>
+              <li><span class="course-dot"></span>Engenharia de Produção</li>
+              <li><span class="course-dot"></span>Recursos Humanos</li>
+              <li><span class="course-dot"></span>Marketing</li>
+              <li><span class="course-dot"></span>Pedagogia</li>
+              <li><span class="course-dot"></span>Logística</li>
+              <li><span class="course-dot"></span>Gestão Financeira</li>
+            </ul>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações EAD →</a>
+          </div>
+        </div>
+        <!-- Graduações Semipresencial -->
+        <div class="course-card course-card--semi">
+          <div class="course-card__header">
+            <div class="course-card__header-left">
+              <h3>Graduação Semipresencial</h3>
+              <span class="badge">Aulas online + encontros presenciais</span>
+            </div>
+            <svg fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" viewBox="0 0 24 24" width="38" height="38"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+          </div>
+          <div class="course-card__body">
+            <ul class="course-list">
+              <li><span class="course-dot"></span>Psicologia</li>
+              <li><span class="course-dot"></span>Biomedicina</li>
+              <li><span class="course-dot"></span>Fisioterapia</li>
+              <li><span class="course-dot"></span>Educação Física</li>
+              <li><span class="course-dot"></span>Enfermagem</li>
+              <li><span class="course-dot"></span>Farmácia</li>
+              <li><span class="course-dot"></span>Nutrição</li>
+            </ul>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações semipresenciais →</a>
+          </div>
+        </div>
+        <!-- Técnicos -->
+        <div class="course-card course-card--green">
+          <div class="course-card__header">
+            <div class="course-card__header-left">
+              <h3>Cursos Técnicos Conhecer</h3>
+              <span class="badge">Presencial · Rápida formação</span>
+            </div>
+            <svg fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" viewBox="0 0 24 24" width="40" height="40"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+          </div>
+          <div class="course-card__body">
+            <ul class="course-list">
+              <li><span class="course-dot"></span>Técnico em Enfermagem</li>
+              <li><span class="course-dot"></span>Técnico em Administração</li>
+              <li><span class="course-dot"></span>Técnico em Logística</li>
+              <li><span class="course-dot"></span>Técnico em Recursos Humanos</li>
+              <li><span class="course-dot"></span>Técnico em Segurança do Trabalho</li>
+              <li><span class="course-dot"></span>Técnico em Informática</li>
+            </ul>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver todos os cursos técnicos →</a>
+          </div>
+        </div>
+      </div>
+      <div class="courses__cta-center reveal">
+        <a href="#contato" class="btn-cta-wpp">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>
+          Inscreva-se agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: bg-light → navy -->
+  <div class="wave-sep" style="background:#f5f7fb;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#0d1b3e"/>
+    </svg>
+  </div>
+
+  <!-- ══ EXPLORE CURSOS ══════════════════════════════════════════ -->
+  <section class="explore" id="explore-cursos">
+    <div class="container">
+      <div class="explore__header reveal">
+        <span class="section-tag">Explore</span>
+        <h2 class="section-title">Confira os cursos por área de conhecimento</h2>
+        <p style="color:var(--text-muted);margin-top:12px;font-size:.95rem;">Escolha a instituição e explore os cursos disponíveis em Ribeirão das Neves.</p>
+      </div>
+      <div style="display:flex;justify-content:center;" class="reveal">
+        <div class="explore__tabs">
+          <button class="tab-btn tab-unifecaf active" data-tab="unifecaf">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+            UniFECAF — Graduações
+          </button>
+          <button class="tab-btn tab-conhecer" data-tab="conhecer">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+            Conhecer — Cursos Técnicos
+          </button>
+        </div>
+      </div>
+
+      <!-- Painel UniFECAF -->
+      <div class="tab-panel active" id="tab-unifecaf">
+        <div class="explore__grid">
+          <!-- Saúde -->
+          <div class="area-card area-card--saude reveal">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Saúde</h3>
+              <ul class="area-list">
+                <li>Psicologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Biomedicina <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Fisioterapia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Nutrição <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Farmácia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Saúde</a>
+            </div>
+          </div>
+          <!-- Gestão -->
+          <div class="area-card area-card--gestao reveal" style="transition-delay:.08s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Gestão</h3>
+              <ul class="area-list">
+                <li>Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Marketing <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Ciências Contábeis <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Gestão Financeira <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Gestão</a>
+            </div>
+          </div>
+          <!-- Tecnologia -->
+          <div class="area-card area-card--tech reveal" style="transition-delay:.16s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Tecnologia</h3>
+              <ul class="area-list">
+                <li>Engenharia de Produção <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Análise e Desenv. de Sistemas <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Gestão da TI <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Tecnologia</a>
+            </div>
+          </div>
+          <!-- Educação -->
+          <div class="area-card area-card--edu reveal" style="transition-delay:.24s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Educação</h3>
+              <ul class="area-list">
+                <li>Pedagogia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Letras <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Educação Física <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Educação</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Painel Conhecer -->
+      <div class="tab-panel" id="tab-conhecer">
+        <div class="explore__grid">
+          <!-- Saúde Técnico -->
+          <div class="area-card area-card--saude reveal">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Saúde</h3>
+              <ul class="area-list">
+                <li>Técnico em Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Técnico em Radiologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Saúde</a>
+            </div>
+          </div>
+          <!-- Gestão Técnico -->
+          <div class="area-card area-card--gestao reveal" style="transition-delay:.08s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Gestão</h3>
+              <ul class="area-list">
+                <li>Técnico em Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Técnico em Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li>Técnico em Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Gestão</a>
+            </div>
+          </div>
+          <!-- Segurança -->
+          <div class="area-card area-card--seg reveal" style="transition-delay:.16s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Segurança</h3>
+              <ul class="area-list">
+                <li>Técnico em Segurança do Trabalho <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Segurança</a>
+            </div>
+          </div>
+          <!-- Tecnologia Técnico -->
+          <div class="area-card area-card--tech reveal" style="transition-delay:.24s">
+            <div class="area-card__cover">
+              <svg fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
+            </div>
+            <div class="area-card__body">
+              <h3 class="area-card__title">Tecnologia</h3>
+              <ul class="area-list">
+                <li>Técnico em Informática <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+              </ul>
+              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Tecnologia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- wave: navy → white -->
+  <div class="wave-sep" style="background:#1a3a8f;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,0 1080,60 1440,30 L1440,60 L0,60 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- ══ GALERIA ════════════════════════════════════════════════ -->
+  <section class="gallery" id="espaco">
+    <div class="gallery__bg-lines">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="-40" y1="500" x2="400" y2="0"   stroke="#2db85a" stroke-width="6" stroke-opacity="0.07"/>
+        <line x1="0"   y1="600" x2="500" y2="0"   stroke="#2db85a" stroke-width="3" stroke-opacity="0.05"/>
+        <line x1="120" y1="600" x2="620" y2="0"   stroke="#2db85a" stroke-width="8" stroke-opacity="0.06"/>
+        <line x1="1480" y1="80"  x2="980" y2="600" stroke="#2db85a" stroke-width="6" stroke-opacity="0.07"/>
+        <line x1="1440" y1="0"   x2="900" y2="600" stroke="#2db85a" stroke-width="4" stroke-opacity="0.05"/>
+        <line x1="1300" y1="0"   x2="760" y2="600" stroke="#2db85a" stroke-width="10" stroke-opacity="0.04"/>
+        <circle cx="80"  cy="520" r="80"  stroke="#2db85a" stroke-width="5" stroke-opacity="0.06" fill="none"/>
+        <circle cx="1380" cy="80" r="110" stroke="#2db85a" stroke-width="5" stroke-opacity="0.05" fill="none"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="gallery__header reveal">
+        <span class="section-tag">Nosso Espaço</span>
+        <h2 class="section-title">Conheça nossa estrutura</h2>
+        <p style="color:var(--text-muted);margin-top:12px;font-size:.95rem;">Um ambiente preparado para o seu aprendizado, aqui em Ribeirão das Neves.</p>
+      </div>
+      <div class="gallery__featured-wrap reveal">
+      <div class="gallery__featured">
+        <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.01 (3).jpeg" alt="Estrutura da UniFECAF Conhecer em Ribeirão das Neves" />
+        <div class="gallery__overlay-hint">
+          <span class="gallery__hint-text">Ribeirão das Neves · MG</span>
+          <button class="btn-gallery" id="openGallery">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg>
+            Ver toda a estrutura
+          </button>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: white → navy -->
+  <div class="wave-sep" style="background:#ffffff;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#0d1b3e"/>
+    </svg>
+  </div>
+
+  <!-- ══ MODAL ESTRUTURA ═══════════════════════════════════════ -->
+  <div class="modal-overlay" id="galleryModal" role="dialog" aria-modal="true" aria-label="Nossa Estrutura">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div>
+          <h2>Nossa Estrutura</h2>
+          <p>Conheça cada ambiente da UniFECAF Conhecer em Ribeirão das Neves</p>
+        </div>
+        <button class="modal-close" id="closeGallery" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-grid">
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.01 (3).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.01 (3).jpeg" alt="Fachada" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Entrada</p>
+            <h3 class="modal-card__title">Fachada e Entrada Principal</h3>
+            <p class="modal-card__desc">Nossa unidade fica na Av. Dionísio Gomes, 159, de fácil acesso em Ribeirão das Neves. Um espaço moderno e acolhedor desde a porta de entrada.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (7).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (7).jpeg" alt="Recepção" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Atendimento</p>
+            <h3 class="modal-card__title">Recepção e Secretaria</h3>
+            <p class="modal-card__desc">Nossa equipe de atendimento está pronta para tirar todas as suas dúvidas sobre matrículas, documentos e informações sobre os cursos.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.04.59 (4).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.04.59 (4).jpeg" alt="Sala de Aula" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Ensino</p>
+            <h3 class="modal-card__title">Salas de Aula</h3>
+            <p class="modal-card__desc">Salas climatizadas, com equipamentos multimídia e cadeiras confortáveis, ideais para as aulas presenciais e semipresenciais dos cursos técnicos e graduações.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (4).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (4).jpeg" alt="Laboratório" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Laboratório</p>
+            <h3 class="modal-card__title">Laboratório de Radiologia</h3>
+            <p class="modal-card__desc">Laboratório equipado para as aulas práticas do curso Técnico em Radiologia, com equipamentos adequados para a formação profissional dos alunos.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (5).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (5).jpeg" alt="Área de convivência" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Laboratório</p>
+            <h3 class="modal-card__title">Materiais de Biomedicina e Enfermagem</h3>
+            <p class="modal-card__desc">Materiais e equipamentos utilizados nas aulas práticas dos cursos de Biomedicina e Enfermagem, garantindo uma formação técnica completa e alinhada ao mercado de saúde.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (6).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.00 (6).jpeg" alt="Sala de estudos" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Estudo</p>
+            <h3 class="modal-card__title">Sala de Estudos</h3>
+            <p class="modal-card__desc">Ambiente silencioso e organizado para que os alunos possam estudar, realizar trabalhos em grupo ou se preparar para as avaliações.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.04.59 (3).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.04.59 (3).jpeg" alt="Sala de Enfermagem" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Laboratório</p>
+            <h3 class="modal-card__title">Sala de Prática Enfermagem</h3>
+            <p class="modal-card__desc">Sala equipada com materiais e instrumentos utilizados nas aulas práticas do curso Técnico em Enfermagem, preparando os alunos para a atuação no mercado de saúde.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.01 (2).jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/WhatsApp Image 2026-04-02 at 08.05.01 (2).jpeg" alt="Área administrativa" loading="lazy" style="object-position: center 20%;" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Gestão</p>
+            <h3 class="modal-card__title">Área Administrativa</h3>
+            <p class="modal-card__desc">Espaço da coordenação e equipe pedagógica, dedicados a oferecer suporte completo aos alunos ao longo de toda a jornada acadêmica.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/Aréa para descanso.jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/Aréa para descanso.jpeg" alt="Área para descanso" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Convivência</p>
+            <h3 class="modal-card__title">Área para Descanso</h3>
+            <p class="modal-card__desc">Espaço confortável para os alunos relaxarem entre as aulas, favorecendo o bem-estar e a convivência no ambiente acadêmico.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/Corredor.jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/Corredor.jpeg" alt="Corredor" loading="lazy" style="object-position: center 15%;" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Instalações</p>
+            <h3 class="modal-card__title">Corredores</h3>
+            <p class="modal-card__desc">Ambiente limpo, iluminado e bem sinalizado, com acessibilidade e conforto para circulação de todos os alunos e visitantes da unidade.</p>
+          </div>
+        </div>
+        <div class="modal-card" data-img="Fotos da Unidades/Laboratorio de informatica.jpeg">
+          <div class="modal-card__img">
+            <img src="Fotos da Unidades/Laboratorio de informatica.jpeg" alt="Laboratório de Informática" loading="lazy" />
+          </div>
+          <div class="modal-card__info">
+            <p class="modal-card__tag">Laboratório</p>
+            <h3 class="modal-card__title">Laboratório de Informática</h3>
+            <p class="modal-card__desc">Espaço equipado com computadores modernos para atividades práticas dos cursos técnicos e acesso às plataformas EAD da UniFECAF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ LIGHTBOX ══════════════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="closeLightbox" aria-label="Fechar">✕</button>
+    <img id="lightboxImg" src="" alt="Foto ampliada" />
+  </div>
+
+  <!-- ══ CONTATO ════════════════════════════════════════════════ -->
+  <section class="contact" id="contato">
+    <div class="container">
+      <div class="contact__header reveal" style="text-align:center;margin-bottom:40px;">
+        <span class="section-tag">Fale conosco</span>
+        <h2 class="section-title">Quer saber mais? Fale com a gente</h2>
+        <p style="color:rgba(255,255,255,.75);margin-top:12px;font-size:1rem;font-weight:400;">Preencha o formulário e nossa equipe entra em contato pelo WhatsApp.</p>
+        <p style="margin-top:16px;">
+          <span style="display:inline-block;background:var(--green);color:#fff;font-family:var(--font-head);font-size:1.15rem;font-weight:800;padding:10px 28px;border-radius:8px;letter-spacing:.01em;">Ganhe uma bolsa especial de estudos!</span>
+        </p>
+      </div>
+      <div class="contact__centered reveal">
+        <div class="contact__form-wrap">
+          <form id="contactForm" novalidate>
+
+            <!-- Nome + WhatsApp -->
+            <div class="form-row">
+              <div class="form-group" id="fg-nome">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+              </div>
+              <div class="form-group" id="fg-wpp">
+                <label for="wpp">WhatsApp *</label>
+                <input type="tel" id="wpp" name="wpp" placeholder="(31) 9xxxx-xxxx" required />
+              </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="form-group" id="fg-email">
+              <label for="email">E-mail *</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            </div>
+
+            <!-- Interesse: cards clicáveis -->
+            <div class="form-group">
+              <label>Tenho interesse em *</label>
+              <div class="selector-group">
+                <div class="selector-card" id="card-grad" data-tipo="graduacao">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+                  Graduação
+                </div>
+                <div class="selector-card" id="card-tec" data-tipo="tecnico">
+                  <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg>
+                  Curso Técnico
+                </div>
+              </div>
+              <input type="hidden" id="tipo-interesse" name="tipo_interesse" />
+            </div>
+
+            <!-- Modalidade (só aparece se Graduação) -->
+            <div class="form-group" id="fg-modalidade" style="display:none;">
+              <label>Modalidade</label>
+              <div class="sub-group visible" id="chips-modalidade">
+                <span class="sub-chip" data-val="ead">EAD</span>
+                <span class="sub-chip" data-val="semipresencial">Semipresencial</span>
+              </div>
+              <input type="hidden" id="modalidade-val" name="modalidade" />
+            </div>
+
+            <!-- Área -->
+            <div class="form-group" id="fg-area" style="display:none;">
+              <label>Área de interesse</label>
+              <div class="sub-group visible" id="chips-area">
+                <span class="sub-chip" data-val="saude">Saúde</span>
+                <span class="sub-chip" data-val="gestao">Gestão</span>
+                <span class="sub-chip" data-val="tecnologia">Tecnologia</span>
+                <span class="sub-chip" data-val="educacao">Educação</span>
+                <span class="sub-chip" data-val="seguranca" id="chip-seg" style="display:none;">Segurança</span>
+              </div>
+              <input type="hidden" id="area-val" name="area" />
+            </div>
+
+            <!-- Curso desejado -->
+            <div class="form-group" id="fg-curso" style="display:none;">
+              <label for="curso">Curso desejado</label>
+              <input type="text" id="curso" name="curso" placeholder="Ex: Técnico em Enfermagem, Psicologia..." />
+            </div>
+
+            <!-- Botões -->
+            <div class="form-btns">
+              <button type="submit" name="acao" value="inscricao" class="btn-inscricao">
+                Inscreva-se
+              </button>
+            </div>
+            <p class="form-note">Você receberá um contato via WhatsApp em breve.</p>
+          </form>
+          <div class="success-card" id="successCard">
+            <strong>Recebemos seu contato!</strong>
+            Nossa equipe entrará em contato pelo WhatsApp em breve. 🎉
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: navy → green band → footer dark -->
+  <div class="wave-sep" style="background:#0d1b3e;">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C360,80 1080,20 1440,50 L1440,80 L0,80 Z" fill="#070f22"/>
+      <path d="M0,35 C360,65 1080,5 1440,35 L1440,50 C1080,20 360,80 0,50 Z" fill="#2db85a"/>
+    </svg>
+  </div>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand-logos">
+            <img src="Logo conhcer png transparente.png" alt="UniFECAF Conhecer" />
+            <span style="font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white);white-space:nowrap;">UniFECAF Conhecer</span>
+          </div>
+          <p class="footer__desc">Unidade parceira UniFECAF em Ribeirão das Neves. Graduações EAD com polo presencial e Cursos Técnicos presenciais.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#por-que">Por que nos escolher</a></li>
+            <li><a href="#cursos">Nossos cursos</a></li>
+            <li><a href="#espaco">Nossa estrutura</a></li>
+            <li><a href="#contato">Fale conosco</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Links Rápidos</h4>
+          <ul>
+            <li><a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/unifecaf.conhecer/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="#cursos">Graduações EAD</a></li>
+            <li><a href="#cursos">Cursos Técnicos</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Redes Sociais</h4>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/unifecaf.conhecer/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579432833880" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+          <div style="margin-top:16px">
+            <p style="font-size:.82rem;color:rgba(255,255,255,.45);">📍 Av. Dionísio Gomes, 159<br/>Ribeirão das Neves - MG</p>
+            <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-top:6px;">📱 (31) 97193-6023</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 UniFECAF Conhecer. Todos os direitos reservados.</p>
+        <p class="footer__mec">UniFECAF é uma instituição de ensino superior credenciada pelo MEC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══ WHATSAPP FLOAT ─────────────────────────────────────── -->
+  <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="wpp-float" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span>Falar agora</span>
+  </a>
+
+  <script>
+    // ── Navbar scroll ─────────────────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 80);
+    }, { passive: true });
+
+    // ── Hamburger ─────────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-link-mob, .btn-wpp-mob').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    // ── IntersectionObserver ──────────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Formulário condicional ────────────────────────────────────
+    const cardGrad = document.getElementById('card-grad');
+    const cardTec  = document.getElementById('card-tec');
+    const tipoInput = document.getElementById('tipo-interesse');
+    const fgModalidade = document.getElementById('fg-modalidade');
+    const fgArea   = document.getElementById('fg-area');
+    const fgCurso  = document.getElementById('fg-curso');
+    const chipSeg  = document.getElementById('chip-seg');
+
+    cardGrad.addEventListener('click', () => {
+      cardGrad.classList.add('selected-grad');
+      cardTec.classList.remove('selected-tec');
+      tipoInput.value = 'graduacao';
+      fgModalidade.style.display = 'block';
+      fgArea.style.display = 'block';
+      fgCurso.style.display = 'block';
+      chipSeg.style.display = 'none';
+      // reset area chips
+      document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
+      document.getElementById('area-val').value = '';
+    });
+
+    cardTec.addEventListener('click', () => {
+      cardTec.classList.add('selected-tec');
+      cardGrad.classList.remove('selected-grad');
+      tipoInput.value = 'tecnico';
+      fgModalidade.style.display = 'none';
+      fgArea.style.display = 'block';
+      fgCurso.style.display = 'block';
+      chipSeg.style.display = 'inline-flex';
+      document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
+      document.getElementById('area-val').value = '';
+      document.getElementById('modalidade-val').value = '';
+    });
+
+    // Chips modalidade
+    document.querySelectorAll('#chips-modalidade .sub-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        document.querySelectorAll('#chips-modalidade .sub-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        document.getElementById('modalidade-val').value = chip.dataset.val;
+      });
+    });
+
+    // Chips área
+    document.querySelectorAll('#chips-area .sub-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const isTec = tipoInput.value === 'tecnico';
+        document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
+        chip.classList.add(isTec ? 'active-blue' : 'active');
+        document.getElementById('area-val').value = chip.dataset.val;
+      });
+    });
+
+    // ── Form submit: Sheets + WhatsApp ───────────────────────────
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4PYVCeN61cpFIwVr9UwCxlIU3mcKy4JzBaqAh9Lyvd-gvYJFFPTw9QfK9g0hwI2Ah/exec';
+
+    const form = document.getElementById('contactForm');
+    const successCard = document.getElementById('successCard');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      ['fg-nome', 'fg-wpp', 'fg-email'].forEach(id => {
+        const fg = document.getElementById(id);
+        const input = fg.querySelector('input');
+        if (!input.value.trim()) {
+          fg.classList.add('error');
+          valid = false;
+        } else {
+          fg.classList.remove('error');
+        }
+      });
+
+      const emailInput = document.getElementById('email');
+      const emailFg = document.getElementById('fg-email');
+      if (emailInput.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        emailFg.classList.add('error');
+        valid = false;
+      }
+
+      if (!tipoInput.value) {
+        cardGrad.style.borderColor = '#f87171';
+        cardTec.style.borderColor  = '#f87171';
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Coletar valores
+      const valorNome       = document.getElementById('nome').value.trim();
+      const valorWhatsapp   = document.getElementById('wpp').value.trim();
+      const valorEmail      = document.getElementById('email').value.trim();
+      const valorInteresse  = tipoInput.value === 'graduacao' ? 'Graduação' : 'Curso Técnico';
+      const valorModalidade = document.getElementById('modalidade-val').value || '';
+      const valorArea       = document.getElementById('area-val').value || 'Não informado';
+      const valorCurso      = (document.getElementById('curso') ? document.getElementById('curso').value.trim() : '') || 'Não informado';
+
+      // AÇÃO 1 — Salvar na planilha Google Sheets
+      fetch(APPS_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome:       valorNome,
+          whatsapp:   valorWhatsapp,
+          email:      valorEmail,
+          interesse:  valorInteresse,
+          modalidade: valorModalidade,
+          area:       valorArea,
+          curso:      valorCurso
+        })
+      }).catch(() => {}); // no-cors sempre retorna opaque — ignora erros de rede
+
+      // Exibir confirmação
+      form.style.display = 'none';
+      successCard.classList.add('show');
+
+      // Resetar formulário
+      form.reset();
+      tipoInput.value = '';
+      document.getElementById('modalidade-val').value = '';
+      document.getElementById('area-val').value = '';
+      cardGrad.classList.remove('selected-grad');
+      cardTec.classList.remove('selected-tec');
+      cardGrad.style.borderColor = '';
+      cardTec.style.borderColor  = '';
+      if (fgModalidade) fgModalidade.style.display = 'none';
+      if (fgArea)       fgArea.style.display       = 'none';
+      if (fgCurso)      fgCurso.style.display      = 'none';
+      document.querySelectorAll('.sub-chip').forEach(c => c.classList.remove('active','active-blue'));
+    });
+
+    // Remove error on input
+    document.querySelectorAll('.form-group input').forEach(el => {
+      el.addEventListener('input', () => {
+        el.closest('.form-group').classList.remove('error');
+      });
+    });
+    [cardGrad, cardTec].forEach(c => c.addEventListener('click', () => {
+      cardGrad.style.borderColor = '';
+      cardTec.style.borderColor  = '';
+    }));
+
+    // ── Abas explore cursos ───────────────────────────────────────
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ── Modal galeria ─────────────────────────────────────────────
+    const galleryModal = document.getElementById('galleryModal');
+    const openGallery  = document.getElementById('openGallery');
+    const closeGallery = document.getElementById('closeGallery');
+
+    openGallery.addEventListener('click', () => {
+      galleryModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeModal() {
+      galleryModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    closeGallery.addEventListener('click', closeModal);
+    galleryModal.addEventListener('click', (e) => {
+      if (e.target === galleryModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeModal(); closeLightboxFn(); }
+    });
+
+    // ── Lightbox ──────────────────────────────────────────────────
+    const lightbox      = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightboxImg');
+    const closeLightbox = document.getElementById('closeLightbox');
+
+    document.querySelectorAll('.modal-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const src = card.dataset.img;
+        lightboxImg.src = src;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightboxFn() {
+      lightbox.classList.remove('open');
+      lightboxImg.src = '';
+    }
+
+    closeLightbox.addEventListener('click', closeLightboxFn);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightboxFn();
+    });
+  </script>
+</body>
+</html>
