@@ -116,27 +116,21 @@
 
     /* Cursos */
     .courses-section { padding: 60px 0 80px; background: var(--bg-light); }
-    .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; align-items: stretch; }
     .course-card-item { background: #fff; border-radius: var(--radius);
       padding: 20px 24px; border: 1px solid rgba(13,27,62,.08);
-      display: flex; flex-direction: column; gap: 12px;
+      display: flex; flex-direction: column; gap: 12px; height: 100%;
       transition: box-shadow .2s, transform .2s; }
     .course-card-item:hover { box-shadow: 0 6px 24px rgba(13,27,62,.12); transform: translateY(-2px); }
     .course-card-item.hidden { display: none; }
     .course-card-item h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: var(--navy); }
     .course-card-item .duration { font-size: .8rem; color: #6b7280;
       background: var(--bg-light); padding: 2px 8px; border-radius: 20px; display: inline-block; }
-    .btn-quero { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--green); color: #fff; padding: 10px 16px; border-radius: 8px;
-      font-family: var(--font-head); font-size: .82rem; font-weight: 700; margin-top: auto;
-      transition: background .2s; }
-    .btn-quero:hover { background: var(--green-dark); }
-    .btn-saber-mais { display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-      background: transparent; color: var(--blue); border: 1.5px solid var(--blue);
-      padding: 8px 16px; border-radius: 8px;
-      font-family: var(--font-head); font-size: .8rem; font-weight: 700;
-      transition: background .2s, color .2s; text-decoration: none; }
-    .btn-saber-mais:hover { background: var(--blue); color: #fff; }
+    .btn-saber-mais { display: flex; align-items: center; justify-content: center;
+      background: var(--green); color: #fff; width: 100%; padding: 12px;
+      border-radius: 8px; font-family: var(--font-head); font-size: .88rem;
+      font-weight: 600; margin-top: auto; transition: background .2s; text-decoration: none; }
+    .btn-saber-mais:hover { background: var(--green-dark); color: #fff; }
     .no-results { text-align: center; padding: 60px 24px; color: #9ca3af; font-size: 1rem; display: none; }
     .no-results.show { display: block; }
 
@@ -643,7 +637,7 @@
     syncChips();
     applyFilters();
 
-    // ── Injetar botão "Saber Mais" em cada card ──────────────────────────
+    // ── Injetar botão "Saber Mais" e remover "Quero este curso" ──────────
     function courseNameToSlug(name) {
       return name
         .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -653,16 +647,18 @@
         .replace(/\s+/g, '-');
     }
     document.querySelectorAll('.course-card-item').forEach(card => {
+      // Esconde botão "Quero este curso"
+      const btnQuero = card.querySelector('.btn-quero');
+      if (btnQuero) btnQuero.style.display = 'none';
+      // Injeta "Saber Mais"
       const h3 = card.querySelector('h3');
       if (!h3) return;
       const slug = courseNameToSlug(h3.textContent.trim());
       const btn = document.createElement('a');
       btn.href = 'curso.html?slug=' + slug + '&modalidade=semipresencial';
       btn.className = 'btn-saber-mais';
-      btn.innerHTML = `<svg viewBox="0 0 16 16" fill="currentColor" width="12" height="12"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 10.25h-1.5v-4.5h1.5v4.5zm0-6h-1.5v-1.5h1.5v1.5z"/></svg> Saber Mais`;
-      const btnQuero = card.querySelector('.btn-quero');
-      if (btnQuero) btnQuero.before(btn);
-      else card.appendChild(btn);
+      btn.textContent = 'Saber Mais';
+      card.appendChild(btn);
     });
   </script>
 

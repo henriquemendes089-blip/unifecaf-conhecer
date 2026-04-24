@@ -45,10 +45,10 @@
     .page-hero p { color: rgba(255,255,255,.85); font-size: 1rem; }
 
     .courses-section { padding: 80px 0; background: var(--bg-light); }
-    .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; align-items: stretch; }
     .course-card-item { background: #fff; border-radius: var(--radius);
       padding: 20px 24px; border: 1px solid rgba(13,27,62,.08);
-      display: flex; flex-direction: column; gap: 12px;
+      display: flex; flex-direction: column; gap: 12px; height: 100%;
       transition: box-shadow .2s, transform .2s; }
     .course-card-item:hover { box-shadow: 0 6px 24px rgba(13,27,62,.12); transform: translateY(-2px); }
     .course-card-item h3 { font-family: var(--font-head); font-size: .95rem; font-weight: 700;
@@ -57,11 +57,11 @@
       background: rgba(45,184,90,.1); border: 1px solid rgba(45,184,90,.25);
       padding: 3px 10px; border-radius: 20px; display: inline-block;
       font-weight: 600; }
-    .btn-quero { display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      background: var(--green); color: #fff; padding: 10px 16px; border-radius: 8px;
-      font-family: var(--font-head); font-size: .82rem; font-weight: 700; margin-top: auto;
-      transition: background .2s; }
-    .btn-quero:hover { background: var(--green-dark); }
+    .btn-saber-mais { display: flex; align-items: center; justify-content: center;
+      background: var(--green); color: #fff; width: 100%; padding: 12px;
+      border-radius: 8px; font-family: var(--font-head); font-size: .88rem;
+      font-weight: 600; margin-top: auto; transition: background .2s; text-decoration: none; }
+    .btn-saber-mais:hover { background: var(--green-dark); color: #fff; }
 
     footer { background: #070f22; padding: 40px 0; text-align: center; }
     footer p { color: rgba(255,255,255,.4); font-size: .82rem; }
@@ -108,32 +108,32 @@
         <div class="course-card-item">
           <h3>Técnico em Enfermagem</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Enfermagem.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Enfermagem.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
         <div class="course-card-item">
           <h3>Técnico em Administração</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Administra%C3%A7%C3%A3o.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Administra%C3%A7%C3%A3o.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
         <div class="course-card-item">
           <h3>Técnico em Logística</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Log%C3%ADstica.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Log%C3%ADstica.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
         <div class="course-card-item">
           <h3>Técnico em Recursos Humanos</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Recursos%20Humanos.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Recursos%20Humanos.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
         <div class="course-card-item">
           <h3>Técnico em Segurança do Trabalho</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Seguran%C3%A7a%20do%20Trabalho.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Seguran%C3%A7a%20do%20Trabalho.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
         <div class="course-card-item">
           <h3>Técnico em Informática</h3>
           <span class="tag-presencial">Presencial · Ribeirão das Neves</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Inform%C3%A1tica.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20T%C3%A9cnico%20em%20Inform%C3%A1tica.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-saber-mais">Saber Mais</a>
         </div>
       </div>
     </div>
