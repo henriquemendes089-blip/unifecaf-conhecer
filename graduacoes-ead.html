@@ -153,19 +153,81 @@
       box-shadow: 0 4px 20px rgba(37,211,102,.4); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7)} }
 
-    @media (max-width: 900px) {
-      .filter-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; max-width: calc(100vw - 120px); }
-      .filter-chips::-webkit-scrollbar { height: 3px; }
-      .filter-chips::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+    /* Mobile filter button (hidden on desktop) */
+    .mobile-filter-wrap { display: none; }
+
+    /* Drawer overlay + panel (always in DOM) */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,.5);
+      z-index: 300; opacity: 0; pointer-events: none; transition: opacity .25s;
     }
+    .drawer-overlay.active { opacity: 1; pointer-events: auto; }
+    .filter-drawer {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 400;
+      background: #fff; border-radius: 20px 20px 0 0;
+      transform: translateY(100%); transition: transform .32s cubic-bezier(.32,.72,0,1);
+      max-height: 88vh; display: flex; flex-direction: column;
+      box-shadow: 0 -8px 40px rgba(0,0,0,.18);
+    }
+    .filter-drawer.open { transform: translateY(0); }
+    .drawer-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 20px 14px; border-bottom: 1px solid #f3f4f6;
+      position: sticky; top: 0; background: #fff; z-index: 1; flex-shrink: 0;
+    }
+    .drawer-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700; color: var(--navy); }
+    .drawer-close {
+      background: none; border: none; cursor: pointer;
+      color: #9ca3af; font-size: 1.6rem; padding: 0 4px; line-height: 1;
+    }
+    .drawer-close:hover { color: var(--navy); }
+    .drawer-body { padding: 16px 20px; flex: 1; overflow-y: auto; }
+    .drawer-section { margin-bottom: 22px; }
+    .drawer-section:last-child { margin-bottom: 0; }
+    .drawer-section-label {
+      display: block; font-family: var(--font-head); font-size: .78rem; font-weight: 700;
+      color: var(--navy); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px;
+    }
+    .drawer-chips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .drawer-chips-grid .chip { justify-content: center; text-align: center; padding: 10px 8px; }
+    .drawer-footer {
+      padding: 14px 20px 28px; border-top: 1px solid #f3f4f6;
+      display: flex; flex-direction: column; gap: 8px;
+      position: sticky; bottom: 0; background: #fff; z-index: 1; flex-shrink: 0;
+    }
+    .btn-apply-filters {
+      padding: 14px; background: var(--green); color: #fff;
+      border: none; border-radius: 10px; font-family: var(--font-head);
+      font-size: .95rem; font-weight: 700; cursor: pointer; transition: background .2s;
+    }
+    .btn-apply-filters:hover { background: var(--green-dark); }
+    .btn-clear-drawer {
+      padding: 10px; background: none; border: none;
+      color: #9ca3af; font-family: var(--font-body); font-size: .85rem;
+      cursor: pointer; text-align: center; transition: color .15s;
+    }
+    .btn-clear-drawer:hover { color: var(--navy); }
+
     @media (max-width: 768px) {
       .page-hero h1 { font-size: 1.7rem; }
       .courses-grid { grid-template-columns: 1fr; }
-      .filter-group { align-items: flex-start; flex-wrap: nowrap; }
-      .filter-chips { max-width: calc(100vw - 100px); }
-    }
-    @media (max-width: 480px) {
-      .filter-chips { max-width: calc(100vw - 80px); }
+      /* Esconder filtros desktop, mostrar botão mobile */
+      .filters-row { display: none; }
+      .mobile-filter-wrap {
+        display: flex; align-items: center; justify-content: space-between;
+        margin-bottom: 12px;
+      }
+      .mobile-filter-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 20px; border-radius: 10px; border: 1.5px solid #e5e7eb;
+        background: #fff; font-family: var(--font-head); font-size: .88rem; font-weight: 700;
+        color: var(--navy); cursor: pointer; transition: all .15s;
+      }
+      .mobile-filter-btn:hover, .mobile-filter-btn.has-filters { border-color: var(--green); color: var(--green-dark); }
+      .filter-badge {
+        background: var(--green); color: #fff; border-radius: 20px;
+        padding: 1px 8px; font-size: .72rem; font-weight: 700; display: none;
+      }
     }
   </style>
 </head>
@@ -203,6 +265,14 @@
         </div>
         <div class="search-dropdown" id="searchDropdown"></div>
       </div>
+      <!-- Botão filtros mobile -->
+      <div class="mobile-filter-wrap">
+        <button class="mobile-filter-btn" id="mobileFilterBtn">
+          <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path fill-rule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.447.894l-4 2.5A1 1 0 016 17.5v-6.086L3.293 6.707A1 1 0 013 6V3z" clip-rule="evenodd"/></svg>
+          Filtrar cursos <span class="filter-badge" id="filterBadge"></span>
+        </button>
+      </div>
+
       <div class="filters-row">
         <div class="filter-group">
           <span class="filter-label">Modalidade:</span>
@@ -240,6 +310,45 @@
         <span id="courseCounter">Mostrando 38 cursos</span>
         <button class="btn-clear-filters" id="clearFilters" style="display:none">Limpar filtros</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Overlay + Drawer mobile -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <div class="filter-drawer" id="filterDrawer">
+    <div class="drawer-header">
+      <span class="drawer-title">Filtrar cursos</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Fechar">×</button>
+    </div>
+    <div class="drawer-body">
+      <div class="drawer-section">
+        <span class="drawer-section-label">Área</span>
+        <div class="drawer-chips-grid" id="drawerAreaFilter">
+          <button class="chip active" data-value="all">Todos</button>
+          <button class="chip" data-value="ciencias-sociais">Ciências Sociais</button>
+          <button class="chip" data-value="educacao">Educação</button>
+          <button class="chip" data-value="engenharia">Engenharia</button>
+          <button class="chip" data-value="gestao-negocios">Gestão de Negócios</button>
+          <button class="chip" data-value="arquitetura">Arquitetura</button>
+          <button class="chip" data-value="saude">Saúde</button>
+          <button class="chip" data-value="tecnologia">Tecnologia</button>
+        </div>
+      </div>
+      <div class="drawer-section">
+        <span class="drawer-section-label">Duração</span>
+        <div class="drawer-chips-grid" id="drawerDurFilter">
+          <button class="chip active" data-value="all">Todos</button>
+          <button class="chip" data-value="lte2">Até 2 Anos</button>
+          <button class="chip" data-value="2.5">2,5 Anos</button>
+          <button class="chip" data-value="3">3 Anos</button>
+          <button class="chip" data-value="4">4 Anos</button>
+          <button class="chip" data-value="5">5 Anos</button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer-footer">
+      <button class="btn-apply-filters" id="applyFiltersBtn">Aplicar filtros</button>
+      <button class="btn-clear-drawer" id="clearDrawerBtn">Limpar filtros</button>
     </div>
   </div>
 
@@ -509,48 +618,90 @@
     const courseCounter = document.getElementById('courseCounter');
     const clearFiltersBtn = document.getElementById('clearFilters');
     const noResults = document.getElementById('noResults');
+    const filterBadge = document.getElementById('filterBadge');
+    const mobileFilterBtn = document.getElementById('mobileFilterBtn');
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const filterDrawer = document.getElementById('filterDrawer');
+    const drawerClose = document.getElementById('drawerClose');
+    const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+    const clearDrawerBtn = document.getElementById('clearDrawerBtn');
 
     let activeArea = 'all';
     let activeDur = 'all';
     let searchText = '';
 
-    document.querySelectorAll('#areaFilter .chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('#areaFilter .chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        activeArea = chip.dataset.value;
-        applyFilters();
+    // ── Sincroniza chips desktop ↔ drawer ──────────────────────────────────
+    function syncChips() {
+      ['#areaFilter', '#drawerAreaFilter'].forEach(sel => {
+        document.querySelectorAll(sel + ' .chip[data-value]').forEach(c =>
+          c.classList.toggle('active', c.dataset.value === activeArea));
       });
+      ['#durFilter', '#drawerDurFilter'].forEach(sel => {
+        document.querySelectorAll(sel + ' .chip[data-value]').forEach(c =>
+          c.classList.toggle('active', c.dataset.value === activeDur));
+      });
+      updateBadge();
+    }
+
+    function updateBadge() {
+      const count = (activeArea !== 'all' ? 1 : 0) + (activeDur !== 'all' ? 1 : 0);
+      filterBadge.textContent = count > 0 ? ' (' + count + ')' : '';
+      filterBadge.style.display = count > 0 ? 'inline' : 'none';
+      mobileFilterBtn.classList.toggle('has-filters', count > 0);
+    }
+
+    // ── Chips desktop (aplica imediatamente) ───────────────────────────────
+    document.querySelectorAll('#areaFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeArea = chip.dataset.value; syncChips(); applyFilters(); });
+    });
+    document.querySelectorAll('#durFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeDur = chip.dataset.value; syncChips(); applyFilters(); });
     });
 
-    document.querySelectorAll('#durFilter .chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('#durFilter .chip').forEach(c => c.classList.remove('active'));
-        chip.classList.add('active');
-        activeDur = chip.dataset.value;
-        applyFilters();
-      });
+    // ── Chips drawer (só seleciona, aplica no botão) ───────────────────────
+    document.querySelectorAll('#drawerAreaFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeArea = chip.dataset.value; syncChips(); });
+    });
+    document.querySelectorAll('#drawerDurFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeDur = chip.dataset.value; syncChips(); });
     });
 
+    // ── Drawer abrir / fechar ──────────────────────────────────────────────
+    function openDrawer() {
+      drawerOverlay.classList.add('active');
+      filterDrawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      drawerOverlay.classList.remove('active');
+      filterDrawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    mobileFilterBtn.addEventListener('click', openDrawer);
+    drawerClose.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', closeDrawer);
+
+    applyFiltersBtn.addEventListener('click', () => { closeDrawer(); applyFilters(); });
+
+    clearDrawerBtn.addEventListener('click', () => {
+      activeArea = 'all'; activeDur = 'all'; syncChips();
+      closeDrawer(); applyFilters();
+    });
+
+    // ── Busca ──────────────────────────────────────────────────────────────
     searchInput.addEventListener('input', () => {
       searchText = searchInput.value.toLowerCase().trim();
       searchClear.style.display = searchText ? 'block' : 'none';
-      updateDropdown();
-      applyFilters();
+      updateDropdown(); applyFilters();
     });
-
     searchClear.addEventListener('click', () => {
-      searchInput.value = '';
-      searchText = '';
+      searchInput.value = ''; searchText = '';
       searchClear.style.display = 'none';
-      searchDropdown.classList.remove('show');
-      applyFilters();
+      searchDropdown.classList.remove('show'); applyFilters();
     });
-
     document.addEventListener('click', e => {
-      if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+      if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target))
         searchDropdown.classList.remove('show');
-      }
     });
 
     function updateDropdown() {
@@ -563,21 +714,19 @@
       if (matches.length === 0) {
         searchDropdown.innerHTML = '<div class="dropdown-empty">Nenhum curso encontrado para sua busca</div>';
       } else {
-        searchDropdown.innerHTML = matches.slice(0, 6).map(m =>
-          `<div class="dropdown-item">${m}</div>`
-        ).join('');
+        searchDropdown.innerHTML = matches.slice(0, 6).map(m => `<div class="dropdown-item">${m}</div>`).join('');
         searchDropdown.querySelectorAll('.dropdown-item').forEach(item => {
           item.addEventListener('click', () => {
             searchInput.value = item.textContent;
             searchText = item.textContent.toLowerCase();
-            searchDropdown.classList.remove('show');
-            applyFilters();
+            searchDropdown.classList.remove('show'); applyFilters();
           });
         });
       }
       searchDropdown.classList.add('show');
     }
 
+    // ── Aplicar filtros ────────────────────────────────────────────────────
     function applyFilters() {
       let visibleCount = 0;
       cards.forEach(card => {
@@ -594,29 +743,28 @@
         card.classList.toggle('hidden', !show);
         if (show) visibleCount++;
       });
-
       areaGroups.forEach(group => {
         const visible = group.querySelectorAll('.course-card-item:not(.hidden)').length;
         group.classList.toggle('hidden', visible === 0);
       });
-
       courseCounter.textContent = `Mostrando ${visibleCount} curso${visibleCount !== 1 ? 's' : ''}`;
       const hasFilters = activeArea !== 'all' || activeDur !== 'all' || searchText !== '';
-      clearFiltersBtn.style.display = hasFilters ? 'inline-block' : 'none';
+      if (clearFiltersBtn) clearFiltersBtn.style.display = hasFilters ? 'inline-block' : 'none';
       noResults.classList.toggle('show', visibleCount === 0);
     }
 
-    clearFiltersBtn.addEventListener('click', () => {
-      document.querySelectorAll('#areaFilter .chip').forEach(c => c.classList.toggle('active', c.dataset.value === 'all'));
-      activeArea = 'all';
-      document.querySelectorAll('#durFilter .chip').forEach(c => c.classList.toggle('active', c.dataset.value === 'all'));
-      activeDur = 'all';
-      searchInput.value = ''; searchText = '';
-      searchClear.style.display = 'none';
-      searchDropdown.classList.remove('show');
-      applyFilters();
-    });
+    // ── Limpar filtros desktop ─────────────────────────────────────────────
+    if (clearFiltersBtn) {
+      clearFiltersBtn.addEventListener('click', () => {
+        activeArea = 'all'; activeDur = 'all';
+        searchInput.value = ''; searchText = '';
+        searchClear.style.display = 'none';
+        searchDropdown.classList.remove('show');
+        syncChips(); applyFilters();
+      });
+    }
 
+    syncChips();
     applyFilters();
   </script>
 
