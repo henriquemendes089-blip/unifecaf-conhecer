@@ -190,6 +190,8 @@
     }
     .drawer-chips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .drawer-chips-grid .chip { justify-content: center; text-align: center; padding: 10px 8px; }
+    .drawer-chips-3col { grid-template-columns: 1fr 1fr 1fr; }
+    .chip-nav.active, .chip-nav:hover { border-color: var(--blue); color: var(--blue); background: rgba(26,58,143,.06); }
     .drawer-footer {
       padding: 14px 20px 28px; border-top: 1px solid #f3f4f6;
       display: flex; flex-direction: column; gap: 8px;
@@ -321,6 +323,14 @@
       <button class="drawer-close" id="drawerClose" aria-label="Fechar">×</button>
     </div>
     <div class="drawer-body">
+      <div class="drawer-section">
+        <span class="drawer-section-label">Modalidade</span>
+        <div class="drawer-chips-grid drawer-chips-3col" id="drawerModalFilter">
+          <button class="chip" data-value="all">Todos</button>
+          <button class="chip active" data-value="ead">EAD</button>
+          <button class="chip chip-nav" data-value="semipresencial">Semipresencial →</button>
+        </div>
+      </div>
       <div class="drawer-section">
         <span class="drawer-section-label">Área</span>
         <div class="drawer-chips-grid" id="drawerAreaFilter">
@@ -664,6 +674,24 @@
     });
     document.querySelectorAll('#drawerDurFilter .chip[data-value]').forEach(chip => {
       chip.addEventListener('click', () => { activeDur = chip.dataset.value; syncChips(); });
+    });
+
+    // ── Chips Modalidade no drawer ─────────────────────────────────────────
+    document.querySelectorAll('#drawerModalFilter .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (chip.dataset.value === 'semipresencial') {
+          // Redireciona para semipresencial mantendo os filtros como params na URL
+          const params = new URLSearchParams();
+          if (activeDur !== 'all') params.set('dur', activeDur);
+          if (activeArea !== 'all') params.set('area', activeArea);
+          const qs = params.toString();
+          window.location.href = 'graduacoes-semipresencial.html' + (qs ? '?' + qs : '');
+        } else {
+          // Todos ou EAD — permanece na página EAD
+          document.querySelectorAll('#drawerModalFilter .chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+        }
+      });
     });
 
     // ── Drawer abrir / fechar ──────────────────────────────────────────────

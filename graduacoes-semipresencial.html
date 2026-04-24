@@ -561,6 +561,12 @@
       });
     }
 
+    // ── Lê parâmetros da URL (ex: vindo da página EAD) ────────────────────
+    (function() {
+      const p = new URLSearchParams(window.location.search);
+      if (p.get('dur')) activeDur = p.get('dur');
+    })();
+
     syncChips();
     applyFilters();
   </script>
