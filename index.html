@@ -1371,6 +1371,16 @@
       .wpp-float span { display: none; }
       .wpp-float { padding: 14px; border-radius: 50%; }
     }
+
+    /* ── Cursos clicáveis ───────────────────────────────────────── */
+    .course-item-link {
+      cursor: pointer;
+      transition: color .2s;
+    }
+    .course-item-link:hover {
+      color: var(--green);
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -1545,16 +1555,16 @@
           </div>
           <div class="course-card__body">
             <ul class="course-list">
-              <li><span class="course-dot"></span>Administração</li>
-              <li><span class="course-dot"></span>Ciências Contábeis</li>
-              <li><span class="course-dot"></span>Engenharia de Produção</li>
-              <li><span class="course-dot"></span>Recursos Humanos</li>
-              <li><span class="course-dot"></span>Marketing</li>
-              <li><span class="course-dot"></span>Pedagogia</li>
-              <li><span class="course-dot"></span>Logística</li>
-              <li><span class="course-dot"></span>Gestão Financeira</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Administração"><span class="course-dot"></span>Administração</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Ciências Contábeis"><span class="course-dot"></span>Ciências Contábeis</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Engenharia de Produção"><span class="course-dot"></span>Engenharia de Produção</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Recursos Humanos"><span class="course-dot"></span>Recursos Humanos</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Marketing"><span class="course-dot"></span>Marketing</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Pedagogia"><span class="course-dot"></span>Pedagogia</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Logística"><span class="course-dot"></span>Logística</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Gestão Financeira"><span class="course-dot"></span>Gestão Financeira</li>
             </ul>
-            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações EAD →</a>
+            <a href="graduacoes-ead.html" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações EAD →</a>
           </div>
         </div>
         <!-- Graduações Semipresencial -->
@@ -1568,15 +1578,15 @@
           </div>
           <div class="course-card__body">
             <ul class="course-list">
-              <li><span class="course-dot"></span>Psicologia</li>
-              <li><span class="course-dot"></span>Biomedicina</li>
-              <li><span class="course-dot"></span>Fisioterapia</li>
-              <li><span class="course-dot"></span>Educação Física</li>
-              <li><span class="course-dot"></span>Enfermagem</li>
-              <li><span class="course-dot"></span>Farmácia</li>
-              <li><span class="course-dot"></span>Nutrição</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Psicologia"><span class="course-dot"></span>Psicologia</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Biomedicina"><span class="course-dot"></span>Biomedicina</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Fisioterapia"><span class="course-dot"></span>Fisioterapia</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Educação Física"><span class="course-dot"></span>Educação Física</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Enfermagem"><span class="course-dot"></span>Enfermagem</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Farmácia"><span class="course-dot"></span>Farmácia</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Nutrição"><span class="course-dot"></span>Nutrição</li>
             </ul>
-            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações semipresenciais →</a>
+            <a href="graduacoes-semipresencial.html" target="_blank" rel="noopener noreferrer" class="course-cta">Ver graduações semipresenciais →</a>
           </div>
         </div>
         <!-- Técnicos -->
@@ -1590,14 +1600,14 @@
           </div>
           <div class="course-card__body">
             <ul class="course-list">
-              <li><span class="course-dot"></span>Técnico em Enfermagem</li>
-              <li><span class="course-dot"></span>Técnico em Administração</li>
-              <li><span class="course-dot"></span>Técnico em Logística</li>
-              <li><span class="course-dot"></span>Técnico em Recursos Humanos</li>
-              <li><span class="course-dot"></span>Técnico em Segurança do Trabalho</li>
-              <li><span class="course-dot"></span>Técnico em Informática</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Enfermagem"><span class="course-dot"></span>Técnico em Enfermagem</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Administração"><span class="course-dot"></span>Técnico em Administração</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Logística"><span class="course-dot"></span>Técnico em Logística</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Recursos Humanos"><span class="course-dot"></span>Técnico em Recursos Humanos</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Segurança do Trabalho"><span class="course-dot"></span>Técnico em Segurança do Trabalho</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Informática"><span class="course-dot"></span>Técnico em Informática</li>
             </ul>
-            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="course-cta">Ver todos os cursos técnicos →</a>
+            <a href="cursos-tecnicos.html" target="_blank" rel="noopener noreferrer" class="course-cta">Ver todos os cursos técnicos →</a>
           </div>
         </div>
       </div>
@@ -2350,6 +2360,51 @@
     closeLightbox.addEventListener('click', closeLightboxFn);
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightboxFn();
+    });
+
+    // Clique em curso → preenche formulário
+    document.querySelectorAll('.course-item-link').forEach(item => {
+      item.addEventListener('click', () => {
+        const tipo = item.dataset.tipo;
+        const modalidade = item.dataset.modalidade;
+        const curso = item.dataset.curso;
+
+        // Scroll para formulário
+        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+
+        setTimeout(() => {
+          // Selecionar tipo
+          const cardGradEl = document.getElementById('card-grad');
+          const cardTecEl = document.getElementById('card-tec');
+          if (tipo === 'graduacao') {
+            cardGradEl.click();
+          } else {
+            cardTecEl.click();
+          }
+
+          // Selecionar modalidade (se houver)
+          if (modalidade) {
+            setTimeout(() => {
+              const chip = document.querySelector(`#chips-modalidade .sub-chip[data-val="${modalidade}"]`);
+              if (chip) chip.click();
+            }, 200);
+          }
+
+          // Preencher curso
+          setTimeout(() => {
+            const cursoInput = document.getElementById('curso');
+            if (cursoInput) {
+              cursoInput.value = curso;
+              cursoInput.style.borderColor = 'var(--green)';
+              cursoInput.style.boxShadow = '0 0 0 3px rgba(45,184,90,.2)';
+              setTimeout(() => {
+                cursoInput.style.borderColor = '';
+                cursoInput.style.boxShadow = '';
+              }, 1500);
+            }
+          }, 400);
+        }, 600);
+      });
     });
   </script>
 </body>
