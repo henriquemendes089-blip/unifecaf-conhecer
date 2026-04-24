@@ -91,10 +91,10 @@
     .dropdown-item:last-child { border-bottom: none; }
     .dropdown-empty { padding: 16px; color: #9ca3af; font-size: .9rem; text-align: center; }
 
-    .filters-row { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-bottom: 12px; align-items: center; }
+    .filters-row { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
     .filter-group { display: flex; align-items: center; gap: 8px; min-width: 0; }
     .filter-label { font-family: var(--font-head); font-size: .8rem; font-weight: 700;
-      color: var(--navy); white-space: nowrap; }
+      color: var(--navy); white-space: nowrap; flex-shrink: 0; }
     .filter-chips { display: flex; gap: 6px; flex-wrap: wrap; }
     .chip {
       padding: 6px 14px; border-radius: 20px; border: 1.5px solid #e5e7eb;
@@ -146,12 +146,19 @@
       box-shadow: 0 4px 20px rgba(37,211,102,.4); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 32px rgba(37,211,102,.7)} }
 
+    @media (max-width: 900px) {
+      .filter-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; max-width: calc(100vw - 120px); }
+      .filter-chips::-webkit-scrollbar { height: 3px; }
+      .filter-chips::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 2px; }
+    }
     @media (max-width: 768px) {
       .page-hero h1 { font-size: 1.7rem; }
       .courses-grid { grid-template-columns: 1fr; }
-      .filter-chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
-      .filter-chips::-webkit-scrollbar { height: 3px; }
-      .filter-chips::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
+      .filter-group { align-items: flex-start; flex-wrap: nowrap; }
+      .filter-chips { max-width: calc(100vw - 100px); }
+    }
+    @media (max-width: 480px) {
+      .filter-chips { max-width: calc(100vw - 80px); }
     }
   </style>
 </head>
@@ -190,6 +197,13 @@
         <div class="search-dropdown" id="searchDropdown"></div>
       </div>
       <div class="filters-row">
+        <div class="filter-group">
+          <span class="filter-label">Modalidade:</span>
+          <div class="filter-chips">
+            <a href="graduacoes-ead.html" class="chip" style="text-decoration:none">← EAD</a>
+            <button class="chip active" style="cursor:default">Semipresencial</button>
+          </div>
+        </div>
         <div class="filter-group">
           <span class="filter-label">Duração:</span>
           <div class="filter-chips" id="durFilter">
