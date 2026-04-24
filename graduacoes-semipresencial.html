@@ -183,6 +183,8 @@
     }
     .drawer-chips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .drawer-chips-grid .chip { justify-content: center; text-align: center; padding: 10px 8px; }
+    .drawer-chips-3col { grid-template-columns: 1fr 1fr 1fr; }
+    .chip-nav.active, .chip-nav:hover { border-color: var(--blue); color: var(--blue); background: rgba(26,58,143,.06); }
     .drawer-footer {
       padding: 14px 20px 28px; border-top: 1px solid #f3f4f6;
       display: flex; flex-direction: column; gap: 8px;
@@ -274,6 +276,17 @@
           </div>
         </div>
         <div class="filter-group">
+          <span class="filter-label">Área:</span>
+          <div class="filter-chips" id="areaFilter">
+            <button class="chip active" data-value="all">Todos</button>
+            <button class="chip" data-value="saude">Saúde</button>
+            <button class="chip" data-value="engenharia">Engenharia</button>
+            <button class="chip" data-value="educacao">Educação</button>
+            <button class="chip" data-value="arquitetura">Arquitetura</button>
+            <button class="chip" data-value="ciencias-sociais">Ciências Sociais</button>
+          </div>
+        </div>
+        <div class="filter-group">
           <span class="filter-label">Duração:</span>
           <div class="filter-chips" id="durFilter">
             <button class="chip active" data-value="all">Todos</button>
@@ -301,6 +314,25 @@
     </div>
     <div class="drawer-body">
       <div class="drawer-section">
+        <span class="drawer-section-label">Modalidade</span>
+        <div class="drawer-chips-grid drawer-chips-3col" id="drawerModalFilter">
+          <button class="chip" data-value="all">Todos</button>
+          <button class="chip chip-nav" data-value="ead">← EAD</button>
+          <button class="chip active" data-value="semipresencial">Semipresencial</button>
+        </div>
+      </div>
+      <div class="drawer-section">
+        <span class="drawer-section-label">Área</span>
+        <div class="drawer-chips-grid" id="drawerAreaFilter">
+          <button class="chip active" data-value="all">Todos</button>
+          <button class="chip" data-value="saude">Saúde</button>
+          <button class="chip" data-value="engenharia">Engenharia</button>
+          <button class="chip" data-value="educacao">Educação</button>
+          <button class="chip" data-value="arquitetura">Arquitetura</button>
+          <button class="chip" data-value="ciencias-sociais">Ciências Sociais</button>
+        </div>
+      </div>
+      <div class="drawer-section">
         <span class="drawer-section-label">Duração</span>
         <div class="drawer-chips-grid" id="drawerDurFilter">
           <button class="chip active" data-value="all">Todos</button>
@@ -323,87 +355,87 @@
       <div class="no-results" id="noResults">Nenhum curso encontrado para sua busca</div>
       <div class="courses-grid" id="coursesGrid">
 
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="arquitetura" data-dur="5">
           <h3>Arquitetura e Urbanismo</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Arquitetura%20e%20Urbanismo%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="saude" data-dur="4">
           <h3>Biomedicina</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Biomedicina%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="saude" data-dur="4">
           <h3>Educação Física</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Educa%C3%A7%C3%A3o%20F%C3%ADsica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="engenharia" data-dur="5">
           <h3>Engenharia Civil</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20Civil%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="engenharia" data-dur="5">
           <h3>Engenharia de Produção</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20de%20Produ%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="engenharia" data-dur="5">
           <h3>Engenharia Elétrica</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20El%C3%A9trica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="2.5">
+        <div class="course-card-item" data-area="saude" data-dur="2.5">
           <h3>Estética e Cosmética</h3>
           <span class="duration">2,5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Est%C3%A9tica%20e%20Cosm%C3%A9tica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="saude" data-dur="5">
           <h3>Farmácia</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Farm%C3%A1cia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="educacao" data-dur="4">
           <h3>Física</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20F%C3%ADsica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="5">
+        <div class="course-card-item" data-area="saude" data-dur="5">
           <h3>Fisioterapia</h3>
           <span class="duration">5 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Fisioterapia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="educacao" data-dur="4">
           <h3>Matemática</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Matem%C3%A1tica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="saude" data-dur="4">
           <h3>Nutrição</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Nutri%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="educacao" data-dur="4">
           <h3>Pedagogia</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Pedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="educacao" data-dur="4">
           <h3>Psicopedagogia</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Psicopedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="3">
+        <div class="course-card-item" data-area="saude" data-dur="3">
           <h3>Radiologia</h3>
           <span class="duration">3 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Radiologia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="ciencias-sociais" data-dur="4">
           <h3>Serviço Social</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Servi%C3%A7o%20Social%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
         </div>
-        <div class="course-card-item" data-dur="4">
+        <div class="course-card-item" data-area="saude" data-dur="4">
           <h3>Terapia Ocupacional</h3>
           <span class="duration">4 Anos</span>
           <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Terapia%20Ocupacional%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
@@ -440,11 +472,16 @@
     const applyFiltersBtn = document.getElementById('applyFiltersBtn');
     const clearDrawerBtn = document.getElementById('clearDrawerBtn');
 
+    let activeArea = 'all';
     let activeDur = 'all';
     let searchText = '';
 
     // ── Sincroniza chips desktop ↔ drawer ──────────────────────────────────
     function syncChips() {
+      ['#areaFilter', '#drawerAreaFilter'].forEach(sel => {
+        document.querySelectorAll(sel + ' .chip[data-value]').forEach(c =>
+          c.classList.toggle('active', c.dataset.value === activeArea));
+      });
       ['#durFilter', '#drawerDurFilter'].forEach(sel => {
         document.querySelectorAll(sel + ' .chip[data-value]').forEach(c =>
           c.classList.toggle('active', c.dataset.value === activeDur));
@@ -453,18 +490,45 @@
     }
 
     function updateBadge() {
-      const count = activeDur !== 'all' ? 1 : 0;
+      const count = (activeArea !== 'all' ? 1 : 0) + (activeDur !== 'all' ? 1 : 0);
       filterBadge.textContent = count > 0 ? ' (' + count + ')' : '';
       filterBadge.style.display = count > 0 ? 'inline' : 'none';
       mobileFilterBtn.classList.toggle('has-filters', count > 0);
     }
 
-    // ── Chips desktop (aplica imediatamente) ───────────────────────────────
+    // ── Chips desktop — Área (aplica imediatamente) ────────────────────────
+    document.querySelectorAll('#areaFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeArea = chip.dataset.value; syncChips(); applyFilters(); });
+    });
+
+    // ── Chips desktop — Duração (aplica imediatamente) ────────────────────
     document.querySelectorAll('#durFilter .chip[data-value]').forEach(chip => {
       chip.addEventListener('click', () => { activeDur = chip.dataset.value; syncChips(); applyFilters(); });
     });
 
-    // ── Chips drawer (só seleciona, aplica no botão) ───────────────────────
+    // ── Chips drawer — Modalidade ─────────────────────────────────────────
+    document.querySelectorAll('#drawerModalFilter .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if (chip.dataset.value === 'ead') {
+          const params = new URLSearchParams();
+          if (activeDur !== 'all') params.set('dur', activeDur);
+          if (activeArea !== 'all') params.set('area', activeArea);
+          const qs = params.toString();
+          document.body.style.overflow = '';
+          window.location.href = 'graduacoes-ead.html' + (qs ? '?' + qs : '');
+        } else {
+          document.querySelectorAll('#drawerModalFilter .chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+        }
+      });
+    });
+
+    // ── Chips drawer — Área (só seleciona, aplica no botão) ───────────────
+    document.querySelectorAll('#drawerAreaFilter .chip[data-value]').forEach(chip => {
+      chip.addEventListener('click', () => { activeArea = chip.dataset.value; syncChips(); });
+    });
+
+    // ── Chips drawer — Duração (só seleciona, aplica no botão) ───────────
     document.querySelectorAll('#drawerDurFilter .chip[data-value]').forEach(chip => {
       chip.addEventListener('click', () => { activeDur = chip.dataset.value; syncChips(); });
     });
@@ -487,7 +551,7 @@
     applyFiltersBtn.addEventListener('click', () => { closeDrawer(); applyFilters(); });
 
     clearDrawerBtn.addEventListener('click', () => {
-      activeDur = 'all'; syncChips();
+      activeArea = 'all'; activeDur = 'all'; syncChips();
       closeDrawer(); applyFilters();
     });
 
@@ -533,9 +597,11 @@
     function applyFilters() {
       let visibleCount = 0;
       cards.forEach(card => {
+        const cardArea = card.dataset.area || 'all';
         const cardDur = parseFloat(card.dataset.dur);
         const cardName = card.querySelector('h3').textContent.toLowerCase();
         let show = true;
+        if (activeArea !== 'all' && cardArea !== activeArea) show = false;
         if (activeDur !== 'all') {
           if (activeDur === 'lte2') { if (cardDur > 2) show = false; }
           else { if (cardDur !== parseFloat(activeDur)) show = false; }
@@ -545,7 +611,7 @@
         if (show) visibleCount++;
       });
       courseCounter.textContent = `Mostrando ${visibleCount} curso${visibleCount !== 1 ? 's' : ''}`;
-      const hasFilters = activeDur !== 'all' || searchText !== '';
+      const hasFilters = activeArea !== 'all' || activeDur !== 'all' || searchText !== '';
       if (clearFiltersBtn) clearFiltersBtn.style.display = hasFilters ? 'inline-block' : 'none';
       noResults.classList.toggle('show', visibleCount === 0);
     }
@@ -553,7 +619,7 @@
     // ── Limpar filtros desktop ─────────────────────────────────────────────
     if (clearFiltersBtn) {
       clearFiltersBtn.addEventListener('click', () => {
-        activeDur = 'all';
+        activeArea = 'all'; activeDur = 'all';
         searchInput.value = ''; searchText = '';
         searchClear.style.display = 'none';
         searchDropdown.classList.remove('show');
@@ -564,6 +630,7 @@
     // ── Lê parâmetros da URL (ex: vindo da página EAD) ────────────────────
     (function() {
       const p = new URLSearchParams(window.location.search);
+      if (p.get('area')) activeArea = p.get('area');
       if (p.get('dur')) activeDur = p.get('dur');
     })();
 
