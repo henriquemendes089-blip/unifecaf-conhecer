@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Curso — UniFECAF Conhecer</title>
+  <meta name="description" content="Conheça os detalhes do curso, áreas de atuação, perfil do profissional e mercado de trabalho. UniFECAF Conhecer — Ribeirão das Neves, MG."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --navy: #0d1b3e; --blue: #1a3a8f; --blue-vivid: #2351c0;
+      --green: #2db85a; --green-dark: #1e9045;
+      --bg-light: #f5f7fb; --white: #ffffff; --text: #1a1a2e;
+      --font-head: 'Sora', sans-serif; --font-body: 'Instrument Sans', sans-serif;
+      --radius: 12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: var(--text); background: var(--white); }
+    a { text-decoration: none; color: inherit; }
+    .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Navbar ── */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,27,62,.95); backdrop-filter: blur(12px);
+      padding: 14px 0; transition: box-shadow .3s;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .navbar__brand { display: flex; align-items: center; gap: 10px; color: #fff;
+      font-family: var(--font-head); font-size: 1rem; font-weight: 700; }
+    .navbar__brand img { height: 32px; }
+    .navbar__back {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: rgba(255,255,255,.7); font-size: .85rem; transition: color .2s;
+    }
+    .navbar__back:hover { color: #fff; }
+    .navbar__back svg { flex-shrink: 0; }
+    .btn-wpp-nav {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff; padding: 10px 20px;
+      border-radius: 8px; font-family: var(--font-head); font-size: .85rem; font-weight: 700;
+      transition: background .2s;
+    }
+    .btn-wpp-nav:hover { background: var(--green-dark); }
+
+    /* ── Hero ── */
+    .course-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+      padding: 130px 0 70px; position: relative; overflow: hidden;
+    }
+    .course-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 80% 50%, rgba(35,81,192,.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(45,184,90,.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-geo {
+      position: absolute; top: -40px; right: -60px; width: 420px; height: 420px;
+      border: 1px solid rgba(255,255,255,.06); border-radius: 50%; pointer-events: none;
+    }
+    .hero-geo::after {
+      content: ''; position: absolute; inset: 40px;
+      border: 1px solid rgba(255,255,255,.04); border-radius: 50%;
+    }
+    .course-hero .container { position: relative; z-index: 1; }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 6px; margin-bottom: 20px;
+      font-size: .82rem; color: rgba(255,255,255,.5);
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,.5); transition: color .2s; }
+    .hero-breadcrumb a:hover { color: rgba(255,255,255,.85); }
+    .hero-breadcrumb span { color: rgba(255,255,255,.25); }
+    .hero-top { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px; margin-bottom: 8px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; }
+    .badge-modality {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(45,184,90,.15); border: 1px solid rgba(45,184,90,.3);
+      color: var(--green); font-family: var(--font-head); font-size: .72rem;
+      font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px;
+    }
+    .badge-area {
+      display: inline-flex; align-items: center;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.7); font-family: var(--font-head); font-size: .72rem;
+      font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px;
+    }
+    .course-hero h1 {
+      font-family: var(--font-head); font-size: 3rem; font-weight: 800;
+      color: #fff; margin-bottom: 16px; line-height: 1.15;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 32px;
+    }
+    .hero-meta-item {
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.65); font-size: .9rem;
+    }
+    .hero-meta-item svg { opacity: .7; flex-shrink: 0; }
+    .hero-meta-item strong { color: rgba(255,255,255,.9); font-weight: 500; }
+    .hero-cta-wrap { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-matricular {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--green); color: #fff; padding: 14px 28px; border-radius: 10px;
+      font-family: var(--font-head); font-size: .95rem; font-weight: 700;
+      transition: background .2s, transform .15s; box-shadow: 0 4px 16px rgba(45,184,90,.35);
+    }
+    .btn-matricular:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-voltar-hero {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.2);
+      padding: 14px 24px; border-radius: 10px; font-size: .9rem;
+      transition: all .2s;
+    }
+    .btn-voltar-hero:hover { color: #fff; border-color: rgba(255,255,255,.5); background: rgba(255,255,255,.05); }
+
+    /* ── Content Layout ── */
+    .course-content { background: var(--bg-light); }
+    .content-inner {
+      display: grid; grid-template-columns: 1fr 320px; gap: 32px;
+      padding: 56px 0 80px; align-items: start;
+    }
+    .content-main { display: flex; flex-direction: column; gap: 32px; }
+
+    /* ── Sections ── */
+    .section-card {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid rgba(13,27,62,.07);
+      padding: 32px; box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+    .section-label {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--font-head); font-size: .72rem; font-weight: 700;
+      color: var(--green-dark); text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: 14px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px; background: rgba(45,184,90,.2);
+    }
+    .section-card h2 {
+      font-family: var(--font-head); font-size: 1.25rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .section-card p {
+      line-height: 1.75; color: #374151; font-size: .95rem; margin-bottom: 14px;
+    }
+    .section-card p:last-child { margin-bottom: 0; }
+
+    /* ── Áreas de Atuação ── */
+    .areas-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px; margin-top: 4px;
+    }
+    .area-tag {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg-light); border: 1px solid rgba(13,27,62,.08);
+      border-radius: 8px; padding: 10px 14px; font-size: .88rem;
+      color: var(--navy); transition: border-color .2s, background .2s;
+    }
+    .area-tag:hover { border-color: var(--green); background: rgba(45,184,90,.05); }
+    .area-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0;
+    }
+
+    /* ── Sidebar ── */
+    .content-sidebar { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 90px; }
+    .sidebar-card {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid rgba(13,27,62,.07);
+      padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+    .sidebar-card h3 {
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 16px;
+    }
+    .sidebar-info-list { display: flex; flex-direction: column; gap: 12px; }
+    .sidebar-info-item { display: flex; flex-direction: column; gap: 3px; }
+    .info-label { font-size: .72rem; font-weight: 500; color: #9ca3af; text-transform: uppercase; letter-spacing: .06em; }
+    .info-value { font-family: var(--font-head); font-size: .95rem; font-weight: 700; color: var(--navy); }
+    .sidebar-divider { height: 1px; background: #f3f4f6; margin: 4px 0; }
+    .btn-matricular-sidebar {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--green); color: #fff; padding: 14px 20px; border-radius: 10px;
+      font-family: var(--font-head); font-size: .92rem; font-weight: 700; width: 100%;
+      transition: background .2s; box-shadow: 0 4px 16px rgba(45,184,90,.3);
+    }
+    .btn-matricular-sidebar:hover { background: var(--green-dark); }
+    .sidebar-note { font-size: .78rem; color: #9ca3af; text-align: center; margin-top: 8px; line-height: 1.4; }
+
+    /* ── Back banner ── */
+    .back-banner {
+      background: var(--navy); padding: 48px 0; text-align: center;
+    }
+    .back-banner p { color: rgba(255,255,255,.6); margin-bottom: 20px; font-size: .95rem; }
+    .back-banner-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .btn-back-courses {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1.5px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85);
+      padding: 12px 24px; border-radius: 8px; font-family: var(--font-head);
+      font-size: .88rem; font-weight: 700; transition: all .2s;
+    }
+    .btn-back-courses:hover { border-color: rgba(255,255,255,.6); color: #fff; background: rgba(255,255,255,.05); }
+    .btn-whatsapp-banner {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff; padding: 12px 24px; border-radius: 8px;
+      font-family: var(--font-head); font-size: .88rem; font-weight: 700; transition: background .2s;
+    }
+    .btn-whatsapp-banner:hover { background: var(--green-dark); }
+
+    /* ── Footer ── */
+    footer { background: #070f22; padding: 40px 0; text-align: center; }
+    footer p { color: rgba(255,255,255,.4); font-size: .82rem; }
+
+    /* ── WhatsApp Float ── */
+    .wpp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      display: flex; align-items: center; gap: 10px;
+      background: #25D366; color: #fff; padding: 14px 20px; border-radius: 50px;
+      font-family: var(--font-head); font-size: .88rem; font-weight: 700;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100%{ box-shadow:0 4px 20px rgba(37,211,102,.4) }
+      50%{ box-shadow:0 4px 32px rgba(37,211,102,.7) }
+    }
+
+    /* ── Not Found ── */
+    .not-found {
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      background: var(--bg-light); padding: 40px 24px; text-align: center;
+    }
+    .not-found h2 { font-family: var(--font-head); font-size: 1.6rem; color: var(--navy); margin-bottom: 12px; }
+    .not-found p { color: #6b7280; margin-bottom: 24px; }
+    .btn-home {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--navy); color: #fff; padding: 12px 24px; border-radius: 8px;
+      font-family: var(--font-head); font-size: .9rem; font-weight: 700; transition: background .2s;
+    }
+    .btn-home:hover { background: var(--blue); }
+
+    /* ── Animations ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .5s ease, transform .5s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .content-inner { grid-template-columns: 1fr; }
+      .content-sidebar { position: static; }
+      .course-hero h1 { font-size: 2.2rem; }
+    }
+    @media (max-width: 600px) {
+      .course-hero { padding: 110px 0 50px; }
+      .course-hero h1 { font-size: 1.8rem; }
+      .section-card { padding: 24px 20px; }
+      .areas-grid { grid-template-columns: 1fr 1fr; }
+      .wpp-float span { display: none; }
+      .wpp-float { padding: 14px; border-radius: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar__brand">
+        <img src="Logo conhcer png transparente.png" alt="UniFECAF Conhecer"/>
+        UniFECAF Conhecer
+      </a>
+      <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-wpp-nav">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Fale no WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <!-- Conteúdo dinâmico: renderizado por JS -->
+  <div id="pageContent"></div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="wpp-float" id="wppFloat" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    <span>Falar agora</span>
+  </a>
+
+  <script src="cursos-data.js"></script>
+  <script>
+    // ── URL Params ──────────────────────────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug') || '';
+    const modalidade = (params.get('modalidade') || 'ead').toLowerCase();
+    const key = slug + '-' + modalidade;
+    const curso = (typeof cursosData !== 'undefined') ? cursosData[key] : null;
+    const pageContent = document.getElementById('pageContent');
+
+    // ── Helpers ─────────────────────────────────────────────────────────────
+    const wppIcon = `<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>`;
+
+    function wppLink(nome) {
+      return 'https://wa.me/5531971936023?text=' + encodeURIComponent('Olá! Tenho interesse no curso de ' + nome + '. Pode me ajudar?');
+    }
+
+    function backLink(mod) {
+      return mod === 'semipresencial' ? 'graduacoes-semipresencial.html' : 'graduacoes-ead.html';
+    }
+
+    function backLabel(mod) {
+      return mod === 'semipresencial' ? 'Graduações Semipresencial' : 'Graduações EAD';
+    }
+
+    function modalidadeLabel(mod) {
+      if (mod === 'ead') return 'EAD · Polo Presencial';
+      if (mod === 'semipresencial') return 'Semipresencial';
+      return mod;
+    }
+
+    // ── Not Found ────────────────────────────────────────────────────────────
+    if (!curso) {
+      pageContent.innerHTML = `
+        <div class="not-found" style="margin-top:60px">
+          <div>
+            <h2>Curso não encontrado</h2>
+            <p>O curso que você procura não está disponível ou o link está incorreto.</p>
+            <a href="index.html" class="btn-home">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+              Voltar ao início
+            </a>
+          </div>
+        </div>
+        <footer><div class="container"><p>&copy; 2025 UniFECAF Conhecer — Ribeirão das Neves, MG. Todos os direitos reservados.</p></div></footer>`;
+    } else {
+      // ── Update <title> and meta ──────────────────────────────────────────
+      document.title = curso.nome + ' — UniFECAF Conhecer';
+      document.querySelector('meta[name="description"]').setAttribute('content',
+        `Conheça o curso de ${curso.nome} (${modalidadeLabel(modalidade)}) na UniFECAF Conhecer, em Ribeirão das Neves - MG. Tire suas dúvidas e matricule-se.`);
+
+      // ── Update WPP Float link ────────────────────────────────────────────
+      document.getElementById('wppFloat').href = wppLink(curso.nome + ' (' + modalidadeLabel(modalidade) + ')');
+
+      // ── Build descricao paragraphs ───────────────────────────────────────
+      const descParas = Array.isArray(curso.descricao)
+        ? curso.descricao.map(p => `<p>${p}</p>`).join('')
+        : curso.descricao.split('\n\n').map(p => `<p>${p.trim()}</p>`).join('');
+
+      // ── Build areas tags ─────────────────────────────────────────────────
+      const areasHTML = curso.areaDeAtuacao
+        .map(a => `<div class="area-tag"><div class="area-dot"></div>${a}</div>`)
+        .join('');
+
+      // ── Render ───────────────────────────────────────────────────────────
+      pageContent.innerHTML = `
+        <!-- Hero -->
+        <section class="course-hero">
+          <div class="hero-geo"></div>
+          <div class="container">
+            <div class="hero-breadcrumb">
+              <a href="index.html">Início</a>
+              <span>/</span>
+              <a href="${backLink(modalidade)}">${backLabel(modalidade)}</a>
+              <span>/</span>
+              <span style="color:rgba(255,255,255,.75)">${curso.nome}</span>
+            </div>
+            <div class="hero-badges">
+              <span class="badge-modality">
+                <svg viewBox="0 0 16 16" fill="currentColor" width="10" height="10"><circle cx="8" cy="8" r="8"/></svg>
+                ${modalidadeLabel(modalidade)}
+              </span>
+              <span class="badge-area">${curso.area}</span>
+            </div>
+            <h1 class="fade-in">${curso.nome}</h1>
+            <div class="hero-meta fade-in" style="animation-delay:.1s">
+              <div class="hero-meta-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                <span>Duração: <strong>${curso.duracao}</strong></span>
+              </div>
+              <div class="hero-meta-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/></svg>
+                <span>Grau: <strong>${curso.tipoGrau}</strong></span>
+              </div>
+              <div class="hero-meta-item">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                <span>Ribeirão das Neves, MG</span>
+              </div>
+            </div>
+            <div class="hero-cta-wrap fade-in" style="animation-delay:.2s">
+              <a href="${wppLink(curso.nome + ' (' + modalidadeLabel(modalidade) + ')')}" target="_blank" rel="noopener noreferrer" class="btn-matricular">
+                ${wppIcon} Quero me matricular
+              </a>
+              <a href="${backLink(modalidade)}" class="btn-voltar-hero">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+                Ver todos os cursos
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content -->
+        <div class="course-content">
+          <div class="container">
+            <div class="content-inner">
+
+              <!-- Main -->
+              <div class="content-main">
+
+                <!-- Sobre -->
+                <div class="section-card fade-in">
+                  <div class="section-label">Sobre o curso</div>
+                  <h2>O que você vai aprender</h2>
+                  ${descParas}
+                </div>
+
+                <!-- Áreas de Atuação -->
+                <div class="section-card fade-in">
+                  <div class="section-label">Áreas de atuação</div>
+                  <h2>Onde você pode trabalhar</h2>
+                  <div class="areas-grid">${areasHTML}</div>
+                </div>
+
+                <!-- Perfil -->
+                <div class="section-card fade-in">
+                  <div class="section-label">Perfil do profissional</div>
+                  <h2>Para quem é este curso</h2>
+                  <p>${curso.perfilProfissional}</p>
+                </div>
+
+                <!-- Mercado -->
+                <div class="section-card fade-in">
+                  <div class="section-label">Mercado de trabalho</div>
+                  <h2>Perspectivas e oportunidades</h2>
+                  <p>${curso.mercadoDeTrabalho}</p>
+                </div>
+
+              </div>
+
+              <!-- Sidebar -->
+              <aside class="content-sidebar">
+                <div class="sidebar-card">
+                  <h3>Informações do curso</h3>
+                  <div class="sidebar-info-list">
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Curso</span>
+                      <span class="info-value">${curso.nome}</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Grau</span>
+                      <span class="info-value">${curso.tipoGrau}</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Modalidade</span>
+                      <span class="info-value">${modalidadeLabel(modalidade)}</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Duração</span>
+                      <span class="info-value">${curso.duracao}</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Área</span>
+                      <span class="info-value">${curso.area}</span>
+                    </div>
+                    <div class="sidebar-divider"></div>
+                    <div class="sidebar-info-item">
+                      <span class="info-label">Unidade</span>
+                      <span class="info-value">Ribeirão das Neves, MG</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sidebar-card">
+                  <a href="${wppLink(curso.nome + ' (' + modalidadeLabel(modalidade) + ')')}" target="_blank" rel="noopener noreferrer" class="btn-matricular-sidebar">
+                    ${wppIcon} Quero me matricular
+                  </a>
+                  <p class="sidebar-note">Atendimento via WhatsApp<br/>Seg–Sex 8h–18h · Sáb 8h–12h</p>
+                </div>
+
+                <div class="sidebar-card" style="background:var(--bg-light); border-color:rgba(13,27,62,.05)">
+                  <h3 style="font-size:.82rem; color:#6b7280; margin-bottom:12px">📍 Endereço</h3>
+                  <p style="font-size:.88rem; color:#374151; line-height:1.5">Av. Dionísio Gomes, 159<br/>Veneza, Ribeirão das Neves — MG</p>
+                </div>
+              </aside>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Banner -->
+        <div class="back-banner">
+          <div class="container">
+            <p>Gostou? Fale com a gente ou veja outros cursos disponíveis.</p>
+            <div class="back-banner-btns">
+              <a href="${backLink(modalidade)}" class="btn-back-courses">
+                <svg viewBox="0 0 20 20" fill="currentColor" width="15" height="15"><path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"/></svg>
+                Ver todos os cursos
+              </a>
+              <a href="${wppLink(curso.nome + ' (' + modalidadeLabel(modalidade) + ')')}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-banner">
+                ${wppIcon} Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <div class="container">
+            <p>&copy; 2025 UniFECAF Conhecer — Ribeirão das Neves, MG. Todos os direitos reservados.</p>
+          </div>
+        </footer>
+      `;
+
+      // ── Animate fade-ins ──────────────────────────────────────────────────
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+      // Trigger hero items immediately
+      setTimeout(() => {
+        document.querySelectorAll('.course-hero .fade-in').forEach(el => el.classList.add('visible'));
+      }, 100);
+    }
+
+    // ── Navbar scroll shadow ──────────────────────────────────────────────
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 80);
+    });
+  </script>
+
+</body>
+</html>
