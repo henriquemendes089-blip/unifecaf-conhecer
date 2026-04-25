@@ -131,6 +131,13 @@
       border-radius: 8px; font-family: var(--font-head); font-size: .88rem;
       font-weight: 600; margin-top: auto; transition: background .2s; text-decoration: none; }
     .btn-saber-mais:hover { background: var(--green-dark); color: #fff; }
+    .area-group { margin-bottom: 48px; }
+    .area-group:last-child { margin-bottom: 0; }
+    .area-group.hidden { display: none; }
+    .area-title { font-family: var(--font-head); font-size: 1rem; font-weight: 700;
+      color: var(--navy); text-transform: uppercase; letter-spacing: .08em;
+      margin-bottom: 20px; padding-bottom: 10px;
+      border-bottom: 2px solid var(--green); }
     .no-results { text-align: center; padding: 60px 24px; color: #9ca3af; font-size: 1rem; display: none; }
     .no-results.show { display: block; }
 
@@ -282,7 +289,6 @@
             <button class="chip" data-value="saude">Saúde</button>
             <button class="chip" data-value="engenharia">Engenharia</button>
             <button class="chip" data-value="educacao">Educação</button>
-            <button class="chip" data-value="arquitetura">Arquitetura</button>
             <button class="chip" data-value="ciencias-sociais">Ciências Sociais</button>
           </div>
         </div>
@@ -328,7 +334,6 @@
           <button class="chip" data-value="saude">Saúde</button>
           <button class="chip" data-value="engenharia">Engenharia</button>
           <button class="chip" data-value="educacao">Educação</button>
-          <button class="chip" data-value="arquitetura">Arquitetura</button>
           <button class="chip" data-value="ciencias-sociais">Ciências Sociais</button>
         </div>
       </div>
@@ -353,95 +358,120 @@
   <section class="courses-section">
     <div class="container">
       <div class="no-results" id="noResults">Nenhum curso encontrado para sua busca</div>
-      <div class="courses-grid" id="coursesGrid">
 
-        <div class="course-card-item" data-area="arquitetura" data-dur="5">
-          <h3>Arquitetura e Urbanismo</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Arquitetura%20e%20Urbanismo%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+      <!-- SAÚDE -->
+      <div class="area-group" data-area="saude">
+        <h2 class="area-title">Saúde</h2>
+        <div class="courses-grid">
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Biomedicina</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Biomedicina%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Educação Física Bacharelado</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Educa%C3%A7%C3%A3o%20F%C3%ADsica%20Bacharelado%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Educação Física Licenciatura</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Educa%C3%A7%C3%A3o%20F%C3%ADsica%20Licenciatura%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="2.5">
+            <h3>Estética e Cosmética</h3>
+            <span class="duration">2,5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Est%C3%A9tica%20e%20Cosm%C3%A9tica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="5">
+            <h3>Farmácia</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Farm%C3%A1cia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="5">
+            <h3>Fisioterapia</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Fisioterapia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Nutrição</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Nutri%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Psicopedagogia</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Psicopedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="3">
+            <h3>Radiologia</h3>
+            <span class="duration">3 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Radiologia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="saude" data-dur="4">
+            <h3>Terapia Ocupacional</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Terapia%20Ocupacional%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
         </div>
-        <div class="course-card-item" data-area="saude" data-dur="4">
-          <h3>Biomedicina</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Biomedicina%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="4">
-          <h3>Educação Física</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Educa%C3%A7%C3%A3o%20F%C3%ADsica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="engenharia" data-dur="5">
-          <h3>Engenharia Civil</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20Civil%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="engenharia" data-dur="5">
-          <h3>Engenharia de Produção</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20de%20Produ%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="engenharia" data-dur="5">
-          <h3>Engenharia Elétrica</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20El%C3%A9trica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="2.5">
-          <h3>Estética e Cosmética</h3>
-          <span class="duration">2,5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Est%C3%A9tica%20e%20Cosm%C3%A9tica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="5">
-          <h3>Farmácia</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Farm%C3%A1cia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="educacao" data-dur="4">
-          <h3>Física</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20F%C3%ADsica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="5">
-          <h3>Fisioterapia</h3>
-          <span class="duration">5 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Fisioterapia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="educacao" data-dur="4">
-          <h3>Matemática</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Matem%C3%A1tica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="4">
-          <h3>Nutrição</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Nutri%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="educacao" data-dur="4">
-          <h3>Pedagogia</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Pedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="educacao" data-dur="4">
-          <h3>Psicopedagogia</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Psicopedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="3">
-          <h3>Radiologia</h3>
-          <span class="duration">3 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Radiologia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="ciencias-sociais" data-dur="4">
-          <h3>Serviço Social</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Servi%C3%A7o%20Social%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-        <div class="course-card-item" data-area="saude" data-dur="4">
-          <h3>Terapia Ocupacional</h3>
-          <span class="duration">4 Anos</span>
-          <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Terapia%20Ocupacional%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
-        </div>
-
       </div>
+
+      <!-- ENGENHARIA -->
+      <div class="area-group" data-area="engenharia">
+        <h2 class="area-title">Engenharia</h2>
+        <div class="courses-grid">
+          <div class="course-card-item" data-area="engenharia" data-dur="5">
+            <h3>Arquitetura e Urbanismo</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Arquitetura%20e%20Urbanismo%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="engenharia" data-dur="5">
+            <h3>Engenharia Civil</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20Civil%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="engenharia" data-dur="5">
+            <h3>Engenharia de Produção</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20de%20Produ%C3%A7%C3%A3o%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="engenharia" data-dur="5">
+            <h3>Engenharia Elétrica</h3>
+            <span class="duration">5 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Engenharia%20El%C3%A9trica%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCAÇÃO -->
+      <div class="area-group" data-area="educacao">
+        <h2 class="area-title">Educação</h2>
+        <div class="courses-grid">
+          <div class="course-card-item" data-area="educacao" data-dur="4">
+            <h3>Pedagogia</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Pedagogia%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CIÊNCIAS SOCIAIS -->
+      <div class="area-group" data-area="ciencias-sociais">
+        <h2 class="area-title">Ciências Sociais</h2>
+        <div class="courses-grid">
+          <div class="course-card-item" data-area="ciencias-sociais" data-dur="4">
+            <h3>Serviço Social</h3>
+            <span class="duration">4 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Servi%C3%A7o%20Social%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+          <div class="course-card-item" data-area="ciencias-sociais" data-dur="2">
+            <h3>Gestão de Recursos Humanos</h3>
+            <span class="duration">2 Anos</span>
+            <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Tenho%20interesse%20no%20curso%20de%20Gest%C3%A3o%20de%20Recursos%20Humanos%20(Semipresencial).%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="btn-quero">Quero este curso</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -458,6 +488,7 @@
 
   <script>
     const cards = document.querySelectorAll('.course-card-item');
+    const areaGroups = document.querySelectorAll('.area-group');
     const searchInput = document.getElementById('searchInput');
     const searchClear = document.getElementById('searchClear');
     const searchDropdown = document.getElementById('searchDropdown');
@@ -609,6 +640,10 @@
         if (searchText && !cardName.includes(searchText)) show = false;
         card.classList.toggle('hidden', !show);
         if (show) visibleCount++;
+      });
+      areaGroups.forEach(group => {
+        const visible = group.querySelectorAll('.course-card-item:not(.hidden)').length;
+        group.classList.toggle('hidden', visible === 0);
       });
       courseCounter.textContent = `Mostrando ${visibleCount} curso${visibleCount !== 1 ? 's' : ''}`;
       const hasFilters = activeArea !== 'all' || activeDur !== 'all' || searchText !== '';
