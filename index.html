@@ -2395,6 +2395,27 @@
       document.querySelectorAll('.sub-chip').forEach(c => c.classList.remove('active','active-blue'));
     });
 
+    // Máscara telefone: (XX) XXXXX-XXXX
+    const wppInput = document.getElementById('wpp');
+    wppInput.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length === 0) { e.target.value = ''; return; }
+      if (v.length <= 2)        e.target.value = '(' + v;
+      else if (v.length <= 7)   e.target.value = '(' + v.slice(0,2) + ') ' + v.slice(2);
+      else if (v.length <= 10)  e.target.value = '(' + v.slice(0,2) + ') ' + v.slice(2,6) + '-' + v.slice(6);
+      else                      e.target.value = '(' + v.slice(0,2) + ') ' + v.slice(2,7) + '-' + v.slice(7);
+    });
+    wppInput.addEventListener('keydown', (e) => {
+      // Permite apagar formatação suavemente
+      if (e.key === 'Backspace') {
+        const val = e.target.value;
+        if (val.endsWith(' ') || val.endsWith('-') || val.endsWith('(')) {
+          e.target.value = val.slice(0, -1);
+          e.preventDefault();
+        }
+      }
+    });
+
     // Remove error on input
     document.querySelectorAll('.form-group input').forEach(el => {
       el.addEventListener('input', () => {
