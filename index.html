@@ -1589,7 +1589,7 @@
           <div class="course-card__body">
             <ul class="course-list">
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Biomedicina"><span class="course-dot"></span>Biomedicina</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Educação Física"><span class="course-dot"></span>Educação Física</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Educação Física - Bacharelado"><span class="course-dot"></span>Educação Física</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Fisioterapia"><span class="course-dot"></span>Fisioterapia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Farmácia"><span class="course-dot"></span>Farmácia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Engenharia Civil"><span class="course-dot"></span>Engenharia Civil</li>
@@ -2367,48 +2367,33 @@
       if (e.target === lightbox) closeLightboxFn();
     });
 
-    // Clique em curso → preenche formulário
+    // Converte nome do curso em slug de URL
+    function courseNameToSlug(name) {
+      return name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')   // remove acentos
+        .replace(/[^a-z0-9\s]/g, ' ')      // remove pontuação (/ . , etc.)
+        .trim()
+        .replace(/\s+/g, '-');             // espaços → hifens
+    }
+
+    // Clique em curso → abre página de detalhe do curso
     document.querySelectorAll('.course-item-link').forEach(item => {
       item.addEventListener('click', () => {
-        const tipo = item.dataset.tipo;
+        const tipo       = item.dataset.tipo;
         const modalidade = item.dataset.modalidade;
-        const curso = item.dataset.curso;
+        const curso      = item.dataset.curso;
 
-        // Scroll para formulário
-        document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+        if (tipo === 'tecnico') {
+          // Técnicos ainda não têm página individual → vai para listagem
+          window.location.href = 'cursos-tecnicos.html';
+          return;
+        }
 
-        setTimeout(() => {
-          // Selecionar tipo
-          const cardGradEl = document.getElementById('card-grad');
-          const cardTecEl = document.getElementById('card-tec');
-          if (tipo === 'graduacao') {
-            cardGradEl.click();
-          } else {
-            cardTecEl.click();
-          }
-
-          // Selecionar modalidade (se houver)
-          if (modalidade) {
-            setTimeout(() => {
-              const chip = document.querySelector(`#chips-modalidade .sub-chip[data-val="${modalidade}"]`);
-              if (chip) chip.click();
-            }, 200);
-          }
-
-          // Preencher curso
-          setTimeout(() => {
-            const cursoInput = document.getElementById('curso');
-            if (cursoInput) {
-              cursoInput.value = curso;
-              cursoInput.style.borderColor = 'var(--green)';
-              cursoInput.style.boxShadow = '0 0 0 3px rgba(45,184,90,.2)';
-              setTimeout(() => {
-                cursoInput.style.borderColor = '';
-                cursoInput.style.boxShadow = '';
-              }, 1500);
-            }
-          }, 400);
-        }, 600);
+        // Graduações: gera slug e navega para curso.html
+        const slug = courseNameToSlug(curso);
+        window.location.href = `curso.html?slug=${encodeURIComponent(slug)}&modalidade=${encodeURIComponent(modalidade)}`;
       });
     });
   </script>
