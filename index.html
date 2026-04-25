@@ -589,15 +589,19 @@
     .course-card--semi .course-cta { color: var(--blue-vivid); }
     .course-card--green .course-dot { background: var(--green); }
     .course-cta {
-      display: flex; align-items: center; justify-content: center;
-      margin-top: auto; padding: 11px 16px;
-      border-radius: 8px; border: 2px solid rgba(255,255,255,.35);
-      background: rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+      margin-top: 20px; padding: 12px 16px;
+      border-radius: 8px; border: 2px solid currentColor;
+      background: transparent;
       font-family: var(--font-head); font-size: .85rem; font-weight: 700;
-      color: #fff; text-decoration: none;
-      transition: background .2s, border-color .2s;
+      text-decoration: none; transition: background .2s, color .2s;
     }
-    .course-cta:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.6); color: #fff; }
+    .course-card--blue .course-cta { color: var(--navy); }
+    .course-card--blue .course-cta:hover { background: var(--navy); color: #fff; }
+    .course-card--semi .course-cta { color: var(--blue-vivid); }
+    .course-card--semi .course-cta:hover { background: var(--blue-vivid); color: #fff; }
+    .course-card--green .course-cta { color: var(--green-dark); }
+    .course-card--green .course-cta:hover { background: var(--green-dark); color: #fff; }
     .courses__cta-center {
       display: flex;
       justify-content: center;
