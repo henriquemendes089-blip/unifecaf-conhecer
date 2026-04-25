@@ -520,6 +520,7 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-bottom: 48px;
+      align-items: stretch;
     }
     .course-card {
       background: var(--white);
@@ -528,6 +529,7 @@
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
+      height: 100%;
     }
     .course-card__header {
       padding: 24px 24px 20px;
@@ -590,7 +592,7 @@
     .course-card--green .course-dot { background: var(--green); }
     .course-cta {
       display: flex; align-items: center; justify-content: center; gap: 6px;
-      margin-top: 20px; padding: 12px 16px;
+      margin-top: auto; padding: 12px 16px; padding-top: 20px;
       border-radius: 8px; border: 2px solid currentColor;
       background: transparent;
       font-family: var(--font-head); font-size: .85rem; font-weight: 700;
