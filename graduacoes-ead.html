@@ -688,6 +688,13 @@
       btn.textContent = 'Saber Mais';
       card.appendChild(btn);
     });
+
+    // ── Auto-filtro por área via URL param (?area=...) ──────────────────────
+    const urlArea = new URLSearchParams(window.location.search).get('area');
+    if (urlArea && urlArea !== 'all') {
+      const chip = document.querySelector(`#areaFilter .chip[data-value="${urlArea}"]`);
+      if (chip) { activeArea = urlArea; syncChips(); applyFilters(); }
+    }
   </script>
 
 </body>
