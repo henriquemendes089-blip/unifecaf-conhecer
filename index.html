@@ -589,17 +589,15 @@
     .course-card--semi .course-cta { color: var(--blue-vivid); }
     .course-card--green .course-dot { background: var(--green); }
     .course-cta {
-      display: block;
-      margin-top: auto;
-      padding-top: 16px;
-      font-family: var(--font-head);
-      font-size: .85rem;
-      font-weight: 700;
-      color: var(--blue-vivid);
-      transition: color .2s;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: auto; padding: 11px 16px;
+      border-radius: 8px; border: 2px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.12);
+      font-family: var(--font-head); font-size: .85rem; font-weight: 700;
+      color: #fff; text-decoration: none;
+      transition: background .2s, border-color .2s;
     }
-    .course-card--green .course-cta { color: var(--green-dark); }
-    .course-cta:hover { opacity: .75; }
+    .course-cta:hover { background: rgba(255,255,255,.22); border-color: rgba(255,255,255,.6); color: #fff; }
     .courses__cta-center {
       display: flex;
       justify-content: center;
@@ -1557,12 +1555,12 @@
             <ul class="course-list">
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Administração"><span class="course-dot"></span>Administração</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Ciências Contábeis"><span class="course-dot"></span>Ciências Contábeis</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Engenharia de Produção"><span class="course-dot"></span>Engenharia de Produção</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Recursos Humanos"><span class="course-dot"></span>Recursos Humanos</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Gestão de Recursos Humanos"><span class="course-dot"></span>Gestão de Recursos Humanos</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Marketing"><span class="course-dot"></span>Marketing</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Pedagogia"><span class="course-dot"></span>Pedagogia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Logística"><span class="course-dot"></span>Logística</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Gestão Financeira"><span class="course-dot"></span>Gestão Financeira</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Creator Digital / Influencer"><span class="course-dot"></span>Creator Digital / Influencer</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="EAD" data-curso="Análise e Desenvolvimento de Sistemas"><span class="course-dot"></span>Análise e Desenvolvimento de Sistemas</li>
             </ul>
             <a href="graduacoes-ead.html" class="course-cta">Ver graduações EAD →</a>
           </div>
@@ -1578,13 +1576,14 @@
           </div>
           <div class="course-card__body">
             <ul class="course-list">
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Psicologia"><span class="course-dot"></span>Psicologia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Biomedicina"><span class="course-dot"></span>Biomedicina</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Fisioterapia"><span class="course-dot"></span>Fisioterapia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Educação Física"><span class="course-dot"></span>Educação Física</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Enfermagem"><span class="course-dot"></span>Enfermagem</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Fisioterapia"><span class="course-dot"></span>Fisioterapia</li>
               <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Farmácia"><span class="course-dot"></span>Farmácia</li>
-              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Nutrição"><span class="course-dot"></span>Nutrição</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Engenharia Civil"><span class="course-dot"></span>Engenharia Civil</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Arquitetura e Urbanismo"><span class="course-dot"></span>Arquitetura e Urbanismo</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Pedagogia"><span class="course-dot"></span>Pedagogia</li>
+              <li class="course-item-link" data-tipo="graduacao" data-modalidade="Semipresencial" data-curso="Serviço Social"><span class="course-dot"></span>Serviço Social</li>
             </ul>
             <a href="graduacoes-semipresencial.html" class="course-cta">Ver graduações semipresenciais →</a>
           </div>
@@ -1601,11 +1600,11 @@
           <div class="course-card__body">
             <ul class="course-list">
               <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Enfermagem"><span class="course-dot"></span>Técnico em Enfermagem</li>
-              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Administração"><span class="course-dot"></span>Técnico em Administração</li>
-              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Logística"><span class="course-dot"></span>Técnico em Logística</li>
-              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Recursos Humanos"><span class="course-dot"></span>Técnico em Recursos Humanos</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Radiologia"><span class="course-dot"></span>Técnico em Radiologia</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Análises Clínicas"><span class="course-dot"></span>Técnico em Análises Clínicas</li>
               <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Segurança do Trabalho"><span class="course-dot"></span>Técnico em Segurança do Trabalho</li>
-              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Informática"><span class="course-dot"></span>Técnico em Informática</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Logística"><span class="course-dot"></span>Técnico em Logística</li>
+              <li class="course-item-link" data-tipo="tecnico" data-modalidade="" data-curso="Técnico em Desenvolvimento de Sistemas"><span class="course-dot"></span>Técnico em Desenvolvimento de Sistemas</li>
             </ul>
             <a href="cursos-tecnicos.html" class="course-cta">Ver todos os cursos técnicos →</a>
           </div>
