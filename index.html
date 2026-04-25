@@ -972,9 +972,13 @@
       font-weight: 500;
       color: var(--text);
       gap: 8px;
+      transition: color .18s;
     }
+    .area-list li[data-href] { cursor: pointer; }
+    .area-list li[data-href]:hover { color: var(--green); }
+    .area-list li[data-href]:hover svg { color: var(--green); }
     .area-list li:last-child { border-bottom: none; }
-    .area-list li svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-muted); }
+    .area-list li svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--text-muted); transition: color .18s; }
     .area-card__cta {
       display: inline-flex;
       align-items: center;
@@ -1664,14 +1668,14 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Saúde</h3>
               <ul class="area-list">
-                <li>Psicologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Biomedicina <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Fisioterapia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Nutrição <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Farmácia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="graduacoes-semipresencial.html">Psicologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="graduacoes-semipresencial.html">Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=biomedicina&modalidade=Semipresencial">Biomedicina <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=fisioterapia&modalidade=Semipresencial">Fisioterapia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=nutricao&modalidade=Semipresencial">Nutrição <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=farmacia&modalidade=Semipresencial">Farmácia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Saúde</a>
+              <a href="graduacoes-semipresencial.html" class="area-card__cta">Mais em Saúde</a>
             </div>
           </div>
           <!-- Gestão -->
@@ -1682,14 +1686,14 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Gestão</h3>
               <ul class="area-list">
-                <li>Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Marketing <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Ciências Contábeis <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Gestão Financeira <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=administracao&modalidade=EAD">Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=gestao-de-recursos-humanos&modalidade=EAD">Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=marketing&modalidade=EAD">Marketing <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=ciencias-contabeis&modalidade=EAD">Ciências Contábeis <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=logistica&modalidade=EAD">Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=gestao-financeira&modalidade=EAD">Gestão Financeira <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Gestão</a>
+              <a href="graduacoes-ead.html" class="area-card__cta">Mais em Gestão</a>
             </div>
           </div>
           <!-- Tecnologia -->
@@ -1700,11 +1704,11 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Tecnologia</h3>
               <ul class="area-list">
-                <li>Engenharia de Produção <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Análise e Desenv. de Sistemas <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Gestão da TI <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=engenharia-de-producao&modalidade=EAD">Engenharia de Produção <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=analise-e-desenvolvimento-de-sistemas&modalidade=EAD">Análise e Desenv. de Sistemas <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=gestao-da-tecnologia-da-informacao&modalidade=EAD">Gestão da TI <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Tecnologia</a>
+              <a href="graduacoes-ead.html" class="area-card__cta">Mais em Tecnologia</a>
             </div>
           </div>
           <!-- Educação -->
@@ -1715,11 +1719,11 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Educação</h3>
               <ul class="area-list">
-                <li>Pedagogia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Letras <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Educação Física <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=pedagogia&modalidade=Semipresencial">Pedagogia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="graduacoes-semipresencial.html">Letras <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="curso.html?slug=educacao-fisica-bacharelado&modalidade=Semipresencial">Educação Física <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Educação</a>
+              <a href="graduacoes-semipresencial.html" class="area-card__cta">Mais em Educação</a>
             </div>
           </div>
         </div>
@@ -1736,10 +1740,10 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Saúde</h3>
               <ul class="area-list">
-                <li>Técnico em Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Técnico em Radiologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Enfermagem <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Radiologia <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Saúde</a>
+              <a href="cursos-tecnicos.html" class="area-card__cta">Mais em Saúde</a>
             </div>
           </div>
           <!-- Gestão Técnico -->
@@ -1750,11 +1754,11 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Gestão</h3>
               <ul class="area-list">
-                <li>Técnico em Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Técnico em Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
-                <li>Técnico em Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Administração <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Recursos Humanos <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Logística <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Gestão</a>
+              <a href="cursos-tecnicos.html" class="area-card__cta">Mais em Gestão</a>
             </div>
           </div>
           <!-- Segurança -->
@@ -1765,9 +1769,9 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Segurança</h3>
               <ul class="area-list">
-                <li>Técnico em Segurança do Trabalho <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Segurança do Trabalho <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Segurança</a>
+              <a href="cursos-tecnicos.html" class="area-card__cta">Mais em Segurança</a>
             </div>
           </div>
           <!-- Tecnologia Técnico -->
@@ -1778,9 +1782,9 @@
             <div class="area-card__body">
               <h3 class="area-card__title">Tecnologia</h3>
               <ul class="area-list">
-                <li>Técnico em Informática <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
+                <li data-href="cursos-tecnicos.html">Técnico em Informática <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></li>
               </ul>
-              <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="area-card__cta">Mais em Tecnologia</a>
+              <a href="cursos-tecnicos.html" class="area-card__cta">Mais em Tecnologia</a>
             </div>
           </div>
         </div>
@@ -2365,6 +2369,13 @@
     closeLightbox.addEventListener('click', closeLightboxFn);
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightboxFn();
+    });
+
+    // Clique nos itens da área-list (seção Explore)
+    document.querySelectorAll('.area-list li[data-href]').forEach(li => {
+      li.addEventListener('click', () => {
+        window.location.href = li.dataset.href;
+      });
     });
 
     // Converte nome do curso em slug de URL
