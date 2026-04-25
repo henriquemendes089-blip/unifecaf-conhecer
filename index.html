@@ -2034,11 +2034,18 @@
             <div class="form-group" id="fg-area" style="display:none;">
               <label>Área de interesse</label>
               <div class="sub-group visible" id="chips-area">
-                <span class="sub-chip" data-val="saude">Saúde</span>
-                <span class="sub-chip" data-val="gestao">Gestão</span>
-                <span class="sub-chip" data-val="tecnologia">Tecnologia</span>
-                <span class="sub-chip" data-val="educacao">Educação</span>
-                <span class="sub-chip" data-val="seguranca" id="chip-seg" style="display:none;">Segurança</span>
+                <!-- EAD -->
+                <span class="sub-chip" data-val="gestao-negocios" style="display:none;">Gestão de Negócios</span>
+                <span class="sub-chip" data-val="ciencias-sociais" style="display:none;">Ciências Sociais</span>
+                <!-- Semi + Técnico -->
+                <span class="sub-chip" data-val="saude" style="display:none;">Saúde</span>
+                <span class="sub-chip" data-val="engenharia" style="display:none;">Engenharia</span>
+                <span class="sub-chip" data-val="educacao" style="display:none;">Educação</span>
+                <!-- EAD + Técnico -->
+                <span class="sub-chip" data-val="tecnologia" style="display:none;">Tecnologia</span>
+                <!-- Técnico -->
+                <span class="sub-chip" data-val="gestao" style="display:none;">Gestão</span>
+                <span class="sub-chip" data-val="seguranca" style="display:none;">Segurança</span>
               </div>
               <input type="hidden" id="area-val" name="area" />
             </div>
@@ -2046,7 +2053,9 @@
             <!-- Curso desejado -->
             <div class="form-group" id="fg-curso" style="display:none;">
               <label for="curso">Curso desejado</label>
-              <input type="text" id="curso" name="curso" placeholder="Ex: Técnico em Enfermagem, Psicologia..." />
+              <select id="curso" name="curso">
+                <option value="">— Selecione uma área primeiro —</option>
+              </select>
             </div>
 
             <!-- Botões -->
@@ -2167,26 +2176,94 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
+    // ── Dados dos cursos para o formulário ───────────────────────
+    const cursosFormData = {
+      graduacao: {
+        ead: {
+          'gestao-negocios': ['Administração','Ciências Contábeis','Gestão Comercial','Gestão Financeira','Gestão de Recursos Humanos','Logística','Marketing','Marketing Digital','Processos Gerenciais'],
+          'ciencias-sociais': ['Design Gráfico','Gestão de Segurança Privada','Gestão de Segurança Pública','Gestão Pública','Serviço Social'],
+          'tecnologia': ['Análise e Desenvolvimento de Sistemas','Ciência de Dados','Computação em Nuvem','Creator Digital / Influencer','Defesa Cibernética','Engenharia Civil','Engenharia de Computação','Engenharia de Produção','Engenharia Elétrica','Gestão da Tecnologia da Informação','Inteligência Artificial e Automação']
+        },
+        semipresencial: {
+          'saude': ['Biomedicina','Educação Física - Bacharelado','Educação Física - Licenciatura','Estética e Cosmética','Farmácia','Fisioterapia','Nutrição','Psicopedagogia','Radiologia','Terapia Ocupacional'],
+          'engenharia': ['Arquitetura e Urbanismo','Engenharia Civil','Engenharia de Produção','Engenharia Elétrica'],
+          'educacao': ['Pedagogia'],
+          'ciencias-sociais': ['Serviço Social']
+        }
+      },
+      tecnico: {
+        'saude': ['Técnico em Análises Clínicas','Técnico em Enfermagem','Técnico em Radiologia'],
+        'gestao': ['Técnico em Administração','Técnico em Contabilidade','Técnico em Logística','Técnico em Recursos Humanos','Técnico em Transações Imobiliárias','Técnico em Vendas'],
+        'seguranca': ['Técnico em Segurança do Trabalho'],
+        'tecnologia': ['Técnico em Desenvolvimento de Sistemas']
+      }
+    };
+
+    // Mapeamento área-valor → label
+    const areasPorContexto = {
+      'ead':           ['gestao-negocios','ciencias-sociais','tecnologia'],
+      'semipresencial':['saude','engenharia','educacao','ciencias-sociais'],
+      'tecnico':       ['saude','gestao','seguranca','tecnologia']
+    };
+
     // ── Formulário condicional ────────────────────────────────────
-    const cardGrad = document.getElementById('card-grad');
-    const cardTec  = document.getElementById('card-tec');
+    const cardGrad  = document.getElementById('card-grad');
+    const cardTec   = document.getElementById('card-tec');
     const tipoInput = document.getElementById('tipo-interesse');
     const fgModalidade = document.getElementById('fg-modalidade');
-    const fgArea   = document.getElementById('fg-area');
-    const fgCurso  = document.getElementById('fg-curso');
-    const chipSeg  = document.getElementById('chip-seg');
+    const fgArea    = document.getElementById('fg-area');
+    const fgCurso   = document.getElementById('fg-curso');
+    const cursoSel  = document.getElementById('curso');
+
+    function resetCursoSel(msg) {
+      cursoSel.innerHTML = '<option value="">' + (msg || '— Selecione uma área primeiro —') + '</option>';
+    }
+
+    function updateAreas() {
+      const tipo = tipoInput.value;
+      const mod  = document.getElementById('modalidade-val').value;
+      const ctx  = tipo === 'tecnico' ? 'tecnico' : mod;
+      const toShow = areasPorContexto[ctx] || [];
+
+      document.querySelectorAll('#chips-area .sub-chip').forEach(c => {
+        c.style.display = toShow.includes(c.dataset.val) ? 'inline-flex' : 'none';
+        c.classList.remove('active','active-blue');
+      });
+      document.getElementById('area-val').value = '';
+      resetCursoSel();
+    }
+
+    function updateCursos() {
+      const tipo = tipoInput.value;
+      const mod  = document.getElementById('modalidade-val').value;
+      const area = document.getElementById('area-val').value;
+      if (!area) { resetCursoSel(); return; }
+
+      let lista = [];
+      if (tipo === 'tecnico') {
+        lista = cursosFormData.tecnico[area] || [];
+      } else {
+        lista = (cursosFormData.graduacao[mod] && cursosFormData.graduacao[mod][area]) || [];
+      }
+
+      resetCursoSel('— Selecione um curso —');
+      lista.forEach(nome => {
+        const opt = document.createElement('option');
+        opt.value = nome; opt.textContent = nome;
+        cursoSel.appendChild(opt);
+      });
+    }
 
     cardGrad.addEventListener('click', () => {
       cardGrad.classList.add('selected-grad');
       cardTec.classList.remove('selected-tec');
       tipoInput.value = 'graduacao';
       fgModalidade.style.display = 'block';
-      fgArea.style.display = 'block';
-      fgCurso.style.display = 'block';
-      chipSeg.style.display = 'none';
-      // reset area chips
-      document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
-      document.getElementById('area-val').value = '';
+      fgArea.style.display = 'none';   // aparece após escolher modalidade
+      fgCurso.style.display = 'none';
+      document.querySelectorAll('#chips-modalidade .sub-chip').forEach(c => c.classList.remove('active'));
+      document.getElementById('modalidade-val').value = '';
+      updateAreas();
     });
 
     cardTec.addEventListener('click', () => {
@@ -2196,10 +2273,8 @@
       fgModalidade.style.display = 'none';
       fgArea.style.display = 'block';
       fgCurso.style.display = 'block';
-      chipSeg.style.display = 'inline-flex';
-      document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
-      document.getElementById('area-val').value = '';
       document.getElementById('modalidade-val').value = '';
+      updateAreas();
     });
 
     // Chips modalidade
@@ -2208,6 +2283,9 @@
         document.querySelectorAll('#chips-modalidade .sub-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
         document.getElementById('modalidade-val').value = chip.dataset.val;
+        fgArea.style.display = 'block';
+        fgCurso.style.display = 'block';
+        updateAreas();
       });
     });
 
@@ -2218,6 +2296,7 @@
         document.querySelectorAll('#chips-area .sub-chip').forEach(c => c.classList.remove('active','active-blue'));
         chip.classList.add(isTec ? 'active-blue' : 'active');
         document.getElementById('area-val').value = chip.dataset.val;
+        updateCursos();
       });
     });
 
