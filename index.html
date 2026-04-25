@@ -87,6 +87,24 @@
       transform: translateY(0);
     }
 
+    /* ── Animações dos cards "Por que" ─────────────────────────── */
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
+    }
+    @keyframes cardEntrance {
+      0%   { opacity: 0; transform: translateY(40px) scale(.96); }
+      60%  { transform: translateY(-4px) scale(1.01); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .why__card.reveal.visible {
+      animation: cardEntrance .7s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    .why__card.reveal.visible .why__icon {
+      animation: floatIcon 3s ease-in-out infinite;
+      animation-delay: inherit;
+    }
+
     /* ══════════════════════════════════════════════════════════════
        NAVBAR
     ══════════════════════════════════════════════════════════════ */
@@ -475,12 +493,19 @@
       border-left: 4px solid var(--green);
       border-radius: var(--radius);
       padding: 32px 24px;
-      transition: transform .25s ease, box-shadow .25s ease;
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s ease, border-color .3s ease;
+      cursor: default;
     }
     .why__card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(13,27,62,.18);
+      border-left-color: var(--green-dark);
     }
+    .why__card:hover .why__icon {
+      background: rgba(45,184,90,.2);
+      transform: rotate(-6deg) scale(1.12);
+    }
+    .why__card:hover h3 { color: var(--green-dark); }
     .why__icon {
       width: 52px; height: 52px;
       background: rgba(45,184,90,.1);
@@ -489,8 +514,10 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
+      transition: background .3s ease, transform .4s cubic-bezier(.34,1.56,.64,1);
     }
     .why__icon svg { width: 26px; height: 26px; }
+    .why__card h3 { transition: color .3s ease; }
     .why__card h3 {
       font-family: var(--font-head);
       font-size: 1.05rem;
@@ -1243,6 +1270,7 @@
       box-shadow: 0 4px 24px rgba(37,211,102,.45);
       animation: pulse 2.4s ease-in-out infinite;
       transition: transform .2s, box-shadow .2s;
+      border: none; cursor: pointer;
     }
     .wpp-float:hover {
       transform: scale(1.05);
@@ -1409,6 +1437,164 @@
     .course-item-link:hover {
       color: var(--green);
       text-decoration: underline;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       LEAD QUIZ MODAL
+    ══════════════════════════════════════════════════════════════ */
+    .lead-quiz-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(7,15,34,.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lead-quiz-overlay.open { display: flex; }
+
+    .quiz-modal {
+      background: #fff;
+      border-radius: 24px;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 40px 100px rgba(0,0,0,.5);
+      overflow: hidden;
+      position: relative;
+      animation: quizSlideIn .4s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    @keyframes quizSlideIn {
+      from { opacity: 0; transform: translateY(48px) scale(.94); }
+      to   { opacity: 1; transform: translateY(0)   scale(1);   }
+    }
+
+    .quiz-progress-bar {
+      height: 4px;
+      background: #e8edf5;
+    }
+    .quiz-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), #1ed760);
+      border-radius: 0 4px 4px 0;
+      transition: width .5s cubic-bezier(.34,1.56,.64,1);
+      width: 33.33%;
+    }
+
+    .quiz-modal-body { padding: 40px 40px 36px; }
+
+    .quiz-close-btn {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 36px; height: 36px;
+      border: none; background: #f0f3f8;
+      border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #666;
+      transition: background .2s, color .2s; z-index: 2;
+    }
+    .quiz-close-btn:hover { background: #dde3ef; color: #333; }
+
+    .quiz-step { display: none; }
+    .quiz-step.active {
+      display: block;
+      animation: quizStepIn .3s ease both;
+    }
+    @keyframes quizStepIn {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    .quiz-step-label {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--green);
+      font-family: var(--font-head); margin-bottom: 10px;
+    }
+    .quiz-step-title {
+      font-family: var(--font-head); font-size: 1.3rem;
+      font-weight: 800; color: var(--navy);
+      margin-bottom: 6px; line-height: 1.3;
+    }
+    .quiz-step-sub {
+      font-size: .87rem; color: #777; margin-bottom: 26px;
+    }
+
+    .quiz-text-input {
+      width: 100%; padding: 14px 16px;
+      border: 2px solid #dde3ef; border-radius: 12px;
+      font-family: var(--font-body); font-size: 1rem;
+      color: var(--navy); outline: none;
+      transition: border-color .2s; box-sizing: border-box;
+      margin-bottom: 18px;
+    }
+    .quiz-text-input:focus { border-color: var(--green); }
+    .quiz-text-input.error { border-color: #e53e3e; animation: inputShake .3s ease; }
+    @keyframes inputShake {
+      0%,100% { transform: translateX(0); }
+      25%      { transform: translateX(-6px); }
+      75%      { transform: translateX(6px); }
+    }
+
+    .quiz-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .quiz-opt {
+      display: flex; align-items: center; gap: 14px;
+      padding: 13px 18px; border: 2px solid #dde3ef; border-radius: 12px;
+      cursor: pointer; transition: border-color .2s, background .2s, transform .15s;
+      font-family: var(--font-body); font-size: .95rem; color: var(--navy);
+      background: #fff; user-select: none;
+    }
+    .quiz-opt:hover { border-color: var(--green); background: #f0fdf5; transform: translateX(4px); }
+    .quiz-opt.selected { border-color: var(--green); background: #f0fdf5; }
+    .quiz-opt-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: #f0f3f8; display: flex; align-items: center;
+      justify-content: center; font-size: 1.1rem; flex-shrink: 0;
+      transition: background .2s;
+    }
+    .quiz-opt.selected .quiz-opt-icon { background: rgba(45,184,90,.15); }
+    .quiz-opt-text { font-weight: 500; }
+
+    .quiz-select {
+      width: 100%; padding: 14px 42px 14px 16px;
+      border: 2px solid #dde3ef; border-radius: 12px;
+      font-family: var(--font-body); font-size: .95rem;
+      color: var(--navy); outline: none; transition: border-color .2s;
+      box-sizing: border-box; appearance: none; -webkit-appearance: none;
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 14px center;
+      cursor: pointer; margin-bottom: 18px;
+    }
+    .quiz-select:focus { border-color: var(--green); }
+    .quiz-select.error { border-color: #e53e3e; }
+
+    .quiz-btn-primary {
+      width: 100%; padding: 15px 24px;
+      background: var(--green); color: #fff; border: none;
+      border-radius: 12px; font-family: var(--font-head);
+      font-size: 1rem; font-weight: 700; cursor: pointer;
+      transition: background .2s, transform .15s;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+    .quiz-btn-primary:hover { background: var(--green-dark); transform: translateY(-1px); }
+
+    .quiz-btn-back {
+      background: none; border: none; color: #999;
+      font-size: .83rem; cursor: pointer;
+      padding: 12px 0 0; display: block; width: 100%;
+      text-align: center; font-family: var(--font-body);
+      transition: color .2s;
+    }
+    .quiz-btn-back:hover { color: var(--navy); }
+
+    .quiz-footer-note {
+      text-align: center; font-size: .73rem;
+      color: #bbb; margin-top: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .quiz-modal-body { padding: 28px 22px 24px; }
+      .quiz-step-title { font-size: 1.15rem; }
     }
   </style>
 </head>
@@ -2154,10 +2340,135 @@
   </footer>
 
   <!-- ══ WHATSAPP FLOAT ─────────────────────────────────────── -->
-  <a href="https://wa.me/5531971936023?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20UniFECAF%20Conhecer%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20cursos%20dispon%C3%ADveis.%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" class="wpp-float" aria-label="Falar no WhatsApp">
+  <button id="wppFloatBtn" class="wpp-float" aria-label="Falar no WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     <span>Falar agora</span>
-  </a>
+  </button>
+
+  <!-- ══ LEAD QUIZ MODAL ────────────────────────────────────── -->
+  <div id="leadQuizModal" class="lead-quiz-overlay" role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <div class="quiz-modal">
+      <button class="quiz-close-btn" id="quizClose" aria-label="Fechar">✕</button>
+
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="quizProgressFill"></div>
+      </div>
+
+      <div class="quiz-modal-body">
+
+        <!-- Passo 1 · Nome -->
+        <div class="quiz-step active" id="qStep1">
+          <p class="quiz-step-label">Passo 1 de 3</p>
+          <h2 class="quiz-step-title" id="quizTitle">Olá! Como posso te chamar?</h2>
+          <p class="quiz-step-sub">Para personalizar seu atendimento 😊</p>
+          <input type="text" class="quiz-text-input" id="quizName" placeholder="Seu nome completo" autocomplete="off"/>
+          <button class="quiz-btn-primary" id="quizStep1Next">
+            Continuar
+            <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <p class="quiz-footer-note">🔒 Seus dados são usados apenas para atendimento</p>
+        </div>
+
+        <!-- Passo 2 · Ensino Médio -->
+        <div class="quiz-step" id="qStep2">
+          <p class="quiz-step-label">Passo 2 de 3</p>
+          <h2 class="quiz-step-title">Você já concluiu o Ensino Médio?</h2>
+          <p class="quiz-step-sub">Isso nos ajuda a indicar o melhor caminho</p>
+          <div class="quiz-options">
+            <div class="quiz-opt" data-value="Já concluí o Ensino Médio">
+              <div class="quiz-opt-icon">✅</div>
+              <span class="quiz-opt-text">Sim, já concluí</span>
+            </div>
+            <div class="quiz-opt" data-value="Ainda estou cursando o Ensino Médio">
+              <div class="quiz-opt-icon">📚</div>
+              <span class="quiz-opt-text">Ainda estou cursando</span>
+            </div>
+            <div class="quiz-opt" data-value="Ainda não concluí o Ensino Médio">
+              <div class="quiz-opt-icon">📝</div>
+              <span class="quiz-opt-text">Ainda não concluí</span>
+            </div>
+          </div>
+          <button class="quiz-btn-back" id="quizStep2Back">← Voltar</button>
+        </div>
+
+        <!-- Passo 3 · Curso -->
+        <div class="quiz-step" id="qStep3">
+          <p class="quiz-step-label">Passo 3 de 3</p>
+          <h2 class="quiz-step-title">Qual curso você tem interesse?</h2>
+          <p class="quiz-step-sub">Vamos te apresentar todas as opções disponíveis</p>
+          <select class="quiz-select" id="quizCurso">
+            <option value="">— Selecione um curso —</option>
+            <optgroup label="🎓 Graduações EAD (UniFECAF)">
+              <option>Administração</option>
+              <option>Ciências Contábeis</option>
+              <option>Gestão Comercial</option>
+              <option>Gestão Financeira</option>
+              <option>Gestão de Recursos Humanos</option>
+              <option>Logística</option>
+              <option>Marketing</option>
+              <option>Marketing Digital</option>
+              <option>Processos Gerenciais</option>
+              <option>Design Gráfico</option>
+              <option>Gestão de Segurança Privada</option>
+              <option>Gestão de Segurança Pública</option>
+              <option>Gestão Pública</option>
+              <option>Serviço Social (EAD)</option>
+              <option>Análise e Desenvolvimento de Sistemas</option>
+              <option>Ciência de Dados</option>
+              <option>Computação em Nuvem</option>
+              <option>Creator Digital / Influencer</option>
+              <option>Defesa Cibernética</option>
+              <option>Engenharia Civil (EAD)</option>
+              <option>Engenharia de Computação</option>
+              <option>Engenharia de Produção (EAD)</option>
+              <option>Engenharia Elétrica (EAD)</option>
+              <option>Gestão da Tecnologia da Informação</option>
+              <option>Inteligência Artificial e Automação</option>
+            </optgroup>
+            <optgroup label="🏫 Graduações Semipresenciais (UniFECAF)">
+              <option>Biomedicina</option>
+              <option>Educação Física - Bacharelado</option>
+              <option>Educação Física - Licenciatura</option>
+              <option>Estética e Cosmética</option>
+              <option>Farmácia</option>
+              <option>Fisioterapia</option>
+              <option>Nutrição</option>
+              <option>Psicopedagogia</option>
+              <option>Radiologia</option>
+              <option>Terapia Ocupacional</option>
+              <option>Arquitetura e Urbanismo</option>
+              <option>Engenharia Civil (Semipresencial)</option>
+              <option>Engenharia de Produção (Semipresencial)</option>
+              <option>Engenharia Elétrica (Semipresencial)</option>
+              <option>Pedagogia</option>
+              <option>Serviço Social (Semipresencial)</option>
+            </optgroup>
+            <optgroup label="⚙️ Cursos Técnicos (Conhecer)">
+              <option>Técnico em Análises Clínicas</option>
+              <option>Técnico em Enfermagem</option>
+              <option>Técnico em Radiologia</option>
+              <option>Técnico em Administração</option>
+              <option>Técnico em Contabilidade</option>
+              <option>Técnico em Logística</option>
+              <option>Técnico em Recursos Humanos</option>
+              <option>Técnico em Transações Imobiliárias</option>
+              <option>Técnico em Vendas</option>
+              <option>Técnico em Segurança do Trabalho</option>
+              <option>Técnico em Desenvolvimento de Sistemas</option>
+            </optgroup>
+            <option value="Ainda não sei, quero conhecer as opções">Ainda não sei — quero conhecer as opções</option>
+          </select>
+          <button class="quiz-btn-primary" id="quizSubmit">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Falar no WhatsApp
+          </button>
+          <button class="quiz-btn-back" id="quizStep3Back">← Voltar</button>
+          <p class="quiz-footer-note">🔒 Você será direcionado para o WhatsApp</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script>
     // ── Navbar scroll ─────────────────────────────────────────────
@@ -2520,6 +2831,104 @@
         window.location.href = `curso.html?slug=${encodeURIComponent(slug)}&modalidade=${encodeURIComponent(modalidade)}`;
       });
     });
+    // ── Lead Quiz Modal ───────────────────────────────────────
+    (function () {
+      const overlay      = document.getElementById('leadQuizModal');
+      const closeBtn     = document.getElementById('quizClose');
+      const progressFill = document.getElementById('quizProgressFill');
+      const steps        = [
+        document.getElementById('qStep1'),
+        document.getElementById('qStep2'),
+        document.getElementById('qStep3'),
+      ];
+      const progressWidths = ['33.33%', '66.66%', '100%'];
+      let currentStep = 0;
+      let leadData    = { nome: '', ensinoMedio: '', curso: '' };
+
+      function goToStep(n) {
+        steps[currentStep].classList.remove('active');
+        currentStep = n;
+        steps[currentStep].classList.add('active');
+        progressFill.style.width = progressWidths[n];
+      }
+
+      function openQuiz() {
+        // Reset
+        leadData = { nome: '', ensinoMedio: '', curso: '' };
+        document.getElementById('quizName').value = '';
+        document.getElementById('quizCurso').value = '';
+        document.getElementById('quizName').classList.remove('error');
+        document.getElementById('quizCurso').classList.remove('error');
+        document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+        currentStep = 0;
+        steps.forEach(s => s.classList.remove('active'));
+        steps[0].classList.add('active');
+        progressFill.style.width = progressWidths[0];
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => document.getElementById('quizName').focus(), 350);
+      }
+
+      function closeQuiz() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Abrir ao clicar no botão flutuante
+      document.getElementById('wppFloatBtn').addEventListener('click', openQuiz);
+
+      // Fechar
+      closeBtn.addEventListener('click', closeQuiz);
+      overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuiz(); });
+
+      // Passo 1 → 2 (nome)
+      document.getElementById('quizStep1Next').addEventListener('click', () => {
+        const input = document.getElementById('quizName');
+        const nome  = input.value.trim();
+        if (!nome) { input.classList.add('error'); input.focus(); return; }
+        input.classList.remove('error');
+        leadData.nome = nome;
+        goToStep(1);
+      });
+      document.getElementById('quizName').addEventListener('keydown', e => {
+        if (e.key === 'Enter') document.getElementById('quizStep1Next').click();
+      });
+      document.getElementById('quizName').addEventListener('input', () => {
+        document.getElementById('quizName').classList.remove('error');
+      });
+
+      // Passo 2 → 3 (opções ensino médio — avança ao clicar)
+      document.querySelectorAll('#qStep2 .quiz-opt').forEach(opt => {
+        opt.addEventListener('click', () => {
+          document.querySelectorAll('#qStep2 .quiz-opt').forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          leadData.ensinoMedio = opt.dataset.value;
+          setTimeout(() => goToStep(2), 280);
+        });
+      });
+      document.getElementById('quizStep2Back').addEventListener('click', () => goToStep(0));
+
+      // Passo 3 → WhatsApp (envio)
+      document.getElementById('quizSubmit').addEventListener('click', () => {
+        const select = document.getElementById('quizCurso');
+        if (!select.value) { select.classList.add('error'); return; }
+        select.classList.remove('error');
+        leadData.curso = select.value;
+
+        const msg = `Olá! Me chamo ${leadData.nome}.\n`
+                  + `${leadData.ensinoMedio}.\n`
+                  + `Tenho interesse no curso de ${leadData.curso}.\n`
+                  + `Pode me ajudar?`;
+        window.open('https://wa.me/5531971936023?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+        closeQuiz();
+      });
+      document.getElementById('quizStep3Back').addEventListener('click', () => goToStep(1));
+      document.getElementById('quizCurso').addEventListener('change', () => {
+        document.getElementById('quizCurso').classList.remove('error');
+      });
+    })();
+
   </script>
 </body>
 </html>
