@@ -2359,7 +2359,7 @@
 
         <!-- Passo 1 · Nome -->
         <div class="quiz-step active" id="qStep1">
-          <p class="quiz-step-label">Passo 1 de 3</p>
+          <p class="quiz-step-label">Passo 1 de 5</p>
           <h2 class="quiz-step-title" id="quizTitle">Olá! Como posso te chamar?</h2>
           <p class="quiz-step-sub">Para personalizar seu atendimento 😊</p>
           <input type="text" class="quiz-text-input" id="quizName" placeholder="Seu nome completo" autocomplete="off"/>
@@ -2372,7 +2372,7 @@
 
         <!-- Passo 2 · Ensino Médio -->
         <div class="quiz-step" id="qStep2">
-          <p class="quiz-step-label">Passo 2 de 3</p>
+          <p class="quiz-step-label">Passo 2 de 5</p>
           <h2 class="quiz-step-title">Você já concluiu o Ensino Médio?</h2>
           <p class="quiz-step-sub">Isso nos ajuda a indicar o melhor caminho</p>
           <div class="quiz-options">
@@ -2394,25 +2394,25 @@
 
         <!-- Passo 3 · Modalidade -->
         <div class="quiz-step" id="qStep3">
-          <p class="quiz-step-label">Passo 3 de 3</p>
+          <p class="quiz-step-label">Passo 3 de 5</p>
           <h2 class="quiz-step-title">Qual modalidade tem interesse?</h2>
           <p class="quiz-step-sub">Escolha o formato que melhor se encaixa na sua rotina</p>
           <div class="quiz-options">
-            <div class="quiz-opt quiz-opt-modalidade" data-value="Graduação EAD 100% online">
+            <div class="quiz-opt quiz-opt-modalidade" data-key="ead" data-value="Graduação EAD 100% online">
               <div class="quiz-opt-icon">💻</div>
               <div>
                 <span class="quiz-opt-text">Graduação EAD</span>
                 <span class="quiz-opt-detail">100% online</span>
               </div>
             </div>
-            <div class="quiz-opt quiz-opt-modalidade" data-value="Graduação Semipresencial com aulas no polo">
+            <div class="quiz-opt quiz-opt-modalidade" data-key="semipresencial" data-value="Graduação Semipresencial com aulas no polo">
               <div class="quiz-opt-icon">🏫</div>
               <div>
                 <span class="quiz-opt-text">Graduação Semipresencial</span>
                 <span class="quiz-opt-detail">Com aulas no polo</span>
               </div>
             </div>
-            <div class="quiz-opt quiz-opt-modalidade" data-value="Curso Técnico presencial">
+            <div class="quiz-opt quiz-opt-modalidade" data-key="tecnico" data-value="Curso Técnico presencial">
               <div class="quiz-opt-icon">⚙️</div>
               <div>
                 <span class="quiz-opt-text">Curso Técnico</span>
@@ -2421,6 +2421,30 @@
             </div>
           </div>
           <button class="quiz-btn-back" id="quizStep3Back">← Voltar</button>
+        </div>
+
+        <!-- Passo 4 · Área (dinâmico) -->
+        <div class="quiz-step" id="qStep4">
+          <p class="quiz-step-label">Passo 4 de 5</p>
+          <h2 class="quiz-step-title">Qual área tem interesse?</h2>
+          <p class="quiz-step-sub">Filtramos as melhores opções para você</p>
+          <div class="quiz-options" id="quizAreasContainer"></div>
+          <button class="quiz-btn-back" id="quizStep4Back">← Voltar</button>
+        </div>
+
+        <!-- Passo 5 · Curso (dinâmico) -->
+        <div class="quiz-step" id="qStep5">
+          <p class="quiz-step-label">Passo 5 de 5</p>
+          <h2 class="quiz-step-title">Qual curso você tem interesse?</h2>
+          <p class="quiz-step-sub">Estamos quase lá! 🎯</p>
+          <select class="quiz-select" id="quizCursoSelect">
+            <option value="">— Selecione um curso —</option>
+          </select>
+          <button class="quiz-btn-primary" id="quizFinalSubmit">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Falar no WhatsApp
+          </button>
+          <button class="quiz-btn-back" id="quizStep5Back">← Voltar</button>
           <p class="quiz-footer-note">🔒 Você será direcionado para o WhatsApp</p>
         </div>
 
@@ -2791,6 +2815,45 @@
     });
     // ── Lead Quiz Modal ───────────────────────────────────────
     (function () {
+      // ── Dados cascateados ──────────────────────────────────
+      const quizData = {
+        ead: {
+          areas: [
+            { key: 'gestao',    label: 'Gestão & Negócios', icon: '📊',
+              cursos: ['Administração','Ciências Contábeis','Gestão Comercial','Gestão Financeira','Gestão de Recursos Humanos','Logística','Marketing','Marketing Digital','Processos Gerenciais'] },
+            { key: 'sociais',   label: 'Ciências Sociais',  icon: '🏛️',
+              cursos: ['Design Gráfico','Gestão de Segurança Privada','Gestão de Segurança Pública','Gestão Pública','Serviço Social'] },
+            { key: 'tecnologia',label: 'Tecnologia',        icon: '💡',
+              cursos: ['Análise e Desenvolvimento de Sistemas','Ciência de Dados','Computação em Nuvem','Creator Digital / Influencer','Defesa Cibernética','Engenharia Civil','Engenharia de Computação','Engenharia de Produção','Engenharia Elétrica','Gestão da Tecnologia da Informação','Inteligência Artificial e Automação'] },
+          ]
+        },
+        semipresencial: {
+          areas: [
+            { key: 'saude',      label: 'Saúde',           icon: '🏥',
+              cursos: ['Biomedicina','Educação Física - Bacharelado','Educação Física - Licenciatura','Estética e Cosmética','Farmácia','Fisioterapia','Nutrição','Psicopedagogia','Radiologia','Terapia Ocupacional'] },
+            { key: 'engenharia', label: 'Engenharia',       icon: '🏗️',
+              cursos: ['Arquitetura e Urbanismo','Engenharia Civil','Engenharia de Produção','Engenharia Elétrica'] },
+            { key: 'educacao',   label: 'Educação',         icon: '📚',
+              cursos: ['Pedagogia'] },
+            { key: 'sociais',    label: 'Ciências Sociais', icon: '🏛️',
+              cursos: ['Serviço Social'] },
+          ]
+        },
+        tecnico: {
+          areas: [
+            { key: 'saude',      label: 'Saúde',     icon: '🏥',
+              cursos: ['Técnico em Análises Clínicas','Técnico em Enfermagem','Técnico em Radiologia'] },
+            { key: 'gestao',     label: 'Gestão',    icon: '📊',
+              cursos: ['Técnico em Administração','Técnico em Contabilidade','Técnico em Logística','Técnico em Recursos Humanos','Técnico em Transações Imobiliárias','Técnico em Vendas'] },
+            { key: 'seguranca',  label: 'Segurança', icon: '🦺',
+              cursos: ['Técnico em Segurança do Trabalho'] },
+            { key: 'tecnologia', label: 'Tecnologia',icon: '💻',
+              cursos: ['Técnico em Desenvolvimento de Sistemas'] },
+          ]
+        }
+      };
+
+      // ── Refs ───────────────────────────────────────────────
       const overlay      = document.getElementById('leadQuizModal');
       const closeBtn     = document.getElementById('quizClose');
       const progressFill = document.getElementById('quizProgressFill');
@@ -2798,10 +2861,12 @@
         document.getElementById('qStep1'),
         document.getElementById('qStep2'),
         document.getElementById('qStep3'),
+        document.getElementById('qStep4'),
+        document.getElementById('qStep5'),
       ];
-      const progressWidths = ['33.33%', '66.66%', '100%'];
+      const progressWidths = ['20%', '40%', '60%', '80%', '100%'];
       let currentStep = 0;
-      let leadData    = { nome: '', ensinoMedio: '', curso: '' };
+      let leadData    = { nome: '', ensinoMedio: '', modalidadeKey: '', modalidade: '', area: '', curso: '' };
 
       function goToStep(n) {
         steps[currentStep].classList.remove('active');
@@ -2811,10 +2876,10 @@
       }
 
       function openQuiz() {
-        // Reset
-        leadData = { nome: '', ensinoMedio: '', modalidade: '' };
+        leadData = { nome: '', ensinoMedio: '', modalidadeKey: '', modalidade: '', area: '', curso: '' };
         document.getElementById('quizName').value = '';
         document.getElementById('quizName').classList.remove('error');
+        document.getElementById('quizCursoSelect').classList.remove('error');
         document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
         currentStep = 0;
         steps.forEach(s => s.classList.remove('active'));
@@ -2830,15 +2895,24 @@
         document.body.style.overflow = '';
       }
 
-      // Abrir ao clicar no botão flutuante
-      document.getElementById('wppFloatBtn').addEventListener('click', openQuiz);
+      function sendToWhatsApp() {
+        const msg = `Olá! Me chamo ${leadData.nome}.\n`
+                  + `${leadData.ensinoMedio}.\n`
+                  + `Modalidade de interesse: ${leadData.modalidade}.\n`
+                  + `Área: ${leadData.area}.\n`
+                  + `Curso: ${leadData.curso}.\n`
+                  + `Pode me ajudar?`;
+        window.open('https://wa.me/5531971936023?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
+        closeQuiz();
+      }
 
-      // Fechar
+      // ── Abrir / fechar ─────────────────────────────────────
+      document.getElementById('wppFloatBtn').addEventListener('click', openQuiz);
       closeBtn.addEventListener('click', closeQuiz);
       overlay.addEventListener('click', e => { if (e.target === overlay) closeQuiz(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuiz(); });
 
-      // Passo 1 → 2 (nome)
+      // ── Passo 1 → 2 (nome) ────────────────────────────────
       document.getElementById('quizStep1Next').addEventListener('click', () => {
         const input = document.getElementById('quizName');
         const nome  = input.value.trim();
@@ -2854,7 +2928,7 @@
         document.getElementById('quizName').classList.remove('error');
       });
 
-      // Passo 2 → 3 (opções ensino médio — avança ao clicar)
+      // ── Passo 2 → 3 (ensino médio) ────────────────────────
       document.querySelectorAll('#qStep2 .quiz-opt').forEach(opt => {
         opt.addEventListener('click', () => {
           document.querySelectorAll('#qStep2 .quiz-opt').forEach(o => o.classList.remove('selected'));
@@ -2865,25 +2939,63 @@
       });
       document.getElementById('quizStep2Back').addEventListener('click', () => goToStep(0));
 
-      // Passo 3 → WhatsApp (clique na modalidade envia direto)
+      // ── Passo 3 → 4 (modalidade → popula áreas) ──────────
       document.querySelectorAll('#qStep3 .quiz-opt-modalidade').forEach(opt => {
         opt.addEventListener('click', () => {
           document.querySelectorAll('#qStep3 .quiz-opt-modalidade').forEach(o => o.classList.remove('selected'));
           opt.classList.add('selected');
-          leadData.modalidade = opt.dataset.value;
+          leadData.modalidadeKey = opt.dataset.key;
+          leadData.modalidade    = opt.dataset.value;
 
-          const msg = `Olá! Me chamo ${leadData.nome}.\n`
-                    + `${leadData.ensinoMedio}.\n`
-                    + `Tenho interesse em: ${leadData.modalidade}.\n`
-                    + `Pode me ajudar?`;
+          // Popula cards de área
+          const areas = quizData[leadData.modalidadeKey].areas;
+          const container = document.getElementById('quizAreasContainer');
+          container.innerHTML = areas.map(a =>
+            `<div class="quiz-opt quiz-opt-area" data-key="${a.key}" data-label="${a.label}">
+               <div class="quiz-opt-icon">${a.icon}</div>
+               <span class="quiz-opt-text">${a.label}</span>
+             </div>`
+          ).join('');
 
-          setTimeout(() => {
-            window.open('https://wa.me/5531971936023?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
-            closeQuiz();
-          }, 300);
+          // Bind clique nas áreas
+          container.querySelectorAll('.quiz-opt-area').forEach(aOpt => {
+            aOpt.addEventListener('click', () => {
+              container.querySelectorAll('.quiz-opt-area').forEach(o => o.classList.remove('selected'));
+              aOpt.classList.add('selected');
+              leadData.area = aOpt.dataset.label;
+              const areaKey = aOpt.dataset.key;
+
+              // Popula select de cursos
+              const areaObj  = quizData[leadData.modalidadeKey].areas.find(a => a.key === areaKey);
+              const select   = document.getElementById('quizCursoSelect');
+              select.innerHTML = '<option value="">— Selecione um curso —</option>'
+                + areaObj.cursos.map(c => `<option>${c}</option>`).join('');
+              select.classList.remove('error');
+
+              setTimeout(() => goToStep(4), 280);
+            });
+          });
+
+          setTimeout(() => goToStep(3), 280);
         });
       });
       document.getElementById('quizStep3Back').addEventListener('click', () => goToStep(1));
+
+      // ── Passo 4 → 5 (área já tratada acima no bind dinâmico)
+      document.getElementById('quizStep4Back').addEventListener('click', () => goToStep(2));
+
+      // ── Passo 5 → WhatsApp ────────────────────────────────
+      document.getElementById('quizFinalSubmit').addEventListener('click', () => {
+        const select = document.getElementById('quizCursoSelect');
+        if (!select.value) { select.classList.add('error'); return; }
+        select.classList.remove('error');
+        leadData.curso = select.value;
+        sendToWhatsApp();
+      });
+      document.getElementById('quizStep5Back').addEventListener('click', () => goToStep(3));
+      document.getElementById('quizCursoSelect').addEventListener('change', () => {
+        document.getElementById('quizCursoSelect').classList.remove('error');
+      });
     })();
 
   </script>
