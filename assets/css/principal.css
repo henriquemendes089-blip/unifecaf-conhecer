@@ -130,14 +130,10 @@
 .comparativo { position: relative; border-radius: var(--raio-g); background: #fff; box-shadow: 0 0 0 1px rgba(4, 28, 87, .05), 0 0 28px rgba(4, 28, 87, .12), 0 16px 40px rgba(4, 28, 87, .1); }
 .comparativo table { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; }
 .comparativo thead th:first-child { border-top-left-radius: var(--raio-g); }
-.comparativo thead th:last-child { border-top-right-radius: var(--raio-g); }
 .comparativo tbody tr:last-child th { border-bottom-left-radius: var(--raio-g); }
-.comparativo tbody tr:last-child td:last-child { border-bottom-right-radius: var(--raio-g); }
 .comparativo th, .comparativo td { padding: 18px 22px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--linha); }
 .comparativo thead th { font-family: var(--fonte-titulo); font-size: 1.05rem; color: #fff; }
 .comparativo thead th:first-child { background: var(--cor-suave); color: var(--texto-suave); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
-.comparativo thead th.col-tecnico { background: var(--tecnico); }
-.comparativo thead th.col-graduacao { background: var(--unifecaf); }
 .comparativo thead small { display: block; margin-top: 2px; font-family: var(--fonte); font-size: .76rem; font-weight: 500; opacity: .75; }
 .comparativo tbody th { width: 22%; font-size: .86rem; color: var(--tinta); background: var(--cor-suave); }
 .comparativo td { font-size: .93rem; }
@@ -145,12 +141,10 @@
 .comparativo__acoes td { padding-top: 22px; padding-bottom: 24px; text-align: center; }
 /* colunas inteiras na cor de cada serviço, com texto branco */
 .comparativo .col-tecnico, .comparativo td:nth-child(2) { position: relative; z-index: 2; background: transparent; color: #fff; border-bottom-color: rgba(255, 255, 255, .16); }
-/* coluna do técnico em destaque: bloco azul atrás dela, do tamanho do quadro, com cantos arredondados em cima e embaixo */
-.comparativo__destaque {
-  position: absolute; z-index: 1; top: 0; bottom: 0; border-radius: 18px; pointer-events: none;
-  background: linear-gradient(180deg, #1149c4, var(--tecnico) 30%, var(--tecnico));
-}
-.comparativo .col-graduacao, .comparativo td:nth-child(3) { background: var(--unifecaf); color: #fff; border-bottom-color: rgba(255, 255, 255, .12); }
+.comparativo .col-graduacao, .comparativo td:nth-child(3) { position: relative; z-index: 2; background: transparent; color: #fff; border-bottom-color: rgba(255, 255, 255, .12); }
+/* cada coluna colorida é um bloco atrás das células, do tamanho do quadro, com cantos arredondados em cima e embaixo */
+.comparativo__destaque { position: absolute; z-index: 1; top: 0; bottom: 0; border-radius: 18px; background: var(--tecnico); pointer-events: none; }
+.comparativo__destaque--graduacao { background: var(--unifecaf); border-radius: 18px var(--raio-g) var(--raio-g) 18px; }
 .nota-caminho { margin-top: 22px; padding: 18px 22px; border-radius: var(--raio); background: linear-gradient(90deg, rgba(10, 61, 174, .08), rgba(52, 216, 136, .14)); color: var(--tinta); text-align: center; }
 
 /* ── Destaques ──────────────────────────────────────────────── */
@@ -188,7 +182,7 @@
 @media (max-width: 700px) {
   /* no celular o quadro rola de lado */
   .comparativo { overflow-x: auto; }
-  .comparativo thead th:first-child, .comparativo thead th:last-child, .comparativo tbody tr:last-child th, .comparativo tbody tr:last-child td:last-child { border-radius: 0; }
+  .comparativo thead th:first-child, .comparativo tbody tr:last-child th { border-radius: 0; }
 }
 @media (max-width: 900px) {
   .caminhos, .destaques { grid-template-columns: 1fr; }
