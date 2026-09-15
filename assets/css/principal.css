@@ -126,7 +126,8 @@
 .numero:nth-child(even) strong { color: #13a36a; }
 
 /* ── Comparativo ────────────────────────────────────────────── */
-.comparativo { position: relative; border-radius: var(--raio-g); background: #fff; box-shadow: var(--sombra-g); }
+/* sombra leve em volta do quadro inteiro (em todos os lados) */
+.comparativo { position: relative; border-radius: var(--raio-g); background: #fff; box-shadow: 0 0 0 1px rgba(4, 28, 87, .05), 0 0 28px rgba(4, 28, 87, .12), 0 16px 40px rgba(4, 28, 87, .1); }
 .comparativo table { width: 100%; min-width: 640px; border-collapse: separate; border-spacing: 0; }
 .comparativo thead th:first-child { border-top-left-radius: var(--raio-g); }
 .comparativo thead th:last-child { border-top-right-radius: var(--raio-g); }
@@ -144,11 +145,10 @@
 .comparativo__acoes td { padding-top: 22px; padding-bottom: 24px; text-align: center; }
 /* colunas inteiras na cor de cada serviço, com texto branco */
 .comparativo .col-tecnico, .comparativo td:nth-child(2) { position: relative; z-index: 2; background: transparent; color: #fff; border-bottom-color: rgba(255, 255, 255, .16); }
-/* coluna do técnico em destaque: um bloco azul atrás dela, passando do quadro em cima e embaixo, com cantos arredondados e sombra */
+/* coluna do técnico em destaque: bloco azul atrás dela, do tamanho do quadro, com cantos arredondados em cima e embaixo */
 .comparativo__destaque {
-  position: absolute; z-index: 1; top: -14px; bottom: -14px; border-radius: 22px; pointer-events: none;
+  position: absolute; z-index: 1; top: 0; bottom: 0; border-radius: 18px; pointer-events: none;
   background: linear-gradient(180deg, #1149c4, var(--tecnico) 30%, var(--tecnico));
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .12) inset, 0 22px 46px rgba(4, 28, 87, .38), 0 0 26px rgba(4, 28, 87, .22);
 }
 .comparativo .col-graduacao, .comparativo td:nth-child(3) { background: var(--unifecaf); color: #fff; border-bottom-color: rgba(255, 255, 255, .12); }
 .nota-caminho { margin-top: 22px; padding: 18px 22px; border-radius: var(--raio); background: linear-gradient(90deg, rgba(10, 61, 174, .08), rgba(52, 216, 136, .14)); color: var(--tinta); text-align: center; }
@@ -186,9 +186,8 @@
 .cta-final__acoes { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
 @media (max-width: 700px) {
-  /* no celular o quadro rola de lado; o espaço em cima e embaixo guarda a sobra da coluna em destaque */
-  .comparativo { overflow-x: auto; padding-block: 16px; }
-  .comparativo__destaque { top: 2px; bottom: 2px; }
+  /* no celular o quadro rola de lado */
+  .comparativo { overflow-x: auto; }
   .comparativo thead th:first-child, .comparativo thead th:last-child, .comparativo tbody tr:last-child th, .comparativo tbody tr:last-child td:last-child { border-radius: 0; }
 }
 @media (max-width: 900px) {
