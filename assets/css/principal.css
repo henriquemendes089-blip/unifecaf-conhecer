@@ -108,6 +108,16 @@
 .caminho__foto-aluna { width: 250px; max-width: 45%; margin-right: -10px; filter: drop-shadow(0 16px 30px rgba(0,0,0,.3)); }
 .caminho__foto-polo { width: 230px; max-width: 42%; margin-bottom: 34px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; border: 3px solid var(--unifecaf-destaque); box-shadow: 0 16px 30px rgba(0,0,0,.35); }
 
+/* ── Seções azuis (mesmo fundo do topo) ──────────────────────── */
+.secao--azul {
+  position: relative; overflow: hidden; color: #fff;
+  background: radial-gradient(circle at 15% 10%, rgba(10, 61, 174, .55), transparent 45%), radial-gradient(circle at 90% 85%, rgba(52, 216, 136, .22), transparent 40%), var(--unifecaf);
+}
+.secao--azul .titulo em { background: linear-gradient(90deg, #7fa6ff, var(--unifecaf-destaque)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.secao--azul .eyebrow::before { background: linear-gradient(90deg, #7fa6ff, var(--unifecaf-destaque)); }
+.secao--azul .destaque { border: none; box-shadow: 0 24px 60px rgba(0, 0, 0, .28); }
+.secao--azul .video { box-shadow: 0 20px 44px rgba(0, 0, 0, .35); }
+
 /* ── Números ────────────────────────────────────────────────── */
 .faixa-numeros { position: relative; z-index: 2; margin-top: -48px; }
 .faixa-numeros .numeros { margin-bottom: 0; }
