@@ -137,7 +137,10 @@
 .comparativo tbody th { width: 22%; font-size: .86rem; color: var(--tinta); background: var(--cor-suave); }
 .comparativo td { font-size: .93rem; }
 .comparativo tbody tr:last-child th, .comparativo tbody tr:last-child td { border-bottom: none; }
-.comparativo__acoes td { padding-top: 22px; padding-bottom: 24px; }
+.comparativo__acoes td { padding-top: 22px; padding-bottom: 24px; text-align: center; }
+/* colunas inteiras na cor de cada serviço, com texto branco */
+.comparativo .col-tecnico, .comparativo td:nth-child(2) { background: var(--tecnico); color: #fff; border-bottom-color: rgba(255, 255, 255, .16); }
+.comparativo .col-graduacao, .comparativo td:nth-child(3) { background: var(--unifecaf); color: #fff; border-bottom-color: rgba(255, 255, 255, .12); }
 .nota-caminho { margin-top: 22px; padding: 18px 22px; border-radius: var(--raio); background: linear-gradient(90deg, rgba(10, 61, 174, .08), rgba(52, 216, 136, .14)); color: var(--tinta); text-align: center; }
 
 /* ── Destaques ──────────────────────────────────────────────── */
