@@ -150,6 +150,7 @@
           <p class="subtitulo">Os dois caminhos levam ao mercado de trabalho. A diferença está no tempo, no formato e no tipo de diploma.</p>
         </div>
         <div class="comparativo revelar">
+          <div class="comparativo__destaque" aria-hidden="true"></div>
           <table>
             <thead>
               <tr>
@@ -345,6 +346,22 @@
         </div>
       </article>`;
     }).join('');
+  </script>
+  <script>
+    // Posiciona o bloco azul em destaque exatamente atrás da coluna do curso técnico.
+    (function () {
+      const quadro = document.querySelector('.comparativo');
+      const destaque = quadro && quadro.querySelector('.comparativo__destaque');
+      const coluna = quadro && quadro.querySelector('th.col-tecnico');
+      if (!destaque || !coluna) return;
+      const ajustar = () => {
+        destaque.style.left = `${coluna.offsetLeft}px`;
+        destaque.style.width = `${coluna.offsetWidth}px`;
+      };
+      ajustar();
+      if ('ResizeObserver' in window) new ResizeObserver(ajustar).observe(quadro);
+      else window.addEventListener('resize', ajustar);
+    })();
   </script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/lead-quiz.js"></script>
