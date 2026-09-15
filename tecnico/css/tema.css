@@ -1,0 +1,40 @@
+/* Tema do subdomínio técnico (branco + azul #0a3dae). A estrutura fica em base.css. */
+
+:root {
+  --cor: #0a3dae;
+  --cor-brilho: #2a63e0;
+  --cor-titulo-escuro: #9fbcff;
+  --botao: var(--cor);
+  --botao-texto: #fff;
+  --botao-hover: var(--cor-escura);
+  --sombra-cor: rgba(10, 61, 174, .08);
+  --sombra-botao: rgba(10, 61, 174, .28);
+  --marca-outra: #001d49;
+  --marca-outra-destaque: #34d888;
+  --cor-escura: #072d85;
+  --cor-profunda: #041c57;
+  --cor-clara: #e8eefb;
+  --cartao-escuro: #0a3dae;
+  --cartao-claro: #2f6fe4;
+  --cor-suave: #f3f6fd;
+  --tinta: #0b1733;
+  --texto: #3b4863;
+  --texto-suave: #6b7690;
+  --linha: #e3e8f3;
+  --branco: #ffffff;
+  --whats: #25d366;
+
+  --fonte-titulo: 'Sora', system-ui, sans-serif;
+  --fonte: 'Instrument Sans', system-ui, sans-serif;
+  --raio: 16px;
+  --raio-g: 24px;
+  --sombra: 0 6px 24px var(--sombra-cor);
+  --sombra-g: 0 18px 50px rgba(4, 28, 87, .16);
+
+  --quiz-cor: var(--cor);
+  --quiz-cor-escura: var(--cor-escura);
+  --quiz-cor-texto: #fff;
+  --quiz-tinta: var(--tinta);
+  --quiz-fonte-titulo: var(--fonte-titulo);
+  --quiz-fonte: var(--fonte);
+}

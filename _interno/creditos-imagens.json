@@ -1,0 +1,249 @@
+{
+  "licenca": "Unsplash License (https://unsplash.com/license) — uso comercial gratuito, sem necessidade de atribuição.",
+  "t:comercio": {
+    "foto": "photo-1665327474695-8609946be727",
+    "autor": "Daria Trofimova",
+    "pagina": "https://unsplash.com/photos/4sYDUP2kPSA",
+    "uso": "tecnico/img/cursos/recorte-comercio.webp (fundo removido)"
+  },
+  "t:computacao-grafica": {
+    "foto": "photo-1611432579402-7037e3e2c1e4",
+    "autor": "alex starnes",
+    "pagina": "https://unsplash.com/photos/PK_t0Lrh7MM",
+    "uso": "tecnico/img/cursos/recorte-computacao-grafica.webp (fundo removido)"
+  },
+  "t:condominio": {
+    "foto": "photo-1770058428276-7ca3d2f98568",
+    "autor": "Beatriz Cattel",
+    "pagina": "https://unsplash.com/photos/QoXMdJcHYSw",
+    "uso": "tecnico/img/cursos/recorte-condominio.webp (fundo removido)"
+  },
+  "t:contabilidade": {
+    "foto": "photo-1736939666660-d4c776e0532c",
+    "autor": "TRAN NHU TUAN",
+    "pagina": "https://unsplash.com/photos/Ydnhp9z0FOU",
+    "uso": "tecnico/img/cursos/recorte-contabilidade.webp (fundo removido)"
+  },
+  "t:desenvolvimento-de-sistemas": {
+    "foto": "photo-1716471081169-cb8528a395d3",
+    "autor": "Noman Khan",
+    "pagina": "https://unsplash.com/photos/3-iPJTAp1i0",
+    "uso": "tecnico/img/cursos/recorte-desenvolvimento-de-sistemas.webp (fundo removido)"
+  },
+  "t:informatica": {
+    "foto": "photo-1659904577828-85836db5a45f",
+    "autor": "Micheal Ogungbe",
+    "pagina": "https://unsplash.com/photos/NoxSu44DTNg",
+    "uso": "tecnico/img/cursos/recorte-informatica.webp (fundo removido)"
+  },
+  "t:jogos-digitais": {
+    "foto": "photo-1723721247425-fffc7dd06aaa",
+    "autor": "Noman Khan",
+    "pagina": "https://unsplash.com/photos/5qzUjgjwzkA",
+    "uso": "tecnico/img/cursos/recorte-jogos-digitais.webp (fundo removido)"
+  },
+  "t:logistica": {
+    "foto": "photo-1690166444493-b3f5fbcd4762",
+    "autor": "Muhammad Faiz Zulkeflee",
+    "pagina": "https://unsplash.com/photos/8RWdrxNOlv8",
+    "uso": "tecnico/img/cursos/recorte-logistica.webp (fundo removido)"
+  },
+  "t:redes-de-computadores": {
+    "foto": "photo-1629836149344-3c51a772fe35",
+    "autor": "Sammyayot254",
+    "pagina": "https://unsplash.com/photos/x2uFyKJhDGE",
+    "uso": "tecnico/img/cursos/recorte-redes-de-computadores.webp (fundo removido)"
+  },
+  "t:transacoes-imobiliarias": {
+    "foto": "photo-1746813627956-64cf760e3085",
+    "autor": "PodMatch",
+    "pagina": "https://unsplash.com/photos/lXk02i7y4C8",
+    "uso": "tecnico/img/cursos/recorte-transacoes-imobiliarias.webp (fundo removido)"
+  },
+  "t:vendas": {
+    "foto": "photo-1765005204227-bf58bcdd4449",
+    "autor": "Joecalih",
+    "pagina": "https://unsplash.com/photos/8Cbk_IGBoQU",
+    "uso": "tecnico/img/cursos/recorte-vendas.webp (fundo removido)"
+  },
+  "g:gestao-publica": {
+    "foto": "photo-1742485244548-8f2ccab4b6b3",
+    "autor": "EqualStock",
+    "pagina": "https://unsplash.com/photos/mulher-trabalhando-em-um-mesa-sorrindo-kxtmtiMVM38"
+  },
+  "g:gestao-de-seguranca-privada": {
+    "foto": "photo-1652739758426-56a564265f9e",
+    "autor": "Krzysztof Hepner",
+    "pagina": "https://unsplash.com/photos/um-agente-de-seguranca-andando-por-uma-rua-_D6rTxw4HAI"
+  },
+  "g:gestao-de-seguranca-publica": {
+    "foto": "photo-1556474835-47da4fcf709c",
+    "autor": "Fred Moon",
+    "pagina": "https://unsplash.com/photos/homem-vestindo-uniforme-da-policia-foto-de-foco-seletivo-ofBf15Ps_0k"
+  },
+  "g:design-grafico": {
+    "foto": "photo-1744686909434-fd158fca1c35",
+    "autor": "TourBox",
+    "pagina": "https://unsplash.com/photos/a-artista-trabalha-em-um-tablet-digital-em-seu-estudio-GTYPaQyspYA"
+  },
+  "g:marketing": {
+    "foto": "photo-1517245386807-bb43f82c33c4",
+    "autor": "Headway",
+    "pagina": "https://unsplash.com/photos/pessoa-gesticulando-durante-a-reuniao-com-o-laptop-5QgIuuBxKwM"
+  },
+  "g:administracao": {
+    "foto": "photo-1590650213165-c1fef80648c4",
+    "autor": "LinkedIn Sales Solutions",
+    "pagina": "https://unsplash.com/photos/mulher-sorridente-de-blazer-azul-encostada-na-parede-NpyF7rjqmq4"
+  },
+  "g:ciencias-contabeis": {
+    "foto": "photo-1543269664-56d93c1b41a6",
+    "autor": "Brooke Cagle",
+    "pagina": "https://unsplash.com/photos/woman-sitting-around-table-holding-tablet-JBwcenOuRCg"
+  },
+  "g:gestao-comercial": {
+    "foto": "photo-1713946598467-fcf9332c56ea",
+    "autor": "Vitaly Gariev",
+    "pagina": "https://unsplash.com/photos/um-homem-sentado-em-uma-mesa-com-um-laptop-lNbM1c4vdCk"
+  },
+  "g:gestao-financeira": {
+    "foto": "photo-1628348068343-c6a848d2b6dd",
+    "autor": "Towfiqu barbhuiya",
+    "pagina": "https://unsplash.com/photos/pessoa-na-jaqueta-do-terno-preto-segurando-o-computador-tablet-branco-nApaSgkzaxg"
+  },
+  "g:gestao-de-recursos-humanos": {
+    "foto": "photo-1698047682091-782b1e5c6536",
+    "autor": "Resume Genius",
+    "pagina": "https://unsplash.com/photos/uma-mulher-apertando-a-mao-de-outra-mulher-sentada-em-uma-mesa-IESB4iFVuzA"
+  },
+  "g:logistica": {
+    "foto": "photo-1759272548449-7b689a81c8fb",
+    "autor": "Haris Illahi",
+    "pagina": "https://unsplash.com/photos/dois-trabalhadores-com-capacetes-discutem-planos-perto-de-conteineres-V89PqZteK-k"
+  },
+  "g:marketing-digital": {
+    "foto": "photo-1563986768494-4dee2763ff3f",
+    "autor": "Austin Distel",
+    "pagina": "https://unsplash.com/photos/pessoa-usando-laptop-e-smartphone-tLZhFRLj6nY"
+  },
+  "g:processos-gerenciais": {
+    "foto": "photo-1538688423619-a81d3f23454b",
+    "autor": "Campaign Creators",
+    "pagina": "https://unsplash.com/photos/mulher-sentada-a-mesa-e6n7uoEnYbA"
+  },
+  "g:analise-e-desenvolvimento-de-sistemas": {
+    "foto": "photo-1534665482403-a909d0d97c67",
+    "autor": "Danial Igdery",
+    "pagina": "https://unsplash.com/photos/programacao-de-homem-usando-laptop-FCHlYvR5gJI"
+  },
+  "g:ciencia-de-dados": {
+    "foto": "photo-1569012871812-f38ee64cd54c",
+    "autor": "Kelly Sikkema",
+    "pagina": "https://unsplash.com/photos/mulher-vestindo-camiseta-preta-segurando-o-teclado-branco-do-computador-YK0HPwWDJ1I"
+  },
+  "g:computacao-em-nuvem": {
+    "foto": "photo-1573164713988-8665fc963095",
+    "autor": "Christina @ wocintechchat.com",
+    "pagina": "https://unsplash.com/photos/mulher-no-topo-preto-usando-o-portatil-do-surface-glRqyWJgUeY"
+  },
+  "g:defesa-cibernetica": {
+    "foto": "photo-1590065707046-4fde65275b2e",
+    "autor": "Dan Nelson",
+    "pagina": "https://unsplash.com/photos/pessoa-usando-macbook-pro-na-mesa-branca-AvSFPw5Tp68"
+  },
+  "g:gestao-da-tecnologia-da-informacao": {
+    "foto": "photo-1551434678-e076c223a692",
+    "autor": "Tim van der Kuip",
+    "pagina": "https://unsplash.com/photos/homem-sentado-na-cadeira-vestindo-camisa-cinza-de-manga-comprida-usando-o-apple-magic-keyboard-CPs2X8JYmS8"
+  },
+  "g:creator-digital-influencer": {
+    "foto": "photo-1664277497095-424e085175e8",
+    "autor": "Videodeck .co",
+    "pagina": "https://unsplash.com/photos/uma-pessoa-sentada-em-uma-mesa-GRUhkcD9k8o"
+  },
+  "g:inteligencia-artificial-e-automacao-digital": {
+    "foto": "photo-1581090121489-ff9b54bbee43",
+    "autor": "ThisisEngineering",
+    "pagina": "https://unsplash.com/photos/homem-na-camiseta-azul-do-pescoco-da-tripulacao-em-pe-ao-lado-da-mulher-na-regata-laranja-H4ClLKv3pqw"
+  },
+  "g:biomedicina": {
+    "foto": "photo-1582719471384-894fbb16e074",
+    "autor": "National Cancer Institute",
+    "pagina": "https://unsplash.com/photos/woman-in-white-robe-sitting-on-black-office-rolling-chair-uVnRa6mOLOM"
+  },
+  "g:educacao-fisica-bacharelado": {
+    "foto": "photo-1738523686578-f18348c8292b",
+    "autor": "Sergio Kian",
+    "pagina": "https://unsplash.com/photos/um-homem-de-camisa-branca-esta-em-pe-em-um-ginasio-NC7ynqvd48A"
+  },
+  "g:educacao-fisica-licenciatura": {
+    "foto": "photo-1526232761682-d26e03ac148e",
+    "autor": "Adrià Crehuet Cano",
+    "pagina": "https://unsplash.com/photos/criancas-jogando-futebol-LIhB1_mAGhY"
+  },
+  "g:estetica-e-cosmetica": {
+    "foto": "photo-1570172619644-dfd03ed5d881",
+    "autor": "Rosa Rafael",
+    "pagina": "https://unsplash.com/photos/mulher-recebendo-tratamento-de-mascara-facial-no-spa-Pe9IXUuC6QU"
+  },
+  "g:farmacia": {
+    "foto": "photo-1580281657527-47f249e8f4df",
+    "autor": "National Cancer Institute",
+    "pagina": "https://unsplash.com/photos/farmaceutico-tentando-pegar-o-remedio-na-prateleira-byGTytEGjBo"
+  },
+  "g:fisioterapia": {
+    "foto": "photo-1706353399656-210cca727a33",
+    "autor": "Marc Zeman",
+    "pagina": "https://unsplash.com/photos/uma-mulher-recebendo-uma-massagem-nas-costas-de-um-homem-uLWW09LLG04"
+  },
+  "g:nutricao": {
+    "foto": "photo-1675270745543-883eae091a5c",
+    "autor": "B Y G",
+    "pagina": "https://unsplash.com/photos/um-homem-e-uma-mulher-sentados-em-uma-mesa-com-um-prato-de-frutas-ntbz4qiuqCA"
+  },
+  "g:psicopedagogia": {
+    "foto": "photo-1675259425125-f8c8bcf097c8",
+    "autor": "Shannia Christanty",
+    "pagina": "https://unsplash.com/photos/uma-mulher-e-uma-crianca-sentados-em-uma-mesa-3MUAxuT6qhI"
+  },
+  "g:radiologia": {
+    "foto": "photo-1666214280250-41f16ba24a26",
+    "autor": "Accuray",
+    "pagina": "https://unsplash.com/photos/pessoa-digitando-em-monitores-medicos-6pQPFuD7nJY"
+  },
+  "g:terapia-ocupacional": {
+    "foto": "photo-1762955911431-4c44c7c3f408",
+    "autor": "Age Cymru",
+    "pagina": "https://unsplash.com/photos/cuidador-que-ajuda-o-par-idoso-com-coloracao-bSXk1lOp8T0"
+  },
+  "g:arquitetura-e-urbanismo": {
+    "foto": "photo-1581090587512-8bfdd1119f94",
+    "autor": "ThisisEngineering",
+    "pagina": "https://unsplash.com/photos/mulher-na-camisa-vermelha-sem-mangas-que-segura-o-papel-branco-da-impressora-zhXR20LFowA"
+  },
+  "g:engenharia-civil": {
+    "foto": "photo-1626885930974-4b69aa21bbf9",
+    "autor": "Joe Holland",
+    "pagina": "https://unsplash.com/photos/dois-trabalhadores-da-construcao-civil-com-coletes-de-seguranca-no-local-80zZ1s24Nag"
+  },
+  "g:engenharia-de-producao": {
+    "foto": "photo-1581091224003-01e7c2e69f6f",
+    "autor": "ThisisEngineering",
+    "pagina": "https://unsplash.com/photos/mulher-na-camisa-branca-de-manga-comprida-e-calcas-pretas-vestindo-oculos-pretos-emoldurados-ovWUKV1btXk"
+  },
+  "g:engenharia-eletrica": {
+    "foto": "photo-1621905251189-08b45d6a269e",
+    "autor": "Emmanuel Ikwuegbu",
+    "pagina": "https://unsplash.com/photos/eletricista-instalando-fiacao-com-capacete-amarelo-_2AlIm-F6pw"
+  },
+  "g:pedagogia": {
+    "foto": "photo-1780844824360-6fced13c828f",
+    "autor": "Ruslan Horovyi",
+    "pagina": "https://unsplash.com/photos/a-girl-writes-on-a-blackboard-while-a-woman-watches-ne0vdRjN_hw"
+  },
+  "g:servico-social": {
+    "foto": "photo-1596450514537-fae68a81346b",
+    "autor": "Ashwini Chaudhary (Monty)",
+    "pagina": "https://unsplash.com/photos/homem-em-camisa-roxa-e-calcas-cinzas-sentado-no-chao-m9rw_cTRVyI"
+  }
+}

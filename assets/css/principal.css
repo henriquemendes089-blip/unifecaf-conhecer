@@ -1,0 +1,182 @@
+/* Tema do portal principal — mescla das identidades técnico (#0a3dae) e UniFECAF (#001d49 / #34d888). A estrutura fica em base.css. */
+
+:root {
+  --cor: #0a3dae;
+  --cor-brilho: #2a63e0;
+  --cor-titulo-escuro: #9fbcff;
+  --botao: var(--cor);
+  --botao-texto: #fff;
+  --botao-hover: var(--cor-escura);
+  --sombra-cor: rgba(10, 61, 174, .08);
+  --sombra-botao: rgba(10, 61, 174, .28);
+  --marca-outra: #001d49;
+  --marca-outra-destaque: #34d888;
+  --cor-escura: #072d85;
+  --cor-profunda: #041c57;
+  --cor-clara: #e8eefb;
+  --cor-suave: #f3f6fd;
+  --tinta: #0b1733;
+  --texto: #3b4863;
+  --texto-suave: #6b7690;
+  --linha: #e3e8f3;
+  --branco: #ffffff;
+  --whats: #25d366;
+
+  --fonte-titulo: 'Sora', system-ui, sans-serif;
+  --fonte: 'Instrument Sans', system-ui, sans-serif;
+  --raio: 16px;
+  --raio-g: 24px;
+  --sombra: 0 6px 24px var(--sombra-cor);
+  --sombra-g: 0 18px 50px rgba(4, 28, 87, .16);
+
+  --quiz-cor: var(--cor);
+  --quiz-cor-escura: var(--cor-escura);
+  --quiz-cor-texto: #fff;
+  --quiz-tinta: var(--tinta);
+  --quiz-fonte-titulo: var(--fonte-titulo);
+  --quiz-fonte: var(--fonte);
+}
+
+:root {
+  --tecnico: #0a3dae;
+  --tecnico-profundo: #041c57;
+  --unifecaf: #001d49;
+  --unifecaf-destaque: #34d888;
+
+  --cor: #001d49;
+  --cor-brilho: #0a3dae;
+  --cor-escura: #00153a;
+  --cor-profunda: #000f2b;
+  --cor-clara: #e7edf8;
+  --cor-suave: #f4f7fb;
+  --cor-titulo-escuro: #34d888;
+  --botao: var(--tecnico);
+  --botao-texto: #fff;
+  --botao-hover: #072d85;
+  --sombra-cor: rgba(0, 29, 73, .08);
+  --sombra-botao: rgba(10, 61, 174, .28);
+
+  --quiz-cor: var(--tecnico);
+  --quiz-cor-escura: #072d85;
+  --quiz-cor-texto: #fff;
+}
+
+
+
+.titulo em { background: linear-gradient(90deg, var(--tecnico), #13a36a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.eyebrow { color: var(--tecnico); }
+.eyebrow::before { background: linear-gradient(90deg, var(--tecnico), var(--unifecaf-destaque)); }
+.btn--verde { background: var(--unifecaf-destaque); color: var(--unifecaf); box-shadow: 0 8px 22px rgba(52, 216, 136, .35); }
+.btn--verde:hover { background: #22bd71; }
+
+.marca-portal { display: inline-flex; align-items: center; gap: 12px; }
+.marca-portal img { height: 40px; width: auto; }
+.marca-portal__divisor { width: 1px; height: 30px; background: var(--linha); }
+.marca-portal__unifecaf { font-family: var(--fonte-titulo); font-weight: 800; font-size: .95rem; line-height: 1.05; color: var(--unifecaf); }
+.marca-portal__unifecaf small { display: block; font-family: var(--fonte); font-size: .64rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
+
+.topo__telefones { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.topo__telefones strong { color: #fff; font-weight: 600; }
+.ponto-cor { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+
+/* ── Hero de escolha ────────────────────────────────────────── */
+.escolha { position: relative; overflow: hidden; padding: 64px 0 96px; background: radial-gradient(circle at 15% 10%, rgba(10, 61, 174, .55), transparent 45%), radial-gradient(circle at 90% 85%, rgba(52, 216, 136, .22), transparent 40%), var(--unifecaf); color: #fff; }
+.escolha__cabecalho { max-width: 760px; margin: 0 auto 40px; text-align: center; }
+.escolha__cabecalho .slide__selo { margin-bottom: 16px; }
+.escolha h1 { font-family: var(--fonte-titulo); font-size: clamp(2.1rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.08; }
+.escolha h1 em { font-style: normal; background: linear-gradient(90deg, #7fa6ff, var(--unifecaf-destaque)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.escolha__cabecalho p { margin-top: 16px; font-size: 1.08rem; color: rgba(255,255,255,.8); }
+
+.caminhos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.caminho { position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; min-height: 520px; padding: 34px 34px 0; border-radius: 30px; box-shadow: 0 30px 70px rgba(0,0,0,.35); transition: transform .3s; }
+.caminho:hover { transform: translateY(-6px); }
+.caminho--tecnico { background: linear-gradient(150deg, #2a63e0, var(--tecnico) 45%, var(--tecnico-profundo)); }
+.caminho--graduacao { background: linear-gradient(150deg, #0b3f8a, var(--unifecaf) 55%, #000f2b); border: 1.5px solid rgba(52, 216, 136, .35); }
+.caminho::before { content: ''; position: absolute; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; border: 44px solid rgba(255,255,255,.06); }
+.caminho--graduacao::before { border-color: rgba(52, 216, 136, .1); }
+.caminho__selo { position: relative; justify-self: start; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.caminho--graduacao .caminho__selo { background: var(--unifecaf-destaque); color: var(--unifecaf); }
+.caminho h2 { position: relative; margin: 16px 0 10px; font-family: var(--fonte-titulo); font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.12; }
+.caminho p { position: relative; max-width: 420px; color: rgba(255,255,255,.82); }
+.caminho .lista-check { position: relative; margin: 20px 0 24px; }
+.caminho .lista-check li { color: #fff; font-weight: 500; font-size: .95rem; }
+.caminho .lista-check li::before { background-color: rgba(255,255,255,.2); }
+.caminho--graduacao .lista-check li::before { background-color: var(--unifecaf-destaque); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23001d49'%3E%3Cpath fill-rule='evenodd' d='M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z' clip-rule='evenodd'/%3E%3C/svg%3E"); }
+.caminho__acoes { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px; }
+.caminho__rodape { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.caminho__rodape .caminho__acoes { padding-bottom: 34px; }
+.caminho__foto-aluna { width: 250px; max-width: 45%; margin-right: -10px; filter: drop-shadow(0 16px 30px rgba(0,0,0,.3)); }
+.caminho__foto-polo { width: 230px; max-width: 42%; margin-bottom: 34px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; border: 3px solid var(--unifecaf-destaque); box-shadow: 0 16px 30px rgba(0,0,0,.35); }
+
+/* ── Números ────────────────────────────────────────────────── */
+.faixa-numeros { position: relative; z-index: 2; margin-top: -48px; }
+.faixa-numeros .numeros { margin-bottom: 0; }
+.faixa-numeros .numero { box-shadow: var(--sombra-g); border: none; }
+.numero:nth-child(odd) strong { color: var(--tecnico); }
+.numero:nth-child(even) strong { color: #13a36a; }
+
+/* ── Comparativo ────────────────────────────────────────────── */
+.comparativo { overflow-x: auto; border-radius: var(--raio-g); background: #fff; box-shadow: var(--sombra-g); }
+.comparativo table { width: 100%; min-width: 640px; border-collapse: collapse; }
+.comparativo th, .comparativo td { padding: 18px 22px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--linha); }
+.comparativo thead th { font-family: var(--fonte-titulo); font-size: 1.05rem; color: #fff; }
+.comparativo thead th:first-child { background: var(--cor-suave); color: var(--texto-suave); font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.comparativo thead th.col-tecnico { background: var(--tecnico); }
+.comparativo thead th.col-graduacao { background: var(--unifecaf); }
+.comparativo thead small { display: block; margin-top: 2px; font-family: var(--fonte); font-size: .76rem; font-weight: 500; opacity: .75; }
+.comparativo tbody th { width: 22%; font-size: .86rem; color: var(--tinta); background: var(--cor-suave); }
+.comparativo td { font-size: .93rem; }
+.comparativo tbody tr:last-child th, .comparativo tbody tr:last-child td { border-bottom: none; }
+.comparativo__acoes td { padding-top: 22px; padding-bottom: 24px; }
+.nota-caminho { margin-top: 22px; padding: 18px 22px; border-radius: var(--raio); background: linear-gradient(90deg, rgba(10, 61, 174, .08), rgba(52, 216, 136, .14)); color: var(--tinta); text-align: center; }
+
+/* ── Destaques ──────────────────────────────────────────────── */
+.destaques { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.destaque { padding: 30px; border-radius: var(--raio-g); background: #fff; border: 1px solid var(--linha); }
+.destaque__topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.destaque__topo h3 { font-family: var(--fonte-titulo); font-size: 1.2rem; color: var(--tinta); }
+.destaque__marca { padding: 5px 10px; border-radius: 999px; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--tecnico); }
+.destaque--graduacao .destaque__marca { background: var(--unifecaf); color: var(--unifecaf-destaque); }
+.destaque ul { display: grid; }
+.destaque li a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 4px; border-bottom: 1px solid var(--linha); color: var(--tinta); font-weight: 500; transition: color .2s, padding .2s; }
+.destaque li:last-child a { border-bottom: none; }
+.destaque li a small { display: block; font-size: .78rem; font-weight: 400; color: var(--texto-suave); }
+.destaque li a svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--tecnico); }
+.destaque--graduacao li a svg { color: #13a36a; }
+.destaque li a:hover { color: var(--tecnico); padding-left: 10px; }
+.destaque--graduacao li a:hover { color: #13a36a; }
+.destaque .btn { margin-top: 18px; }
+
+/* ── Unidades do portal ─────────────────────────────────────── */
+.unidade__servicos { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
+.unidade__servicos span { padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 700; color: #fff; background: var(--tecnico); }
+.unidade__servicos span.unifecaf { background: var(--unifecaf); color: var(--unifecaf-destaque); }
+.unidade__foto { height: 200px; overflow: hidden; background: linear-gradient(145deg, #2a63e0, var(--tecnico) 55%, var(--tecnico-profundo)); display: grid; place-items: center; color: rgba(255,255,255,.85); }
+.unidade__foto img { width: 100%; height: 100%; object-fit: cover; }
+.unidade__foto svg { width: 54px; height: 54px; }
+
+/* ── CTA final ──────────────────────────────────────────────── */
+.cta-final { position: relative; overflow: hidden; padding: 56px 40px; border-radius: 32px; text-align: center; color: #fff; background: linear-gradient(115deg, var(--tecnico-profundo), var(--tecnico) 45%, var(--unifecaf) 70%, #0b3f8a); }
+.cta-final::after { content: ''; position: absolute; left: 50%; bottom: -220px; width: 520px; height: 320px; transform: translateX(-50%); border-radius: 50%; background: rgba(52, 216, 136, .18); filter: blur(40px); }
+.cta-final h2 { position: relative; font-family: var(--fonte-titulo); font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.2; }
+.cta-final p { position: relative; margin: 12px auto 26px; max-width: 560px; color: rgba(255,255,255,.8); }
+.cta-final__acoes { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+@media (max-width: 900px) {
+  .caminhos, .destaques { grid-template-columns: 1fr; }
+  .caminho { min-height: 0; padding: 28px 24px 0; }
+  .caminho__foto-aluna { width: 170px; }
+  .caminho__foto-polo { width: 150px; margin-bottom: 28px; }
+  .caminho__rodape .caminho__acoes { padding-bottom: 28px; }
+  .faixa-numeros { margin-top: -36px; }
+  .cta-final { padding: 40px 22px; }
+}
+@media (max-width: 560px) {
+  .caminho__rodape { flex-direction: column; align-items: stretch; }
+  .caminho__rodape .caminho__acoes { padding-bottom: 0; }
+  .caminho__acoes .btn { flex: 1 1 100%; }
+  .caminho__foto-aluna { align-self: center; max-width: 60%; margin: 0; }
+  .caminho__foto-polo { display: none; }
+  .caminho--graduacao .caminho__rodape { padding-bottom: 28px; }
+  .destaque { padding: 24px 18px; }
+}

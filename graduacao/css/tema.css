@@ -1,0 +1,68 @@
+/* Tema do subdomínio UniFECAF (branco + #001d49 + #34d888). A estrutura fica em base.css. */
+
+:root {
+  --cor: #001d49;
+  --cor-brilho: #0b3f8a;
+  --cor-escura: #00153a;
+  --cor-profunda: #000f2b;
+  --cor-clara: #dcf6e8;
+  --cor-suave: #f2f8f6;
+  --cor-titulo-escuro: #34d888;
+  --destaque: #34d888;
+  --destaque-escuro: #22bd71;
+  --botao: var(--destaque);
+  --botao-texto: #001d49;
+  --botao-hover: var(--destaque-escuro);
+  --sombra-cor: rgba(0, 29, 73, .08);
+  --sombra-botao: rgba(52, 216, 136, .35);
+  --marca-outra: #0a3dae;
+  --marca-outra-destaque: #ffffff;
+  --tinta: #0b1733;
+  --texto: #3b4863;
+  --texto-suave: #6b7690;
+  --linha: #e2e8ee;
+  --branco: #ffffff;
+  --whats: #25d366;
+
+  --fonte-titulo: 'Sora', system-ui, sans-serif;
+  --fonte: 'Instrument Sans', system-ui, sans-serif;
+  --raio: 16px;
+  --raio-g: 24px;
+  --sombra: 0 6px 24px var(--sombra-cor);
+  --sombra-g: 0 18px 50px rgba(0, 15, 43, .16);
+
+  --quiz-cor: var(--destaque);
+  --quiz-cor-escura: var(--destaque-escuro);
+  --quiz-cor-texto: #001d49;
+  --quiz-tinta: var(--tinta);
+  --quiz-fonte-titulo: var(--fonte-titulo);
+  --quiz-fonte: var(--fonte);
+}
+
+.titulo em { color: var(--cor); background: linear-gradient(transparent 60%, rgba(52, 216, 136, .45) 60%); padding: 0 2px; }
+.secao--azul .titulo em, .slide__titulo em { background: none; padding: 0; color: var(--destaque); }
+.eyebrow::before { background: var(--destaque); }
+.btn--branco { color: var(--cor); }
+.aba.ativa { background: var(--cor); border-color: var(--cor); color: #fff; }
+.link-marca span { background: var(--marca-outra); }
+.lista-check li::before { background-color: var(--destaque); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23001d49'%3E%3Cpath fill-rule='evenodd' d='M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z' clip-rule='evenodd'/%3E%3C/svg%3E"); }
+.numero { border-top: 4px solid var(--destaque); }
+.slide::before { border-color: rgba(52, 216, 136, .1); }
+.slide::after { background: rgba(52, 216, 136, .08); }
+.faixa-teste__icone { background: var(--destaque); color: var(--cor); }
+.cartao-matricula .btn--branco { background: var(--destaque); color: var(--cor); }
+.rodape__redes a:hover { background: var(--destaque); color: var(--cor); }
+.passo::before { background: var(--destaque); color: var(--cor); }
+.card-curso__tipo { background: var(--destaque); color: var(--cor); }
+.banner-bolsa__indique { border-color: rgba(52, 216, 136, .5); }
+.espaco-midia { border-color: rgba(0, 29, 73, .28); }
+
+/* ── Marca em texto (sem logo oficial do polo) ──────────────── */
+.marca-texto { display: inline-flex; align-items: center; gap: 10px; color: var(--cor); }
+.marca-texto__icone { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--cor); color: var(--destaque); }
+.marca-texto__icone svg { width: 24px; height: 24px; }
+.marca-texto strong { display: block; font-family: var(--fonte-titulo); font-size: 1.28rem; font-weight: 800; line-height: 1; letter-spacing: -.01em; }
+.marca-texto small { display: block; margin-top: 3px; font-size: .72rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
+.rodape .marca-texto { color: #fff; }
+.rodape .marca-texto small { color: rgba(255,255,255,.6); }
+.rodape .marca-texto__icone { background: var(--destaque); color: var(--cor); }
