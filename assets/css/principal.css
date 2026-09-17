@@ -146,8 +146,8 @@
 .destaque { padding: 30px; border-radius: var(--raio-g); background: #fff; border: 1px solid var(--linha); }
 .destaque__topo { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
 .destaque__topo h3 { font-family: var(--fonte-titulo); font-size: 1.2rem; color: var(--tinta); }
-.destaque__marca { padding: 5px 10px; border-radius: 999px; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--tecnico); }
-.destaque--graduacao .destaque__marca { background: var(--unifecaf); color: var(--unifecaf-destaque); }
+.destaque__logo { flex-shrink: 0; width: auto; height: 36px; }
+.destaque__logo--unifecaf { height: 24px; }
 .destaque ul { display: grid; }
 .destaque li a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 13px 4px; border-bottom: 1px solid var(--linha); color: var(--tinta); font-weight: 500; transition: color .2s, padding .2s; }
 .destaque li:last-child a { border-bottom: none; }
