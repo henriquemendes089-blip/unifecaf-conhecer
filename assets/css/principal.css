@@ -88,25 +88,22 @@
 .escolha__cabecalho p { margin-top: 16px; font-size: 1.08rem; color: rgba(255,255,255,.8); }
 
 .caminhos { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.caminho { position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; min-height: 520px; padding: 34px 34px 0; border-radius: 30px; box-shadow: 0 30px 70px rgba(0,0,0,.35); transition: transform .3s; }
+.caminho { position: relative; overflow: hidden; display: grid; grid-template-rows: auto 1fr auto; justify-items: center; padding: 38px 34px; text-align: center; border-radius: 30px; box-shadow: 0 30px 70px rgba(0,0,0,.35); transition: transform .3s; }
 .caminho:hover { transform: translateY(-6px); }
 .caminho--tecnico { background: linear-gradient(150deg, #2a63e0, var(--tecnico) 45%, var(--tecnico-profundo)); }
 .caminho--graduacao { background: linear-gradient(150deg, #0b3f8a, var(--unifecaf) 55%, #000f2b); border: 1.5px solid rgba(52, 216, 136, .35); }
 .caminho::before { content: ''; position: absolute; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; border: 44px solid rgba(255,255,255,.06); }
 .caminho--graduacao::before { border-color: rgba(52, 216, 136, .1); }
-.caminho__selo { position: relative; justify-self: start; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.caminho__selo { position: relative; justify-self: center; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .caminho--graduacao .caminho__selo { background: var(--unifecaf-destaque); color: var(--unifecaf); }
 .caminho h2 { position: relative; margin: 16px 0 10px; font-family: var(--fonte-titulo); font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.12; }
-.caminho p { position: relative; max-width: 420px; color: rgba(255,255,255,.82); }
-.caminho .lista-check { position: relative; margin: 20px 0 24px; }
-.caminho .lista-check li { color: #fff; font-weight: 500; font-size: .95rem; }
+.caminho p { position: relative; max-width: 420px; margin-inline: auto; color: rgba(255,255,255,.82); }
+.caminho .lista-check { position: relative; justify-items: center; margin: 22px 0 26px; }
+.caminho .lista-check li { color: #fff; font-weight: 500; font-size: .95rem; text-align: left; }
 .caminho .lista-check li::before { background-color: rgba(255,255,255,.2); }
 .caminho--graduacao .lista-check li::before { background-color: var(--unifecaf-destaque); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23001d49'%3E%3Cpath fill-rule='evenodd' d='M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z' clip-rule='evenodd'/%3E%3C/svg%3E"); }
-.caminho__acoes { position: relative; z-index: 2; display: flex; flex-wrap: wrap; gap: 10px; }
-.caminho__rodape { position: relative; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
-.caminho__rodape .caminho__acoes { padding-bottom: 34px; }
-.caminho__foto-aluna { width: 250px; max-width: 45%; margin-right: -10px; filter: drop-shadow(0 16px 30px rgba(0,0,0,.3)); }
-.caminho__foto-polo { width: 230px; max-width: 42%; margin-bottom: 34px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px; border: 3px solid var(--unifecaf-destaque); box-shadow: 0 16px 30px rgba(0,0,0,.35); }
+.caminho__acoes { position: relative; z-index: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.caminho__rodape { position: relative; display: flex; justify-content: center; }
 
 /* ── Seções azuis (mesmo fundo do topo) ──────────────────────── */
 .secao--azul {
@@ -186,19 +183,12 @@
 }
 @media (max-width: 900px) {
   .caminhos, .destaques { grid-template-columns: 1fr; }
-  .caminho { min-height: 0; padding: 28px 24px 0; }
-  .caminho__foto-aluna { width: 170px; }
-  .caminho__foto-polo { width: 150px; margin-bottom: 28px; }
-  .caminho__rodape .caminho__acoes { padding-bottom: 28px; }
-  .faixa-numeros { margin-top: -36px; }
+  .caminho { padding: 30px 22px; }
+      .faixa-numeros { margin-top: -36px; }
   .cta-final { padding: 40px 22px; }
 }
 @media (max-width: 560px) {
-  .caminho__rodape { flex-direction: column; align-items: stretch; }
-  .caminho__rodape .caminho__acoes { padding-bottom: 0; }
+  .caminho__rodape { justify-self: stretch; }
   .caminho__acoes .btn { flex: 1 1 100%; }
-  .caminho__foto-aluna { align-self: center; max-width: 60%; margin: 0; }
-  .caminho__foto-polo { display: none; }
-  .caminho--graduacao .caminho__rodape { padding-bottom: 28px; }
-  .destaque { padding: 24px 18px; }
+      .destaque { padding: 24px 18px; }
 }
