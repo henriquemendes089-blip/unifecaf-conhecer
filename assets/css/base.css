@@ -99,6 +99,10 @@ button { font: inherit; cursor: pointer; }
 .slide__acoes { display: flex; flex-wrap: wrap; gap: 12px; }
 /* Recorte da pessoa: cresce até a altura máxima sem sair da própria coluna (nunca invade texto ou botões) */
 .slide__imagem { align-self: end; justify-self: center; width: auto; height: auto; max-width: 100%; max-height: 580px; margin-top: 32px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.25)); }
+/* Mascote recortado com um cartão ao lado (hero da UniFECAF) */
+.slide__mascote { position: relative; align-self: end; justify-self: center; margin-top: 32px; }
+.slide__mascote img { width: auto; height: auto; max-width: 100%; max-height: 580px; filter: drop-shadow(0 20px 40px rgba(0,0,0,.3)); }
+.slide__mascote .moldura__cartao { left: -28px; bottom: 96px; }
 /* Pontos do carrossel: abaixo dos botões, na coluna do texto, fora da área coberta pela busca */
 .hero__controles { position: absolute; left: max(20px, calc((100% - 1200px) / 2 + 20px)); bottom: 62px; z-index: 2; display: flex; gap: 8px; }
 .hero__ponto { width: 10px; height: 10px; border-radius: 999px; border: none; background: rgba(255,255,255,.4); transition: width .3s, background .3s; }
@@ -351,6 +355,9 @@ input.campo { background-image: none; padding-right: 16px; }
   .slide__imagem { max-height: 440px; margin-top: 20px; }
   .hero__controles { left: 0; right: 0; bottom: 52px; width: max-content; margin-inline: auto; padding: 7px 10px; border-radius: 999px; background: rgba(4, 28, 87, .45); backdrop-filter: blur(6px); }
   .slide--moldura .moldura { margin-bottom: 112px; }
+  .slide__mascote { margin-top: 20px; }
+  .slide__mascote img { max-height: 420px; }
+  .slide__mascote .moldura__cartao { left: -8px; bottom: 96px; }
   .busca__caixa { grid-template-columns: 1fr; }
   .busca__rotulo { padding: 0; }
   .unidades, .diferenciais, .info-curso { grid-template-columns: 1fr; }
