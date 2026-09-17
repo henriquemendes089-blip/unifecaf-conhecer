@@ -75,9 +75,6 @@
 .marca-portal__unifecaf { font-family: var(--fonte-titulo); font-weight: 800; font-size: .95rem; line-height: 1.05; color: var(--unifecaf); }
 .marca-portal__unifecaf small { display: block; font-family: var(--fonte); font-size: .64rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--texto-suave); }
 
-.topo__telefones { display: flex; flex-wrap: wrap; gap: 6px 18px; }
-.topo__telefones strong { color: #fff; font-weight: 600; }
-.ponto-cor { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
 
 /* ── Hero de escolha ────────────────────────────────────────── */
 .escolha { position: relative; overflow: hidden; padding: 64px 0 96px; background: radial-gradient(circle at 15% 10%, rgba(10, 61, 174, .55), transparent 45%), radial-gradient(circle at 90% 85%, rgba(52, 216, 136, .22), transparent 40%), var(--unifecaf); color: #fff; }

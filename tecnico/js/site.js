@@ -24,16 +24,6 @@
     });
   }
 
-  document.querySelectorAll('.dropdown').forEach(dd => {
-    const botao = dd.querySelector('.dropdown__botao');
-    botao.addEventListener('click', e => {
-      e.stopPropagation();
-      const aberto = dd.classList.toggle('aberto');
-      botao.setAttribute('aria-expanded', String(aberto));
-    });
-  });
-  document.addEventListener('click', () => document.querySelectorAll('.dropdown.aberto').forEach(dd => dd.classList.remove('aberto')));
-
   document.querySelectorAll('[data-carrossel]').forEach(carrossel => {
     const trilho = carrossel.querySelector('.hero__trilho');
     const slides = [...trilho.children];
