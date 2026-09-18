@@ -89,8 +89,16 @@
 .caminho:hover { transform: translateY(-6px); }
 .caminho--tecnico { background: linear-gradient(150deg, #2a63e0, var(--tecnico) 45%, var(--tecnico-profundo)); }
 .caminho--graduacao { background: linear-gradient(150deg, #0b3f8a, var(--unifecaf) 55%, #000f2b); border: 1.5px solid rgba(52, 216, 136, .35); }
-.caminho::before { content: ''; position: absolute; right: -90px; top: -90px; width: 300px; height: 300px; border-radius: 50%; border: 44px solid rgba(255,255,255,.06); }
-.caminho--graduacao::before { border-color: rgba(52, 216, 136, .1); }
+/* símbolo de cada marca bem clarinho no canto do cartão (no lugar do antigo círculo) */
+.caminho::before {
+  content: ''; position: absolute; right: -34px; top: -26px; width: 230px; height: 286px; pointer-events: none;
+  background: rgba(255, 255, 255, .07);
+  -webkit-mask: url(../img/simbolo-conhecer.webp) center / contain no-repeat; mask: url(../img/simbolo-conhecer.webp) center / contain no-repeat;
+}
+.caminho--graduacao::before {
+  right: -44px; top: -40px; width: 270px; height: 270px; background: rgba(52, 216, 136, .1);
+  -webkit-mask-image: url(../img/simbolo-unifecaf.webp); mask-image: url(../img/simbolo-unifecaf.webp);
+}
 .caminho__selo { position: relative; justify-self: center; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .caminho--graduacao .caminho__selo { background: var(--unifecaf-destaque); color: var(--unifecaf); }
 .caminho h2 { position: relative; margin: 16px 0 10px; font-family: var(--fonte-titulo); font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.12; }
@@ -181,6 +189,8 @@
 @media (max-width: 900px) {
   .caminhos, .destaques { grid-template-columns: 1fr; }
   .caminho { padding: 30px 22px; }
+  .caminho::before { width: 170px; height: 212px; right: -30px; top: -20px; }
+  .caminho--graduacao::before { width: 200px; height: 200px; right: -36px; top: -30px; }
       .faixa-numeros { margin-top: -36px; }
   .cta-final { padding: 40px 22px; }
 }
