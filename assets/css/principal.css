@@ -91,12 +91,12 @@
 .caminho--graduacao { background: linear-gradient(150deg, #0b3f8a, var(--unifecaf) 55%, #000f2b); border: 1.5px solid rgba(52, 216, 136, .35); }
 /* símbolo de cada marca bem clarinho no canto do cartão (no lugar do antigo círculo) */
 .caminho::before {
-  content: ''; position: absolute; right: -34px; top: -26px; width: 230px; height: 286px; pointer-events: none;
+  content: ''; position: absolute; right: -14px; top: -10px; width: 150px; height: 186px; pointer-events: none;
   background: rgba(255, 255, 255, .07);
   -webkit-mask: url(../img/simbolo-conhecer.webp) center / contain no-repeat; mask: url(../img/simbolo-conhecer.webp) center / contain no-repeat;
 }
 .caminho--graduacao::before {
-  right: -44px; top: -40px; width: 270px; height: 270px; background: rgba(52, 216, 136, .1);
+  right: -20px; top: -18px; width: 170px; height: 170px; background: rgba(52, 216, 136, .1);
   -webkit-mask-image: url(../img/simbolo-unifecaf.webp); mask-image: url(../img/simbolo-unifecaf.webp);
 }
 .caminho__selo { position: relative; justify-self: center; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.14); font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -189,8 +189,8 @@
 @media (max-width: 900px) {
   .caminhos, .destaques { grid-template-columns: 1fr; }
   .caminho { padding: 30px 22px; }
-  .caminho::before { width: 170px; height: 212px; right: -30px; top: -20px; }
-  .caminho--graduacao::before { width: 200px; height: 200px; right: -36px; top: -30px; }
+  .caminho::before { width: 110px; height: 136px; right: -10px; top: -8px; }
+  .caminho--graduacao::before { width: 124px; height: 124px; right: -14px; top: -12px; }
       .faixa-numeros { margin-top: -36px; }
   .cta-final { padding: 40px 22px; }
 }
