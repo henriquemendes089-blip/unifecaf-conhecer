@@ -291,12 +291,9 @@
           <h2 class="titulo">Uma escola técnica feita para <em>transformar vidas na prática</em></h2>
           <p class="subtitulo">Estrutura moderna, professores qualificados e experiência real de mercado.</p>
         </div>
-        <div class="galeria revelar">
-          <figure><img src="img/escola/laboratorio-uti.webp" alt="Laboratório com leitos de UTI" loading="lazy" /><figcaption>Laboratório com UTI</figcaption></figure>
-          <figure><img src="img/escola/sala-de-aula.webp" alt="Sala de aula" loading="lazy" /><figcaption>Salas de aula</figcaption></figure>
-          <figure><img src="img/escola/turma-enfermagem.webp" alt="Turma de enfermagem" loading="lazy" /></figure>
-          <figure><img src="img/escola/galeria-1.webp" alt="Alunos da Conhecer" loading="lazy" /></figure>
-          <figure><img src="img/escola/galeria-5.webp" alt="Turma reunida" loading="lazy" /></figure>
+        <div class="faixa-fotos revelar" id="faixaEstrutura"></div>
+        <div class="centro" style="margin-top:34px">
+          <button type="button" class="btn btn--primario" data-galeria-estrutura>Conheça a estrutura da Conhecer</button>
         </div>
       </div>
     </section>
@@ -381,6 +378,7 @@
   </button>
 
   <script src="js/cursos-tecnicos-data.js"></script>
+  <script src="js/estrutura-data.js"></script>
   <script src="js/cursos-ui.js"></script>
   <script>
     const cursos = cursosOrdenados();
@@ -460,6 +458,7 @@
       .map(u => `<span><strong style="color:#fff">${u.nome}</strong><br />${u.endereco}</span>`).join('');
   </script>
   <script>window.LEAD_QUIZ_CONFIG = { modalidades: ['tecnico'] };</script>
+  <script src="js/estrutura-ui.js"></script>
   <script src="js/site.js"></script>
   <script src="js/lead-quiz.js"></script>
 </body>
