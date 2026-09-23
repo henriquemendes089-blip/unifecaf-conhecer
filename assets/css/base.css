@@ -50,8 +50,17 @@ button { font: inherit; cursor: pointer; }
 .secao--azul .subtitulo { color: rgba(255,255,255,.78); }
 
 /* ── Cabeçalho ──────────────────────────────────────────────── */
-.cabecalho { position: sticky; top: 0; z-index: 50; background: #fff; transition: box-shadow .25s; }
-.cabecalho.rolou { box-shadow: 0 6px 24px rgba(4, 28, 87, .1); }
+.cabecalho { position: sticky; top: 0; z-index: 50; background: #fff; transition: background .3s, box-shadow .25s; }
+/* ao rolar, o cabeçalho vira vidro: fundo translúcido que embaça o que passa atrás */
+.cabecalho.rolou {
+  background: rgba(255, 255, 255, .72);
+  -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: 0 6px 24px rgba(4, 28, 87, .1); border-bottom: 1px solid rgba(255, 255, 255, .6);
+}
+/* navegador sem suporte ao vidro continua com o branco de sempre */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .cabecalho.rolou { background: #fff; }
+}
 .cabecalho .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; }
 .cabecalho__logo img { height: 42px; width: auto; }
 .menu { display: flex; align-items: center; gap: 4px; }
@@ -66,7 +75,7 @@ button { font: inherit; cursor: pointer; }
 .link-marca:hover { border-color: var(--cor); color: var(--cor); }
 .hamburguer { display: none; width: 44px; height: 44px; border: none; border-radius: 12px; background: var(--cor-suave); color: var(--cor); align-items: center; justify-content: center; }
 .hamburguer svg { width: 22px; height: 22px; }
-.menu-mobile { display: none; border-top: 1px solid var(--linha); padding: 12px 20px 20px; background: #fff; }
+.menu-mobile { display: none; border-top: 1px solid var(--linha); padding: 12px 20px 20px; background: rgba(255, 255, 255, .96); }
 .menu-mobile.aberto { display: grid; gap: 4px; }
 .menu-mobile a { padding: 12px 8px; border-bottom: 1px solid var(--linha); font-weight: 500; color: var(--tinta); }
 .menu-mobile .btn { margin-top: 10px; }
