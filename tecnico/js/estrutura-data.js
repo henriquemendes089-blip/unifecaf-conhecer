@@ -1,6 +1,15 @@
 /* Fotos das unidades (pasta do Drive da Conhecer), usadas na faixa e na galeria completa.
    Cada foto tem duas versões: img/estrutura/mini (faixa e grade) e img/estrutura/grande (tela cheia). */
 
+/* As 5 fotos do mosaico da seção Estrutura (abrem a galeria quando clicadas). */
+const fotosMosaicoEstrutura = [
+  { caminho: 'img/escola/laboratorio-uti.webp', legenda: 'Laboratório com UTI' },
+  { caminho: 'img/escola/sala-de-aula.webp', legenda: 'Salas de aula' },
+  { caminho: 'img/escola/turma-enfermagem.webp', legenda: 'Turma de enfermagem' },
+  { caminho: 'img/escola/galeria-1.webp', legenda: 'Alunos da Conhecer' },
+  { caminho: 'img/escola/galeria-5.webp', legenda: 'Turma reunida' }
+];
+
 const fotosEstrutura = [
   { unidade: 'rn', arquivo: 'rn-01-1-fachada', legenda: 'Fachada da unidade' },
   { unidade: 'sl', arquivo: 'sl-07-laboratorio-enfermagem', legenda: 'Laboratório de enfermagem' },
