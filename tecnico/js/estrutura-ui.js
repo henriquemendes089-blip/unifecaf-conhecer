@@ -25,6 +25,7 @@
   let indiceAtual = 0;
   let listaVisivel = TODAS;
   let focoAnterior = null;
+  let visorSozinho = false; // aberto direto pelo mosaico, sem a página com todas as fotos atrás
 
   function montarModal() {
     modal = document.createElement('div');
@@ -100,16 +101,26 @@
       </button>`).join('');
   }
 
-  function abrirGaleria(indice) {
+  function abrirGaleria() {
     if (!modal) montarModal();
     focoAnterior = document.activeElement;
     filtro = '';
+    visorSozinho = false;
     modal.querySelectorAll('.galeria-modal__filtros .aba').forEach(x => x.classList.toggle('ativa', x.dataset.unidade === ''));
     montarGrade();
     modal.classList.add('aberta');
     document.body.style.overflow = 'hidden';
     modal.querySelector('.galeria-modal__fechar').focus({ preventScroll: true });
-    if (typeof indice === 'number') abrirVisor(indice);
+  }
+
+  // clique numa foto do mosaico: abre só a foto, e fechar volta direto para a página
+  function abrirFotoDoMosaico(indice) {
+    if (!modal) montarModal();
+    focoAnterior = document.activeElement;
+    listaVisivel = TODAS;
+    visorSozinho = true;
+    document.body.style.overflow = 'hidden';
+    abrirVisor(indice);
   }
 
   function fecharGaleria() {
@@ -132,7 +143,13 @@
   }
 
   function fecharVisor() {
-    if (visor) visor.classList.remove('aberta');
+    if (!visor) return;
+    visor.classList.remove('aberta');
+    if (visorSozinho) {
+      visorSozinho = false;
+      document.body.style.overflow = '';
+      if (focoAnterior) focoAnterior.focus({ preventScroll: true });
+    }
   }
 
   function mover(passo) {
@@ -140,8 +157,9 @@
   }
 
   function teclado(e) {
-    if (!modal || !modal.classList.contains('aberta')) return;
+    if (!modal) return;
     const visorAberto = visor.classList.contains('aberta');
+    if (!visorAberto && !modal.classList.contains('aberta')) return;
     if (e.key === 'Escape') { e.stopPropagation(); visorAberto ? fecharVisor() : fecharGaleria(); }
     else if (visorAberto && e.key === 'ArrowLeft') mover(-1);
     else if (visorAberto && e.key === 'ArrowRight') mover(1);
@@ -150,7 +168,7 @@
   const mosaico = document.getElementById('mosaicoEstrutura');
   if (mosaico) mosaico.addEventListener('click', e => {
     const item = e.target.closest('[data-mosaico]');
-    if (item) abrirGaleria(+item.dataset.mosaico);
+    if (item) abrirFotoDoMosaico(+item.dataset.mosaico);
   });
   document.querySelectorAll('[data-galeria-estrutura]').forEach(b => b.addEventListener('click', () => abrirGaleria()));
 })();
