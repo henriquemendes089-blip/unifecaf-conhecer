@@ -219,23 +219,23 @@ input.campo { background-image: none; padding-right: 16px; }
 /* ── Banner bolsa ───────────────────────────────────────────── */
 /* ── Banner de vagas e bolsas ───────────────────────────────── */
 .banner-bolsa {
-  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr) auto;
-  align-items: center; gap: 30px; padding-right: 34px; border-radius: 32px; color: #fff;
+  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.06fr);
+  align-items: stretch; min-height: 470px; border-radius: 32px; color: #fff;
   background: linear-gradient(115deg, var(--cor-profunda) 0%, #082b7e 45%, var(--cor) 100%);
 }
 .banner-bolsa::before, .banner-bolsa::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; }
 .banner-bolsa::before { left: -120px; bottom: -150px; width: 360px; height: 360px; background: radial-gradient(circle at 30% 30%, rgba(59, 130, 246, .55), rgba(59, 130, 246, 0) 70%); }
 .banner-bolsa::after { right: -90px; top: -110px; width: 320px; height: 320px; border: 46px solid rgba(96, 165, 250, .16); }
-.banner-bolsa__foto { position: relative; z-index: 1; align-self: end; }
-.banner-bolsa__foto img { display: block; width: 100%; max-height: 420px; object-fit: contain; object-position: center bottom; }
+.banner-bolsa__foto { position: relative; z-index: 1; align-self: stretch; padding-top: 26px; }
+.banner-bolsa__foto img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: left bottom; }
 .banner-bolsa__balao {
-  position: absolute; left: 8%; right: -6%; bottom: 46px; display: flex; align-items: flex-start; gap: 10px;
+  position: absolute; left: 5%; right: 9%; bottom: 40px; display: flex; align-items: flex-start; gap: 10px;
   padding: 14px 18px; border-radius: 18px; border: 1px solid rgba(255,255,255,.28);
   background: rgba(10, 35, 92, .55); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   font-size: .92rem; line-height: 1.35;
 }
 .banner-bolsa__balao svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; opacity: .85; }
-.banner-bolsa__texto { position: relative; z-index: 1; padding: 44px 0 44px 40px; }
+.banner-bolsa__texto { position: relative; z-index: 1; align-self: center; justify-self: end; max-width: 600px; padding: 44px 46px 44px 0; }
 .banner-bolsa__titulo { font-family: var(--fonte-titulo); font-size: clamp(1.7rem, 3.4vw, 2.7rem); font-weight: 800; line-height: 1.12; }
 .banner-bolsa__titulo em { display: block; font-style: normal; }
 .banner-bolsa__texto > p { margin-top: 12px; max-width: 460px; color: rgba(255,255,255,.85); }
@@ -250,7 +250,6 @@ input.campo { background-image: none; padding-right: 16px; }
 .banner-bolsa__indique strong { color: #fff; }
 .banner-bolsa__indique a { text-decoration: underline; }
 .banner-bolsa__botao { display: none; margin-top: 22px; }
-.banner-bolsa__cta { position: relative; z-index: 1; white-space: nowrap; }
 .card-curso__acao .btn { width: 100%; }
 .card-curso--breve { opacity: .7; }
 .card-curso--breve:hover { transform: none; box-shadow: none; }
@@ -438,15 +437,14 @@ input.campo { background-image: none; padding-right: 16px; }
   .unidades, .diferenciais, .info-curso { grid-template-columns: 1fr; }
   .galeria { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
   .faixa-teste { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: 30px 22px; }
-  .banner-bolsa { grid-template-columns: 1fr; gap: 0; padding-right: 0; text-align: center; }
+  .banner-bolsa { grid-template-columns: 1fr; min-height: 0; text-align: center; }
   .banner-bolsa__foto { order: 2; }
-  .banner-bolsa__foto img { max-height: 300px; }
+  .banner-bolsa__foto img { height: auto; max-height: 320px; object-position: center bottom; }
   .banner-bolsa__balao { left: 16px; right: 16px; bottom: 16px; text-align: left; }
-  .banner-bolsa__texto { padding: 34px 24px 0; }
+  .banner-bolsa__texto { justify-self: stretch; max-width: none; padding: 34px 24px 0; }
   .banner-bolsa__texto > p { margin-inline: auto; }
   .banner-bolsa__chips { justify-content: center; }
   .banner-bolsa__botao { display: inline-flex; }
-  .banner-bolsa__cta { display: none; }
   .outra-marca { grid-template-columns: 1fr; padding: 30px 24px; }
   .curso-topo__texto { padding-bottom: 20px; }
   .curso-topo__imagem { max-height: 300px; }
