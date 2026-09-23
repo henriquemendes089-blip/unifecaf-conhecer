@@ -219,7 +219,7 @@ input.campo { background-image: none; padding-right: 16px; }
 /* ── Banner bolsa ───────────────────────────────────────────── */
 /* ── Banner de vagas e bolsas ───────────────────────────────── */
 .banner-bolsa {
-  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) auto;
+  position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, .68fr) minmax(0, 1.32fr) auto;
   align-items: center; gap: 30px; padding-right: 34px; border-radius: 32px; color: #fff;
   background: linear-gradient(115deg, var(--cor-profunda) 0%, #082b7e 45%, var(--cor) 100%);
 }
@@ -235,14 +235,14 @@ input.campo { background-image: none; padding-right: 16px; }
   font-size: .92rem; line-height: 1.35;
 }
 .banner-bolsa__balao svg { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; opacity: .85; }
-.banner-bolsa__texto { position: relative; z-index: 1; padding: 44px 0; }
+.banner-bolsa__texto { position: relative; z-index: 1; padding: 44px 0 44px 40px; }
 .banner-bolsa__titulo { font-family: var(--fonte-titulo); font-size: clamp(1.7rem, 3.4vw, 2.7rem); font-weight: 800; line-height: 1.12; }
 .banner-bolsa__titulo em { display: block; font-style: normal; }
 .banner-bolsa__texto > p { margin-top: 12px; max-width: 460px; color: rgba(255,255,255,.85); }
 .banner-bolsa__texto > p strong { color: #fff; }
 .banner-bolsa__chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .banner-bolsa__chips li {
-  display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
   background: rgba(59, 130, 246, .28); border: 1px solid rgba(147, 197, 253, .35); font-size: .86rem; font-weight: 600;
 }
 .banner-bolsa__chips svg { width: 16px; height: 16px; opacity: .9; }
@@ -250,12 +250,7 @@ input.campo { background-image: none; padding-right: 16px; }
 .banner-bolsa__indique strong { color: #fff; }
 .banner-bolsa__indique a { text-decoration: underline; }
 .banner-bolsa__botao { display: none; margin-top: 22px; }
-.banner-bolsa__seta {
-  position: relative; z-index: 1; display: grid; place-items: center; width: 62px; height: 62px; border-radius: 50%;
-  border: 1.5px solid rgba(255,255,255,.6); color: #fff; transition: background .2s, transform .2s, border-color .2s;
-}
-.banner-bolsa__seta svg { width: 22px; height: 22px; }
-.banner-bolsa__seta:hover { background: rgba(255,255,255,.16); border-color: #fff; transform: translateX(3px); }
+.banner-bolsa__cta { position: relative; z-index: 1; white-space: nowrap; }
 .card-curso__acao .btn { width: 100%; }
 .card-curso--breve { opacity: .7; }
 .card-curso--breve:hover { transform: none; box-shadow: none; }
@@ -451,7 +446,7 @@ input.campo { background-image: none; padding-right: 16px; }
   .banner-bolsa__texto > p { margin-inline: auto; }
   .banner-bolsa__chips { justify-content: center; }
   .banner-bolsa__botao { display: inline-flex; }
-  .banner-bolsa__seta { display: none; }
+  .banner-bolsa__cta { display: none; }
   .outra-marca { grid-template-columns: 1fr; padding: 30px 24px; }
   .curso-topo__texto { padding-bottom: 20px; }
   .curso-topo__imagem { max-height: 300px; }
