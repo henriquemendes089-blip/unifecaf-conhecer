@@ -19,26 +19,6 @@
   );
   const descricao = f => f.unidade ? `${f.legenda} — unidade ${NOMES[f.unidade]}` : f.legenda;
 
-  const ICONE = {
-    enfermagem: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>',
-    radiologia: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3m15.364-6.364L5.636 18.364m12.728 0L5.636 5.636"/></svg>',
-    informatica: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>',
-    sala: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"/></svg>',
-    seguranca: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>',
-    biblioteca: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>',
-    atendimento: '<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>'
-  };
-
-  const DESTAQUES = [
-    { icone: ICONE.enfermagem, titulo: 'Laboratórios de enfermagem', texto: 'Leitos, simuladores e materiais iguais aos de hospitais e clínicas, incluindo UTI real, para treinar cada procedimento antes do estágio.' },
-    { icone: ICONE.radiologia, titulo: 'Laboratório de radiologia', texto: 'Equipamento real de raio-X para praticar o posicionamento do paciente e as normas de proteção radiológica.' },
-    { icone: ICONE.informatica, titulo: 'Laboratórios de informática', texto: 'Computadores para as aulas de desenvolvimento de sistemas, computação gráfica e rotinas administrativas.' },
-    { icone: ICONE.sala, titulo: 'Salas de aula amplas', texto: 'Ambientes climatizados, com projeção e espaço para turmas que aprendem na prática desde o primeiro módulo.' },
-    { icone: ICONE.seguranca, titulo: 'Sala de segurança do trabalho', texto: 'EPIs, sinalização e equipamentos usados no dia a dia da profissão para as aulas práticas do curso.' },
-    { icone: ICONE.biblioteca, titulo: 'Biblioteca e espaços de estudo', texto: 'Acervo técnico e lugares para estudar antes da aula, revisar a matéria e se preparar para as provas.' },
-    { icone: ICONE.atendimento, titulo: 'Atendimento presencial', texto: 'Equipe na recepção de cada unidade para matrícula, financeiro, estágio e tudo o que o aluno precisar.' }
-  ];
-
   let modal = null;
   let visor = null;
   let filtro = '';
@@ -68,13 +48,6 @@
             <div class="numero"><strong>+20 mil</strong><span>Alunos formados</span></div>
             <div class="numero"><strong>4 em 5</strong><span>Alunos empregados após o curso</span></div>
             <div class="numero"><strong>3</strong><span>Unidades na Grande BH</span></div>
-          </div>
-
-          <div class="diferenciais galeria-modal__destaques">${DESTAQUES.map(d => `
-            <div class="diferencial">
-              <div class="diferencial__icone">${d.icone}</div>
-              <div><h3>${d.titulo}</h3><p>${d.texto}</p></div>
-            </div>`).join('')}
           </div>
 
           <div class="galeria-modal__separador">

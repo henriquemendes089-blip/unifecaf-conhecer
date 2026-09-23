@@ -567,8 +567,7 @@ a.cartao-curso:focus-visible { outline: 3px solid var(--cartao-claro, var(--cor-
   transition: border-color .2s, color .2s, background .2s;
 }
 .galeria-modal__fechar:hover { border-color: var(--cor); background: var(--cor-suave); color: var(--cor); }
-.galeria-modal__numeros { margin-bottom: 26px; }
-.galeria-modal__destaques { grid-template-columns: repeat(3, 1fr); margin-bottom: 56px; }
+.galeria-modal__numeros { margin-bottom: 44px; }
 .galeria-modal__separador { max-width: 720px; margin: 0 auto 26px; text-align: center; }
 .galeria-modal__subtitulo { margin-top: 2px; font-family: var(--fonte-titulo); font-size: clamp(1.3rem, 2.4vw, 1.8rem); font-weight: 800; color: var(--tinta); }
 .galeria-modal__conta { margin: 8px 0 18px; font-size: .92rem; color: var(--texto-suave); }
@@ -618,13 +617,9 @@ a.cartao-curso:focus-visible { outline: 3px solid var(--cartao-claro, var(--cor-
 .galeria-visor__nav--anterior { left: 18px; }
 .galeria-visor__nav--proxima { right: 18px; }
 
-@media (max-width: 1080px) {
-  .galeria-modal__destaques { grid-template-columns: repeat(2, 1fr); }
-}
 @media (max-width: 760px) {
   .galeria-modal__rolagem { padding: 30px 0 40px; }
   .galeria-modal__cabecalho { margin-bottom: 28px; }
-  .galeria-modal__destaques { grid-template-columns: 1fr; margin-bottom: 36px; }
   .galeria-modal__chamada { margin-top: 32px; padding: 24px 20px; }
   .galeria-modal__grade { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
   .galeria-modal__item span { padding: 10px 12px 12px; font-size: .84rem; }
