@@ -186,6 +186,7 @@
   .comparativo { overflow: hidden; }
   .comparativo__destaque { display: none; }
   .comparativo table { width: 100%; min-width: 0; }
+  .comparativo thead th, .comparativo tbody th, .comparativo td { text-align: center; }
   .comparativo thead, .comparativo tbody { display: block; }
   .comparativo thead tr, .comparativo tbody tr { display: grid; grid-template-columns: 1fr 1fr; }
   .comparativo thead th:first-child, .comparativo__acoes th { display: none; }
