@@ -182,29 +182,28 @@
 .cta-final__acoes { position: relative; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 
 @media (max-width: 700px) {
-  /* no celular o quadro rola de lado */
-  /* no celular a tabela vira cartões empilhados: tudo cabe sem arrastar de lado */
-  .comparativo { background: transparent; box-shadow: none; border-radius: 0; }
+  /* no celular: duas colunas lado a lado e o item numa faixa fina acima, para caber sem arrastar e sem ficar alto */
+  .comparativo { overflow: hidden; }
   .comparativo__destaque { display: none; }
-  .comparativo table { min-width: 0; }
-  .comparativo table, .comparativo tbody, .comparativo tr, .comparativo th, .comparativo td { display: block; width: auto; }
-  .comparativo thead { display: none; }
-  .comparativo tbody tr { overflow: hidden; margin-bottom: 14px; border-radius: var(--raio-g); background: #fff; box-shadow: 0 10px 26px rgba(4, 28, 87, .08); }
+  .comparativo table { width: 100%; min-width: 0; }
+  .comparativo thead, .comparativo tbody { display: block; }
+  .comparativo thead tr, .comparativo tbody tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .comparativo thead th:first-child, .comparativo__acoes th { display: none; }
+  .comparativo thead th { padding: 12px; font-size: .88rem; border-radius: 0; }
+  .comparativo thead .col-tecnico { background: var(--tecnico); }
+  .comparativo thead .col-graduacao { background: var(--unifecaf); }
+  .comparativo thead small { margin-top: 1px; font-size: .64rem; }
   .comparativo tbody th {
-    width: auto; padding: 12px 18px; border-bottom: none; border-radius: 0;
-    font-family: var(--fonte-titulo); font-size: .76rem; font-weight: 700; letter-spacing: .1em;
+    grid-column: 1 / -1; width: auto; padding: 7px 12px; border-bottom: none; border-radius: 0;
+    font-family: var(--fonte-titulo); font-size: .66rem; font-weight: 700; letter-spacing: .09em;
     text-transform: uppercase; color: var(--texto-suave); background: var(--cor-suave);
   }
-  .comparativo td { padding: 14px 18px; border-bottom: none; font-size: .92rem; }
-  .comparativo td::before {
-    content: attr(data-rotulo); display: block; margin-bottom: 4px; font-family: var(--fonte-titulo);
-    font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255, 255, 255, .72);
-  }
+  .comparativo td { padding: 10px 12px; border-bottom: none; font-size: .78rem; line-height: 1.35; }
+  .comparativo td::before { display: none; }
   .comparativo td:nth-child(2) { background: var(--tecnico); }
   .comparativo td:nth-child(3) { background: var(--unifecaf); }
-  .comparativo__acoes th { display: none; }
-  .comparativo__acoes td { padding: 16px 18px; }
-  .comparativo__acoes .btn { width: 100%; }
+  .comparativo__acoes td { padding: 12px; }
+  .comparativo__acoes .btn { width: 100%; padding: 10px 6px; font-size: .72rem; }
 }
 @media (max-width: 900px) {
   .caminhos, .destaques { grid-template-columns: 1fr; }
