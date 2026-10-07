@@ -49,8 +49,9 @@ function videoInstitucionalHtml() {
     : espacoMidia('video', 'Espaço para vídeo institucional do polo', 'Formato horizontal 16:9');
 }
 
+// Página fixa de cada graduação (gerada por _interno/gerar-paginas.js)
 function urlCurso(c) {
-  return `curso.html?slug=${c.slug}&modalidade=${c.modalidade}`;
+  return `graduacao-${c.slug}-${c.modalidade}.html`;
 }
 
 function imagemCurso(c) {

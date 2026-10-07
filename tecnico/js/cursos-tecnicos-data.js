@@ -108,7 +108,7 @@ const cursosTecnicosData = {
 
   "administracao": {
     slug: "administracao", nome: "Técnico em Administração", areaKey: "gestao", area: "Gestão e Negócios",
-    unidades: ["sl"], destaque: true, foto: "img/cursos/recorte-administracao.webp",
+    unidades: ["rn", "sl"], destaque: true, foto: "img/cursos/recorte-administracao.webp",
     descricao: "O Curso Técnico em Administração tem por objetivo formar profissionais com conhecimentos e habilidades para atuar em diferentes áreas administrativas de empresas e organizações, tanto públicas quanto privadas. O objetivo é capacitar os técnicos em administração para desempenhar funções operacionais e de suporte administrativo, contribuindo para o bom funcionamento das empresas.",
     perfilProfissional: [
       "Executar operações administrativas de planejamento, pesquisas, análise e assessoria no que tange à gestão de pessoal, de materiais e produção, de serviços, gestão financeira, orçamentária e mercadológica.",
@@ -124,6 +124,7 @@ const cursosTecnicosData = {
 
   "contabilidade": {
     slug: "contabilidade", foto: "img/cursos/recorte-contabilidade.webp", nome: "Técnico em Contabilidade", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["bh"],
     descricao: "O objetivo principal do Curso Técnico em Contabilidade é capacitar estudantes de nível médio com habilidades práticas e teóricas para executar rotinas financeiras, fiscais e trabalhistas, registrando operações mercantis e auxiliando na gestão do patrimônio das empresas com foco em uma rápida inserção no mercado de trabalho.",
     perfilProfissional: [
       "Executar processos administrativos e contábeis.",
@@ -141,6 +142,7 @@ const cursosTecnicosData = {
 
   "comercio": {
     slug: "comercio", foto: "img/cursos/recorte-comercio.webp", nome: "Técnico em Comércio", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["bh"],
     descricao: "O objetivo principal do Curso Técnico em Comércio é formar profissionais capacitados para aplicar métodos de comercialização de bens e serviços, gerenciar rotinas de vendas, controlar estoques, organizar a logística e atuar de forma ética no mercado de varejo e atacado, seja em lojas físicas ou virtuais.",
     competenciasPrevias: "Não há",
     perfilProfissional: [
@@ -160,6 +162,7 @@ const cursosTecnicosData = {
 
   "condominio": {
     slug: "condominio", foto: "img/cursos/recorte-condominio.webp", nome: "Técnico em Condomínio", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["bh"],
     descricao: "O objetivo principal do curso Técnico em Condomínio é formar profissionais qualificados para realizar a gestão eficiente, administração e operação de condomínios residenciais e comerciais. O curso capacita o aluno a otimizar recursos, controlar rotinas financeiras, gerenciar equipes e garantir o cumprimento de normas legais e de segurança.",
     perfilProfissional: [
       "Executar atividades administrativas voltadas a recursos humanos, financeiros e de gestão de suprimentos e materiais, de acordo com convenção condominial.",
@@ -175,6 +178,7 @@ const cursosTecnicosData = {
 
   "vendas": {
     slug: "vendas", foto: "img/cursos/recorte-vendas.webp", nome: "Técnico em Vendas", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["sl"],
     descricao: "O objetivo principal do Curso Técnico em Vendas é preparar e qualificar pessoas para planejar, executar e controlar ações comerciais, desenvolver estratégias de marketing, negociar com ética e gerenciar o relacionamento com clientes, garantindo alta empregabilidade no comércio, na indústria ou no próprio negócio.",
     perfilProfissional: [
       "Identificar produtos e serviços da empresa e canais de venda adequados às respectivas especificidades.",
@@ -194,6 +198,7 @@ const cursosTecnicosData = {
 
   "transacoes-imobiliarias": {
     slug: "transacoes-imobiliarias", foto: "img/cursos/recorte-transacoes-imobiliarias.webp", nome: "Técnico em Transações Imobiliárias", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["bh"],
     descricao: "O objetivo principal do Curso Técnico em Transações Imobiliárias (TTI) é formar profissionais capacitados para planejar, operar e executar a intermediação na compra, venda, locação, permuta e administração de bens imóveis.",
     perfilProfissional: [
       "Executar atividades de intermediação na compra, venda, permuta e locação de imóveis, sejam terrenos ou edificações.",
@@ -210,6 +215,7 @@ const cursosTecnicosData = {
 
   "logistica": {
     slug: "logistica", foto: "img/cursos/recorte-logistica.webp", nome: "Técnico em Logística", areaKey: "gestao", area: "Gestão e Negócios",
+    unidades: ["bh"],
     descricao: "O principal objetivo do Curso Técnico em Logística é capacitar profissionais para planejar, organizar, executar e controlar os fluxos de materiais, serviços e informações ao longo da cadeia de suprimentos.",
     perfilProfissional: [
       "Auxiliar no planejamento, operacionalização e controle da cadeia produtiva e seu fluxo logístico.",
@@ -226,6 +232,7 @@ const cursosTecnicosData = {
 
   "desenvolvimento-de-sistemas": {
     slug: "desenvolvimento-de-sistemas", foto: "img/cursos/recorte-desenvolvimento-de-sistemas.webp", nome: "Técnico em Desenvolvimento de Sistemas", areaKey: "tecnologia", area: "Tecnologia",
+    unidades: ["bh", "rn"],
     descricao: "O objetivo principal do Curso Técnico em Desenvolvimento de Sistemas é capacitar profissionais de nível médio para planejar, criar, testar, implantar e manter softwares, sites e aplicativos. O curso prepara o aluno de forma prática para resolver problemas reais e otimizar processos em empresas de vários setores.",
     perfilProfissional: [
       "Desenvolver sistemas computacionais utilizando ambiente de desenvolvimento.",
@@ -248,6 +255,7 @@ const cursosTecnicosData = {
 
   "computacao-grafica": {
     slug: "computacao-grafica", foto: "img/cursos/recorte-computacao-grafica.webp", nome: "Técnico em Computação Gráfica", areaKey: "tecnologia", area: "Tecnologia",
+    unidades: ["bh"],
     descricao: "O objetivo principal do Curso Técnico em Computação Gráfica é capacitar profissionais para criar, editar e produzir conteúdos visuais, projetos 2D e 3D, animações e materiais de áudio e vídeo digital, unindo criatividade e domínio de softwares tecnológicos para atender às demandas do mercado de trabalho.",
     perfilProfissional: [
       "Elaborar e implementar projetos de programação visual e layout para mídia digital e/ou impressa.",

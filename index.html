@@ -291,14 +291,14 @@
 
     const destaquesTec = ['enfermagem', 'radiologia', 'seguranca-do-trabalho', 'analises-clinicas', 'administracao', 'cuidador-de-idosos'];
     document.getElementById('destaquesTecnicos').innerHTML = destaquesTec.map(s => cursosTecnicosData[s]).filter(Boolean).map(c => {
-      const caminho = `curso.html?slug=${c.slug}`;
+      const caminho = `curso-${c.slug}.html`;
       return `<li><a href="https://tecnico.conhecerescola.com.br/${caminho}" data-site="tecnico" data-caminho="${caminho}"><span>${esc(c.nome)}<small>${esc(c.area)}${c.tipo ? ' · ' + c.tipo : ''}</small></span>${SETA}</a></li>`;
     }).join('');
 
     const destaquesGrad = [['administracao', 'ead'], ['analise-e-desenvolvimento-de-sistemas', 'ead'], ['biomedicina', 'semipresencial'], ['pedagogia', 'semipresencial'], ['gestao-de-recursos-humanos', 'ead'], ['engenharia-civil', 'semipresencial']];
     document.getElementById('destaquesGraduacoes').innerHTML = destaquesGrad
       .map(([s, m]) => graduacoesData.find(c => c.slug === s && c.modalidade === m)).filter(Boolean).map(c => {
-        const caminho = `curso.html?slug=${c.slug}&modalidade=${c.modalidade}`;
+        const caminho = `graduacao-${c.slug}-${c.modalidade}.html`;
         return `<li><a href="https://graduacao.conhecerescola.com.br/${caminho}" data-site="graduacao" data-caminho="${caminho}"><span>${esc(c.nome)}<small>${c.modalidade === 'ead' ? 'EAD' : 'Semipresencial'} · ${esc(c.duracao)} · ${esc(c.tipoGrau)}</small></span>${SETA}</a></li>`;
       }).join('');
 

@@ -39,7 +39,12 @@ function cardCurso(c) {
     <div class="cartao-curso__foto">${c.foto ? `<img src="${c.foto}" alt="" loading="lazy" />` : `<span class="cartao-curso__icone">${iconeArea(c.areaKey)}</span>`}</div>`;
   return c.emBreve
     ? `<article class="cartao-curso cartao-curso--breve">${miolo}</article>`
-    : `<a href="curso.html?slug=${c.slug}" class="cartao-curso">${miolo}</a>`;
+    : `<a href="${urlCurso(c)}" class="cartao-curso">${miolo}</a>`;
+}
+
+// Página fixa de cada curso (gerada por _interno/gerar-paginas.js)
+function urlCurso(c) {
+  return `curso-${c.slug}.html`;
 }
 
 function videoYoutube(id, legenda, vertical) {

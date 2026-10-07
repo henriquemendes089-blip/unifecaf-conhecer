@@ -472,7 +472,7 @@
       e.preventDefault();
       if (!buscaCurso.value) return buscaCurso.focus();
       const [slug, modalidade] = buscaCurso.value.split('|');
-      location.href = `curso.html?slug=${slug}&modalidade=${modalidade}`;
+      location.href = urlCurso({ slug, modalidade });
     });
 
     let modalidadeAtiva = '';
