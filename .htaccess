@@ -1,0 +1,33 @@
+# Vale para conhecerescola.com.br, www, tecnico. e graduacao.
+# (os subdomínios usam as subpastas tecnico/ e graduacao/ como raiz, então herdam este arquivo)
+
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Arquivos internos do repositório não são públicos
+RewriteRule (^|/)(_interno|\.claude|\.git)(/|$) - [F,L]
+RewriteRule \.md$ - [F,L]
+
+# Validação do SSL (AutoSSL) fica fora dos redirecionamentos
+RewriteCond %{REQUEST_URI} ^/\.well-known/
+RewriteRule ^ - [L]
+
+# www -> domínio sem www (já em https)
+RewriteCond %{HTTP_HOST} ^www\.conhecerescola\.com\.br$ [NC]
+RewriteRule ^ https://conhecerescola.com.br%{REQUEST_URI} [R=301,L]
+
+# http -> https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# Cache de arquivos estáticos
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/webp "access plus 30 days"
+ExpiresByType image/jpeg "access plus 30 days"
+ExpiresByType image/png "access plus 30 days"
+</IfModule>

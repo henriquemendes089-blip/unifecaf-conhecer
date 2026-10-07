@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /_interno/
+Disallow: /obrigado-
+Disallow: /enviar
+
+Sitemap: https://conhecerescola.com.br/sitemap.xml
+Sitemap: https://tecnico.conhecerescola.com.br/sitemap.xml
+Sitemap: https://graduacao.conhecerescola.com.br/sitemap.xml
