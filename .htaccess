@@ -22,6 +22,25 @@ RewriteRule ^ https://conhecerescola.com.br%{REQUEST_URI} [R=301,L]
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Endereços do WordPress antigo (apareciam como 404 no Search Console)
+# -> página nova equivalente, para não perder a autoridade dos links antigos
+RewriteCond %{HTTP_HOST} ^conhecerescola\.com\.br$ [NC]
+RewriteRule ^conhecer-advanced-enfermagem/?$ https://tecnico.conhecerescola.com.br/curso-enfermagem.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^conhecerescola\.com\.br$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/tecnico/curso-$1.html -f
+RewriteRule ^curso/([a-z0-9-]+)/?$ https://tecnico.conhecerescola.com.br/curso-$1.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^conhecerescola\.com\.br$ [NC]
+RewriteRule ^curso/ https://tecnico.conhecerescola.com.br/cursos.html [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^conhecerescola\.com\.br$ [NC]
+RewriteRule ^(home|voce-conhece-o-curso-de-tanatopraxia-entenda-aqui)/?$ https://conhecerescola.com.br/ [R=301,L]
+
+# Arquivos do WordPress não existem mais: 410 avisa o Google para esquecê-los
+RewriteRule ^wp-(content|includes|admin|json)(/|$) - [G,L]
+RewriteRule ^(wp-login\.php|xmlrpc\.php)$ - [G,L]
 </IfModule>
 
 # Cache de arquivos estáticos
