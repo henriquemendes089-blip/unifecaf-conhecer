@@ -9,10 +9,10 @@ const unidadesConhecer = [
 ];
 
 const portaisAluno = [
-  { nome: 'Unidade 1 – Belo Horizonte', url: 'http://portal.sponteeducacional.net.br/conhecer' },
-  { nome: 'Unidade 2 – Belo Horizonte', url: 'http://portal.sponteeducacional.net.br/tecconhecer' },
-  { nome: 'Unidade 3 – Santa Luzia', url: 'http://portal.sponteeducacional.net.br/conhecersl' },
-  { nome: 'Unidade 4 – Ribeirão das Neves', url: 'http://portal.sponteeducacional.net.br/conhecerdasneves' }
+  { nome: 'Unidade 1 – Belo Horizonte', url: 'https://portal.sponteeducacional.net.br/conhecer' },
+  { nome: 'Unidade 2 – Belo Horizonte', url: 'https://portal.sponteeducacional.net.br/tecconhecer' },
+  { nome: 'Unidade 3 – Santa Luzia', url: 'https://portal.sponteeducacional.net.br/conhecersl' },
+  { nome: 'Unidade 4 – Ribeirão das Neves', url: 'https://portal.sponteeducacional.net.br/conhecerdasneves' }
 ];
 
 const areasTecnicas = [
